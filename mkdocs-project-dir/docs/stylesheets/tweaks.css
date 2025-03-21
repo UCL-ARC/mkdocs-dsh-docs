@@ -1,0 +1,48 @@
+
+/*
+ * The contrast on the search entries was too low, apparently.
+ * By default they're black with partial alpha in light mode;
+ *  we used to set them all to plain black, but that has some
+ *  obvious problems when you add in dark mode.
+ * We should be able to use the existing CSS variables set
+ *  by the colour scheme.
+ */
+
+.md-search-result__title,
+.md-search-result__link:hover,
+.md-search-result__meta,
+.md-search-result__teaser {
+    color: var(--md-typeset-color);
+}
+
+/* Normally Pygments (the code highlighter)
+ *  makes comments a pale grey, but that's not
+ *  good either, especially since they're 
+ *  syntactically important for job scripts.
+ *
+ * This has similar dark-mode problems to the search result
+ * changes above.
+ *
+ * In an ideal world we might want to make a custom job script
+ * lexer for Pygments to separate comments from job script
+ * option lines.
+ */
+.codehilite .c1, 
+.codehilite .ch, 
+.codehilite .cs, 
+.md-typeset .highlight .c1, 
+.md-typeset .highlight .ch, 
+.md-typeset .highlight .cs {
+    /* This looked like the best *colour* option at the time, no
+     * other reason for this choice. */
+    color: var(--md-code-hl-keyword-color);
+}
+
+/*
+ * And Courier New is a little light-weight,
+ *  which also makes it hard to read.
+ *  These are some reasonably common monospaced fonts.
+ */
+code, kbd, pre {
+  font-family: Inconsolata,Source Code Pro,Menlo,Monaco,Ubuntu Mono,Consolas,Courier,Courier New,monospace;
+}
