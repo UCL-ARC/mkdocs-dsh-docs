@@ -1,4 +1,4 @@
-# Research Computing Documentation Repo
+# DSH Documentation Repo
 
 This repository houses the source and build method for the [Research Computing documentation](https://www.rc.ucl.ac.uk) with [MkDocs](https://www.mkdocs.org/).
 
