@@ -1,30 +1,14 @@
----
-title: Example Jobscripts
-categories:
- - User Guide
-layout: docs
----
-On this page we describe some basic example scripts to submit jobs to
-our clusters.
+On this page we describe some basic example scripts to submit jobs to DSH cluster.
 
 After creating your script, submit it to the scheduler with:
 
 `qsub my_script.sh`
-
-## Service Differences
-
-These scripts are applicable to all our clusters, but node sizes (core count, memory, and temporary storage sizes) differ between machines, so please check those details on the cluster-specific pages.
-Some clusters are diskless and have no temporary space that can be requested.
 
 ## Working Directories and Output
 
 The parallel filesystems we use to provide the home and scratch filesystems perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary `$TMPDIR` storage, and compress and copy them to the scratch area at the end of the job.
 
 This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to Scratch directly, however, your performance will generally not be as good as writing to `$TMPDIR`, and you may impact the general performance of the machine if you do this with many jobs simultaneously. This is particularly the case with single-core jobs, because that core is guaranteed to be writing out data.
-
-Please be aware that some clusters are diskless (eg Kathleen) and have no `$TMPDIR` available 
-for use - in those you must remove the request for `tmpfs` in your script. Check the 
-cluster-specific pages.
 
 Note that there is also the option of using [the `Local2Scratch` process](#example-array-job-using-local2scratch), 
 which takes place *after* the job has finished, in the clean-up step. This gives you the option of always
