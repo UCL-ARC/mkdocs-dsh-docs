@@ -1,10 +1,3 @@
----
-title: Account Services
-categories:
-- User Guide
-layout: docs
----
-
 # Account Services
 
 ## DSH Cluster access application
