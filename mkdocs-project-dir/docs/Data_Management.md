@@ -1,10 +1,3 @@
----
-title: Data Management
-categories:
-- User Guide
-layout: docs
----
-
 # Data Management
 
 Our clusters have local [parallel filesystems](Background/Parallel_Filesystems.md) and may also
@@ -16,15 +9,7 @@ The amount of storage you can use on the cluster is limited by a quota.
 
 ### Local filesystem quota
 
-Check your quota and usage for home and Scratch with the `lquota` command.
-
-### ACFS quotas
-
-Check your ACFS quota and usage with the `aquota` command.
-
-The ACFS has dual locations for resilience, and as a result commands like `du -h` or `ls -alsh` 
-will report filesizes on it as being twice what they really are. The `aquota` command will show you 
-real usage and quota.  
+Check your quota and usage for home and Scratch with the `XXXX` command.
 
 
 ## Giving files to another user
@@ -41,7 +26,7 @@ you can contact us at rc-support@ucl.ac.uk and ask us to do this. Please arrange
 have access to the institutional credentials associated with the account. Without this, we cannot 
 identify you as the owner of the account. 
 
-You will need to tell us what data to transfer, on what cluster, and the username of the recipient.
+You will need to tell us what data to transfer and the username of the recipient.
 
 ### Requesting data belonging to a user who has left
 
