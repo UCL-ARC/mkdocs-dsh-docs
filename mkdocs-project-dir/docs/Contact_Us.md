@@ -1,16 +1,6 @@
----
-title: Contact and Support
-categories:
- - User Guide
- - Internal:Address
- - Internal:Staff Names
-layout: docs
----
-
 # Contact and Support
 
-Users should direct any queries relating to their use of Research
-Computing services to the Research Computing Support Team at 
+Users should direct any queries relating to their use of the DSH to the Research Computing Support Team at 
 <rc-support@ucl.ac.uk> (see below). The team will respond to your question as
 quickly as possible, giving priority to requests that are deemed urgent
 on the basis of the information provided.
