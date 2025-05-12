@@ -1,136 +1,37 @@
----
-title: How To
-layout: docs
----
-
 # How do I?
 
 I have an account, now:
 
 ## How do I log in?
 
-Logging in is most straightforward if you are inside the UCL firewall. If you are logging in from home or other external networks then you first have to [get on to the UCL network](#logging-in-from-outside-the-ucl-firewall).
+Logging in is most straightforward if you are inside the UCL firewall. ASA-VPN-ISD?
+DSH Log in portal
 
-### Linux / Unix / macOS
+### Windows with poweshell terminal (Linux)
 
-Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace `<your_UCL_user_id>` with your central UCL username, and `<system_name>` with the name of the machine you want to log in to, eg. `myriad`, `kathleen`, `aristotle`. 
-
-```
-ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
-```
-
-### Windows
-
-On Windows you need something that will give you a suitable terminal and ssh - usually PuTTY, or
-on Windows 10 you can use OpenSSH from a command prompt and type the same `ssh` command as the 
-Linux instructions.
-
-#### Using PuTTY
-
-PuTTY is a common SSH client on Windows and is available on Desktop@UCL. You can find it under:
- `Start > P > PuTTY 0.76 (64-bit) > PuTTY 0.76` or type "putty" in the toolbar's search box.
-
-You will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY. 
-
-![PuTTY screenshot](img/putty_gui.png)
-
-You will then be asked to enter your username and password. Only enter your username, not `@<system_name>.rc.ucl.ac.uk`. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something. 
-
-The first time you log in to a new server, you'll get a popup telling you that the server's host 
-key is not cached in the registry - this is normal and is because you have never connected to
-this server before. If you want to, you can check the host fingerprint against [our current key fingerprints](Supplementary/Hostkeys.md).
-
-### Logging in from outside the UCL firewall
-
-You will need to either use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) or ssh in to UCL's Gateway system `ssh-gateway.ucl.ac.uk` first. From there you can then ssh in to our systems. 
+Use the terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace `<system_name>` with the name of the machine you want to log in to, eg. `dsh-login01`.
 
 ```
-ssh <your_UCL_user_id>@ssh-gateway.ucl.ac.uk
-ssh <your_UCL_user_id>@<system_name>.rc.ucl.ac.uk
+ssh <system_name>.rc.ucl.ac.uk
 ```
-
-**Advanced:** If you find you need to go via the Gateway often, you can set up this jump automatically, see [Single-step logins using tunnelling](#single-step-logins-using-tunnelling)
 
 ### Login problems
 
 If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.
 
-If you still cannot get access but can access other UCL services like the SSH Gateway, please contact us on rc-support@ucl.ac.uk. Your account may have expired, or you may have gone over quota.
+If you still cannot get access but can access other UCL services, please contact us on rc-support@ucl.ac.uk.
 
 If you cannot access anything, please see UCL MyAccount - you may need to request a password reset from the [Service Desk](https://www.ucl.ac.uk/isd/help-support). 
 
-If you get a host key error message, you will need to delete old host keys - continue reading!
-
-#### Remote host identification has changed
-
-When you log in via SSH, it keeps a record of the host key for the server you logged in to in 
-your `.ssh/known_hosts` file in your home directory, on the machine you are logging in from. 
-This helps make sure you are connecting directly to the server you think you are, but can cause 
-warnings to show up if the host key on that machine has genuinely changed (usually because of an 
-update or reinstall).
-
-Check the host key warning against [our current key fingerprints](Supplementary/Hostkeys.md):
-
-The error message looks like this if you are using OpenSSH in a terminal:
-```
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that a host key has just been changed.
-The fingerprint for the ECDSA key sent by the remote host is
-SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
-Please contact your system administrator.
-Add correct host key in /Users/uccaxxx/.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in /Users/uccaxxx/.ssh/known_hosts:11
-ECDSA host key for myriad.rc.ucl.ac.uk has changed and you have requested strict checking.
-Host key verification failed.
-Killed by signal 1.
-```
-This tells you that the old key is in line 11 of your `known_hosts` file. 
-Sometimes it will give you a direct command you can run to remove that specific key:
-```
-ssh-keygen -R myriad.rc.ucl.ac.uk
-``` 
-or you can manually delete line 11 yourself in a text editor.
-
-If you are logging in via the Gateway, you will need to remove the old key there too. On the Gateway, 
-`nano` and `vim` are available text editors. If you are not already familiar 
-with `vim`, use `nano` - it has the command shortcuts shown at the bottom, where `^O` means 
-press `Ctrl` and then the letter `o`.
-```
-# to open the file for editing in nano
-nano ~/.ssh/known_hosts
 ```
 Once you have removed the old host key you will be able to ssh in again. The first time 
 you log in to an unknown server you will get a message like this:
 ```
-The authenticity of host 'myriad.rc.ucl.ac.uk can't be established.
+The authenticity of host 'IDSH.rc.ucl.ac.uk can't be established.
 ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
 Are you sure you want to continue connecting (yes/no)?
 ```
 Typing `yes` will allow you to continue logging in.
-
-**PuTTY** will display a warning and you can choose to continue or not.
-
-**WinSCP** will say `Server's host key does not match the one that WinSCP has in cache.` 
-and you will have the option to update the key.
-
-#### macOS connection failures
-
-If you are on macOS and getting many ssh connection failures and broken pipe messages
-when trying to log in, try adding an ssh timeout to your ssh command:
-```
-ssh -o ConnectTimeout=10 <your_UCL_user_id>@myriad.rc.ucl.ac.uk
-```
-This has particularly been a problem with macOS Big Sur when using the VPN.
-
-## How do I log out?
-
-You can log out of the systems by typing `exit` and pressing enter.
-
-(`logout` or pressing Ctrl+D also work)
 
 ## How do I transfer data onto the system?
 
@@ -204,142 +105,6 @@ WinSCP is a graphical client that you can use for `scp` or `sftp`.
 If using MobaXterm, you may need to set a password for the left side file manager 
 panel separately as well as for the main panel, to allow you to drag and drop 
 files and have them transferred to the cluster.
-
-### Transferring files from outside the UCL firewall
-
-As when logging in, when you are outside the UCL firewall you will need a method to connect inside it before you copy files.
-
-You can use the [UCL Virtual Private Network](https://www.ucl.ac.uk/isd/services/get-connected/ucl-virtual-private-network-vpn/) and scp direct to our systems or you can do some form of SSH tunnelling.
-
-### Single-step logins using tunnelling
-
-#### Linux / Unix / macOS
-
-##### On the command line
-
-```
-# Log in to Myriad, jumping via the Gateway (replace ccxxxxx with your own username)
-ssh -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk ccxxxxx@myriad.rc.ucl.ac.uk
-```
-or
-```
-# Copy 'my_file' from the machine you are logged in to into your Scratch on Grace
-# Replace ccxxxxx with your own username.
-scp -o ProxyJump=ccxxxxx@ssh-gateway.ucl.ac.uk my_file ccxxxxx@myriad.rc.ucl.ac.uk:~/Scratch/
-```
-
-This tunnels through the Gateway in order to get you to your destination - you'll be asked for your password twice, once for each machine. You can use this to log in or to copy files.
-
-You may also need to do this if you are trying to reach one cluster from another and there is a firewall in the way.
-
-##### Using a config file
-
-You can create a config file which does this without you needing to type it every time.
-
-Inside your `~/.ssh` directory on your local machine, add the below to your `config` file (or create a file called `config` if you don't already have one).
-
-Generally, it should be of this form where `<name>` can be anything you want to call this entry.
-
-```
-Host <name>
-   User <remote_user_id>
-   HostName <remote_hostname>
-   proxyCommand ssh -W <remote_hostname>:22 <remote_user_id>@ssh-gateway.ucl.ac.uk
-```
-This causes the commands you type in your client to be forwarded on over a secure channel to the specified remote host.
-
-Here are some examples - you can have as many of these as you need in your config file.
-```
-Host myriad
-   User ccxxxxx
-   HostName myriad.rc.ucl.ac.uk
-   proxyCommand ssh -W myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
-
-Host myriad12
-   User ccxxxxx
-   HostName login12.myriad.rc.ucl.ac.uk
-   proxyCommand ssh -W login12.myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
-
-Host aristotle
-   User ccxxxxx
-   HostName aristotle.rc.ucl.ac.uk
-   proxyCommand ssh -W aristotle.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk
-```
-
-You can now just type `ssh myriad` or `scp file1 aristotle:~` and you will go through the Gateway. You'll be asked for login details twice since you're logging in to two machines, a Gateway server and your endpoint.  
-
-#### Windows - WinSCP
-
-WinSCP can also set up SSH tunnels.
-
- 1. Create a new session as before, and tick the Advanced options box in the bottom left corner.
- 2. Select Connection > Tunnel from the left pane.
- 3. Tick the Connect through SSH tunnel box and enter the hostname of the gateway you are tunnelling through, for example ssh-gateway.ucl.ac.uk
- 4. Fill in your username and password for that host. (Central UCL ones for the Gateway).
- 5. Select Session from the left pane and fill in the hostname you want to end up on after the tunnel.
- 6. Fill in your username and password for that host and set the file protocol to SCP.
- 7. Save your settings with a useful name.
-
-#### Creating a tunnel that other applications can use
-
-Some applications do not read your SSH config file and also cannot set up tunnels themselves,
-but can use one that you have created separately. FileZilla in particular is something you
-may want to do this with to transfer your files directly to the clusters from outside UCL using 
-a graphical client.
-
-##### SSH tunnel creation using a terminal
-
-You can do this in Linux, macOS and the Windows Command Prompt on Windows 10 and later.
-
-Set up a tunnel between a port on your local computer (this is using 3333 as it is unlikely to be
-in use, but you can pick different ones) to Myriad's port 22 (which is the standard port for ssh), 
-going via a UCL gateway.
-
-```
-# replace ccxxxxx with your UCL username
-ssh -L 3333:myriad.rc.ucl.ac.uk:22 ccxxxxx@ssh-gateway.ucl.ac.uk 
-```
-
-You may also want to use the `-N` option to tell it not to execute any remote commands and 
-`-f` to put this command into the background if you want to continue to type other commands 
-into the same terminal.
-
-The tunnel now exists, and `localhost:3333` on your computer connects to Myriad.
-
-You can do this with ports other than 22 if you are not wanting to ssh in but to instead connect
-with a local browser to something running on Myriad. Here the port remains as 3333,
-something could be launched on that port on Myriad and your browser could be pointed at 
-`localhost:3333` to connect to it.
-
-```
-# replace ccxxxxx with your UCL username
-ssh -L 3333:myriad.rc.ucl.ac.uk:3333 ccxxxxx@ssh-gateway.ucl.ac.uk
-```
-
-Do not leave things like this running for long periods on the login nodes.
-
-##### SSH tunnel creation using PuTTY
-
-On Windows you can also [set up a tunnel using PuTTY](https://winscp.net/eng/docs/guide_tunnel#tunnel_putty).
-
-##### Connect to your tunnel with an application (like FileZilla)
-
-You can then tell your application to connect to `localhost:3333` instead of Myriad. If it has 
-separate boxes for hostname and port, put `localhost` as the hostname and `3333` as the port.
-
-### Managing your quota
-
-After using `lquota` to see your total usage, you may wish to find what is using all your space.
-
-`du` is a command that gives you information about your disk usage. Useful options are:
-
-```
-du -ch <dir>
-du -h --max-depth=1
-```
-
-The first will give you a summary of the sizes of directory tree and subtrees inside the directory you specify, using human-readable sizes with a total at the bottom. The second will show you the totals for all top-level directories relative to where you are, plus the grand total. These can help you track down the locations of large amounts of data if you need to reduce your disk usage.
-
 
 ## How do I connect to UCL group folders, N drive or other smb mounts?
 
@@ -443,14 +208,6 @@ This tells this GPU job to only run on the type E and F nodes which have Nvidia 
 
 Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.
 
-### Checking your previous jobscripts
-
-If you want to check what you submitted for a specific job ID, you can do it with the `scriptfor` utility.
-```
-scriptfor 12345
-```
-As mentioned above, this will not show any command line options you passed in.
-
 ## How do I monitor a job?
 
 ### qstat
@@ -477,7 +234,7 @@ qstat -f -j 12345
 
 #### Job states
 
-- `qw`: queueing, waiting
+-  `qw`: queueing, waiting
 -  `r`: running
 -  `Rq`: a pre-job check on a node failed and this job was put back in the queue
 -  `Rr`: this job was rescheduled but is now running on a new node
