@@ -22,6 +22,8 @@ ssh uccaxxx@myriad.rc.ucl.ac.uk
 If you are outside the UCL firewall you will need to follow the
 instructions for [Logging in from outside the UCL firewall](../howto.md#logging-in-from-outside-the-ucl-firewall).
 
+Idle ssh sessions will be disconnected after 7 days.
+
 ### Login nodes
 The login nodes allow you to manage your files, compile code and submit jobs. Very short (< 15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job.
 
@@ -358,6 +360,48 @@ export OMP_NUM_THREADS=80
 
 This job would still be using 80 physical cores, but would use one MPI 
 process per node which would create 80 threads on the node (on Hyperthreads).
+
+
+The A-type nodes have hyperthreading enabled and you can choose on a per-job basis whether you want to use it.
+
+Hyperthreading lets you use two virtual cores instead of one physical core - some programs can take advantage of this.
+
+If you do not ask for hyperthreading, your job only uses one thread per core as normal.
+
+The -l threads= request is not a true/false setting, instead you are telling the scheduler you want one slot to block one virtual cpu instead of the normal situation where it blocks two. If you have a script with a threads request and want to override it on the command line or set it back to normal, the usual case is -l threads=2. (Setting threads to 0 does not disable hyperthreading!)
+
+```
+# request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# request 2G RAM per virtual core
+#$ -l mem=2G
+
+# set number of OpenMP threads being used per MPI process
+export OMP_NUM_THREADS=2
+```
+
+This job would be using 80 physical cores, using 80 MPI processes each of which would create two threads (on Hyperthreads).
+
+Note that memory requests are now per virtual core with hyperthreading enabled. If you asked for #$ -l mem=4Gon a node with 80 virtual cores and 192G RAM then you are requiring 320G RAM in total which will not fit on that node and so you would be given a sparse process layout across more nodes to meet this requirement.
+```
+# request hyperthreading in this job
+#$ -l threads=1
+
+# request the number of virtual cores
+#$ -pe mpi 160
+
+# request 2G RAM per virtual core
+#$ -l mem=2G
+
+# set number of OpenMP threads being used per MPI process
+# (a whole node's worth)
+export OMP_NUM_THREADS=80
+```
+This job would still be using 80 physical cores, but would use one MPI process per node which would create 80 threads on the node (on Hyperthreads).
 
 ### Job deletion
 
