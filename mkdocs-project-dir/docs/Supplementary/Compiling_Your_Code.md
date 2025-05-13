@@ -10,13 +10,10 @@ layout: docs
 
 ## Download your code
 
-Use wget or curl to download the source code for the software you want
-to install to your account. There might be binaries available, but they
-often won't work on our clusters because they were compiled for other
-machines with other library versions available. Use tar or unzip or
-similar depending on archive type to uncompress your source code.
+For security reasons, you will not be able to use wget or curl to download the source code for the software you want
+to install to your account. Contact 
 
-```
+
 wget https://www.example.com/program.tar.gz
 tar -xvf program.tar.gz
 ```
