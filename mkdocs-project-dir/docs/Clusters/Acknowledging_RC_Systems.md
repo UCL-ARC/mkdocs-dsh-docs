@@ -1,7 +1,7 @@
 ---
 title: Acknowledging the Use of DSH Systems
 categories:
- - Data Save HAven
+ - Data Save Haven
  - DSH
 layout: docs
 ---
