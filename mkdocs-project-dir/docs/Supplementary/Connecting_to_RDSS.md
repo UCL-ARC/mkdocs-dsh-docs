@@ -1,7 +1,7 @@
 ---
 title: Connecting to the Research Data Storage Service
 categories:
- - Myriad
+ - DSH
 layout: docs
 ---
 The [Research Data Storage Service](https://www.ucl.ac.uk/advanced-research-computing/platforms-and-services/research-data-storage-service)
@@ -18,7 +18,7 @@ If you already have an account with the Research Data Storage Service, you can
 transfer data directly between Legion and Research Data Storage using
 the Secure Copy (`scp`) command.
 
-### From RDS to Myriad
+### From RDS to DSH
 
 If you are on an RDSS login node, you can transfer data to
 Myriad’s Scratch area at the highest rate currently possible by running
@@ -35,7 +35,7 @@ running jobs) running the command:
 scp ssh.rd.ucl.ac.uk:~/data_file.tgz ~/Scratch/
 ```
 
-### From Myriad to RDSS
+### From DSH to RDSS
 
 From Myriad, send data to your project space on RDSS by running the
 command:
