@@ -32,16 +32,13 @@ to keep working as intended, we need to keep filesystem usage below that point.
 ## Tips for use
 
 - Use different directories for different jobs. Do not write everything to the same place.
-- If you are on a cluster with disks for local temporary storage on the nodes (`$TMPDIR`) then your
-  jobs can write temporary data there, faster, and you can decide what you need to keep and copy back
-  to Scratch at the end.
-- Clear up Scratch after your jobs. Keep the files you need, archive or delete the ones you do not.
+- Clear up your work directory after your jobs. Keep the files you need, archive or delete the ones you do not.
 - Archive and compress directory trees you aren't currently using. (`tar` command for example). This
   stores all their contents as one file, and compressing it saves space.
 - Back up your important data to somewhere off the cluster regularly.
 - If you haven't used particular files for some months and do not expect to in the near future, keep
   them off-cluster and delete the copies on the cluster.
-- If you are no longer using a cluster, remove your data to maintain filesystem performance and allow
+- If you are no longer using the cluster, remove your data to maintain filesystem performance and allow
   the space to be used by current active users.
 - Before you leave UCL, please consider what should happen to your data, and take steps to put it in
   a Research Data archive and/or ensure that your colleagues are given access to it.
