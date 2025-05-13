@@ -69,6 +69,11 @@ maximum wallclock time as other jobs.
 
 ## Node types
 
+Kathleen's compute capability comprises 192 diskless compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network.
+
+Two nodes identical to these, but with two 1 terabyte hard-disk drives added, serve as the login nodes.
+
+
 DSH contains three main node types: standard compute nodes, high memory
 nodes and GPU nodes. As new nodes as added over time with slightly newer processor
 variants, new letters are added.
