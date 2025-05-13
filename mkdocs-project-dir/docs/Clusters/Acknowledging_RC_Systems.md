@@ -1,9 +1,8 @@
 ---
-title: Acknowledging the Use of RC Systems
+title: Acknowledging the Use of DSH Systems
 categories:
- - Myriad
- - Aristotle
- - User Guide
+ - Data Save HAven
+ - DSH
 layout: docs
 ---
 
