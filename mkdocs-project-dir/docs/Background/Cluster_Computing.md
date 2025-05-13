@@ -28,7 +28,10 @@ Often these kinds of work are either impossible or would take far too long to do
 
 By running the programs on the computers in a cluster, researchers can use many powerful computers at once, without locking up their own one.
 
-## How do I use it?
+## What is DAata Save Haven (DSH)? 
+
+
+## How do I use a cluster in DSH?
 
 Most people use something like the following workflow:
 
@@ -38,9 +41,7 @@ Most people use something like the following workflow:
  - wait for the scheduler to find available "compute nodes" and run the script
  - look at the results in the files the script created
 
-Most people connect using a program called a Secure Shell Client ("ssh client" for short), but some
-programs, like Matlab and Comsol, run on your own computer and can be set up to send work to the cluster automatically. 
-That can be a little tricky to get working, though.
+Most people connect using a program called a Secure Shell Client ("ssh client" for short).
 
 The ssh client gives you a command prompt when you can enter text commands, but you can also tell it to 
 pass graphical windows through the network connection, using a system called X-Forwarding.
