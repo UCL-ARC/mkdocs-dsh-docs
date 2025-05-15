@@ -1,6 +1,15 @@
 # Account Services
 
+UCL DSH service is composed by two parts: The DSH desktop and the DSH cluster. 
+
+The DSH Desktop is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that allows multiple concurrent interactive sessions. New sessions are connected to a virtual machine with the least load. 
+
 ## DSH Cluster access application
+
+
+
+
+
 
 !!! important
     Check our [Status page](Status_page.md) and [Planned outages](Planned_Outages.md) to see 
