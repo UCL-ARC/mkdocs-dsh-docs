@@ -9,7 +9,8 @@ analyze this data while adhering to strict data protection laws and ethical guid
 the security and confidentiality of sensitive data, data safe havens help build trust and foster 
 collaboration in research.
 
-[UCL DSH service](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh) is composed by two parts: The DSH desktop and the DSH cluster. 
+[UCL DSH service](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh) is
+composed by two parts: The DSH desktop and the DSH cluster. 
 
 The DSH Desktop is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that allows
 multiple concurrent interactive sessions. New sessions are connected to a virtual machine with the least load. 
