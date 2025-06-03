@@ -9,7 +9,7 @@ The DSH cluster is a set of machines in an isolated environment and it is access
 
 ## DSH account application
 
-To apply for an account to DSH clusters you must fill in the following form in MyServices: [https://uk.4me.io/cnQ9MjkzNw]
+To apply for an account to DSH clusters you must fill in the following form in MyServices: https://uk.4me.io/cnQ9MjkzNw
 The person must also read and sign the Acceptable Use Statement prior to submitting this request.
 
 You can request a new user account for members of your team if the person has completed the (**NHS Digital’s Data Security 
