@@ -1,6 +1,6 @@
 # Account Services
 
-UCL DSH service is composed by two parts: The DSH desktop and the DSH cluster.
+UCL DSH service is composed by two parts: The [DSH desktop](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals) and the [DSH cluster](DSH_Cluster.md).
 
 The DSH Desktop is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that allows multiple concurrent 
 interactive sessions. New sessions are connected to a virtual machine with the least load. 
@@ -54,6 +54,6 @@ DSH password and tokens: https://registration.idhs.ucl.ac.uk:8074/sso/
 Data Save Haven services are free at point of use by default.
 
 !!! important
-    Check our [Status page](Status_page.md) to see the current status of clusters and planned outages. 
+    Check our [Status page](Cluster_status_page.md) to see the current status of clusters and planned outages. 
 
 Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md)
