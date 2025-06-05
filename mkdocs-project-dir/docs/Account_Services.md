@@ -64,7 +64,7 @@ The Data safe haven operates under a "walled garden" approach. All connections i
 
 ## Charges for use of DSH services
 
-Data Save Haven services are free at point of use by default.
+Data Save Haven services are free at point of use by default. 
 
 !!! important
     Check our [Status page](Cluster_status_page.md) to see the current status of clusters and planned outages. 
