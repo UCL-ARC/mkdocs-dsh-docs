@@ -19,7 +19,7 @@ is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that 
 sessions. New sessions are connected to a virtual machine with the least load. For detailed information related to 
 DSH Desktop, please visit the [user guide documentation and FAQ](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs).
 
-The software available in DSH Desktop can be checked [here](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services .
+The software available in DSH Desktop can be checked [here](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services).
 
 The [DSH cluster](DSH_Cluster.md) is a set of machines in an isolated environment and it is accessed only from the DSH desktop.  
 
@@ -30,8 +30,7 @@ Internal UCL users and external users can apply for a DSH account but before to 
 in the last 12 months.  This training is mandatory for all members. For more information, please visit: 
 https://www.ucl.ac.uk/isd/information-governance-training-awareness-service.
 
-Once the course is finished, the applicant must upload the training certification here: 
-https://liveuclac.sharepoint.com/sites/ISD.IGAdvisoryService/Lists/Training%20Certification/NewForm.aspx?pa=1
+Once the course is finished, the applicant must upload the training certification in the [following sharepoint](https://liveuclac.sharepoint.com/sites/ISD.IGAdvisoryService/Lists/Training%20Certification/NewForm.aspx?pa=1).
 
 **Internal UCL users**, can apply for an account to DSH clusters by filling in the following form in MyServices: https://uk.4me.io/cnQ9MjkzNw
 The person must also read and sign the Acceptable Use Statement prior to submitting this request.
@@ -39,15 +38,12 @@ The person must also read and sign the Acceptable Use Statement prior to submitt
 *Please note in order for the person to upload the training completion certificate and sign the acceptable use statement they
 require an active UCL account.*
 
-For **external users** there are some additional steps so submit this request and the instructions will be provided by the ISD team.
+For **external users** there are some additional steps so submit this request and the instructions will be provided by the ISD team. If the user does not have a UCL account please use their email address in the 'DSH User ID' field.
 
-Joiners must be a member of at least one share, enter the name of the share in the [New User Account form](https://uk.4me.io/cnQ9MjkzNw).
-You can add to additional shares using the Add/Remove to share process described below. If the share does not exist please also submit a 
-New Share request. DSH users who are not a member of any share will be disabled.
+Joiners must be a member of at least one **share** (or project), enter the name of the share when you are filling in the New User Account form.
+You can add or remove additional shares or createn new shares if they do exist. DSH users who are not a member of any share will be disabled.
+More information related to the addition/remove/creation of shares and account request can be found in the [service request page](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/service-requests#).
 
-    Note: The Information Asset Administrator (IAA) does not need to have a DSH account.
-    Note: If the user does not have a UCL account please use their email address in the 'DSH User ID' field.
-    
 All granted applications give you a DSH windows portal and access to the DSH cluster from there. You will then receive an email when 
 your account is approved.
 
