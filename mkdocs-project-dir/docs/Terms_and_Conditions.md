@@ -1,31 +1,10 @@
----
-title: Terms and Conditions
-categories:
- - User Guide
-layout: docs
----
 
 # Terms and Conditions
 
-!!! info
-    The Terms and Conditions were changed on 10 September 2024. [The previous Terms and Conditions are still available for reference](Supplementary/Previous_Terms_and_Conditions.md).
+All use of Research Computing Platforms including DSH cluster aresubject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
 
-All use of Research Computing Platforms is subject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
 
-The following terms also apply to the use of ARC HPC services, including:
- 
- - Myriad
- - Kathleen
- - Michael
- - MMM Young
- - ARC Cluster Filesystem ("ACFS").
 
-They do *not* apply to other ARC services, including:
-
- - Data Safe Haven
- - Research Data Storage Service
-
-These services have their own terms and conditions for use.
 
 ## Commercial Services
 
@@ -54,21 +33,16 @@ we may raise this with relevant UCL teams[^fn-isg] and suspend your access to se
 
 ## Your Data
 
-Our research computing services have data storage capabilities, but should not be treated as the sole repository for your data. We do not make contractual agreements about uptime or availability.
-
+DSH have data storage capabilities, but should not be treated as the sole repository for your data. We do not do back-up of the data.
 Outages and data-loss events will be handled on a best-efforts basis within normal UCL working hours.
-
 
 ### Transferring Data Ownership
 
 You may contact us to arrange to transfer ownership of your data on a service to another user, with their consent. Please arrange this before you stop being a user.
 
-- [Requesting transfer of your data to another user](Data_Management.md#requesting-transfer-of-your-data-to-another-user)
-- [Requesting data belonging to a user who has left](Data_Management.md#requesting-data-belonging-to-a-user-who-has-left)
-
 ### Data Access by Support Staff
 
-We will not access your data without your consent, except in the following circumstances:
+We will not access your data without your consent under any circumstances.
 
  - You contact us with a support issue and the data is relevant to your request.
  - We have reason to believe the data is relevant to investigating an on-going security incident.
