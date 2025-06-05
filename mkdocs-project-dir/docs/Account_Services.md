@@ -70,3 +70,7 @@ Data Save Haven services are free at point of use by default.
     Check our [Status page](Cluster_status_page.md) to see the current status of clusters and planned outages. 
 
 Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md)
+
+## Contact 
+
+You can contact us [here](Contact_Us.md).
