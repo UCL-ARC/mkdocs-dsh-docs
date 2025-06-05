@@ -14,9 +14,10 @@ issues with the cluster, feel free to report them to rc-support@ucl.ac.uk.
 
 Full details of unplanned outages are emailed to the cluster user list. 
 
-The second Tuesday of every month is a RedHat patch release day, aka “Patch Tuesday”.
-We perform maintenance every month in the cluster in the afternoon of the Friday 17 days after Patch Tuesday. The
-queue will be disbles before an outage begins. The nodes may need to be emptied of jobs in advance ('drained')
+The second Tuesday of every month is a RedHat patch release day, aka **Patch Tuesday**.
+We perform maintenance every month in the cluster in the afternoon of the Friday 17 days after **Patch Tuesday**. The
+queue will be disabled before an outage begins. The jobs running will be not stopped but as the maintenance includes to 
+reboot the machines, all the jobs that have not finish will be killed. 
 
 If there is a notable delay in bringing the system back we will contact you after approximately midday.
 After an outage, the first day or two back should be considered 'at risk'; that is, things are more likely to go wrong
@@ -33,6 +34,25 @@ until after the outage.
 Date                | Status    | Reason 
 --------------------|-----------|--------
 11 May 2025         | Completed | Maintenance day: nodes being drained for a system update.
+
+This is to inform you that we need to perform maintenance on some of our DSH host machines this Wednesday, June 4th, and as a result the GPU-enabled virtual machines listed below will be unavailable from 5:30 pm Tuesday until end of day Wednesday:
+
+    dsh-00530gpu01
+    dsh-00965gpu02
+    dsh-01148app01
+    dsh-01534gpu01
+    dsh-sge2gpu01
+    dsh-sge2gpu02
+
+ 
+
+Please ensure that any long-term processes that you may be running are completed before end of day Tuesday to ensure the integrity of your results. The maintenance should be completed before end of day Wednesday, and I will send a follow-up email as soon as the machines are available again.
+
+
+
+
+
+
 
 
 Friday 17 days after Patch Tuesday (T+17) = DSH Prod Cluster preparation
