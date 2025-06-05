@@ -1,9 +1,9 @@
 
 # Terms and Conditions
 
-All use of Research Computing Platforms including DSH cluster aresubject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
+All use of Research Computing Platforms including DSH cluster are subject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
 
-
+DSH services are also subjected to the [Information Governance procedure and rationale](https://www.ucl.ac.uk/isd/data-safe-haven-arc-trusted-research-environment-assurance) policy and the [UCL Information Security Management System (ISMS) policies for Trusted Research Environments] (https://isms.arc.ucl.ac.uk/) policy.
 
 
 ## Commercial Services
@@ -44,13 +44,8 @@ You may contact us to arrange to transfer ownership of your data on a service to
 
 We will not access your data without your consent under any circumstances.
 
- - You contact us with a support issue and the data is relevant to your request.
- - We have reason to believe the data is relevant to investigating an on-going security incident.
- - In automated service processes, such as backups, or transfers between storage systems for service maintenance.
-
-Occasionally support requests can involve more involved work, including running jobs as a user. Since this can be disruptive or involve changes to files and directories, in this case we will check with you when it is safe to begin the work, and when the work has ended.
-
 ### Data Retention
+
 
 #### Data Retention on Leaving UCL
 
@@ -60,20 +55,12 @@ This process is not currently automated, so data may still be retained after thi
 
 #### Backup Retention
 
-- On clusters where home is backed up, backups are retained for 15 days.
-- On the ACFS, backups are retained for 30 days minimum.
-  
-#### Filesystem Retirement
-
-When filesystems or clusters are retired, they will be decommissioned and we will not retain
-the data left on them. Barring unforeseen circumstances, you will receive three months' notice before this
-happens.
-
+- Our cluster do not do back up of any data.
 
 ## Acknowledgement in Works
 
-We request that you acknowledge the use of our HPC services in any publications describing research that has used them, in any part. The following words should be used:
+We request that you acknowledge the use of the DSH services in any publications describing research that has used them, in any part. The following words should be used:
     
-> "The authors acknowledge the use of the UCL Myriad High Performance Computing Facility (Myriad@UCL), and associated support services, in the completion of this work". 
+> "The authors acknowledge the use of the UCL Data Save Haven (DSH), and associated support services, in the completion of this work". 
 
 Or analogous terminology for other services.
