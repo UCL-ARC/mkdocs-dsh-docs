@@ -50,16 +50,17 @@ your account is approved.
 ## DSH account access
 
 Once the account is created, the ISD team will provide the user with the necessary information to gain access to the DSH. 
-What is a token?
-What is a share?
-It is required a mobile phone number or an alternative e-mail address for the user, this is to provide the PIN number separately 
-from the Token for security purposes. This information  is stored securely and used only for this purpose. After the password 
-and PIN has been changed, users will get access to the DSH portals and their shares.
+It is required a mobile phone number or an alternative e-mail address for the user, this is to provide the [PIN number separately 
+from the Token for security purposes](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs#Security%20&%20Tokens%20Portal). This information  is stored securely and used only for this purpose. After the password and PIN has been changed, users will get access to the DSH portals and their shares.
 
-The DSH webpage is composed by 3 portals: https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals
-DSH Access (data portal): https://accessgateway.idhs.ucl.ac.uk/vpn/index.html
-DSH file transfer portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
-DSH password and tokens: https://registration.idhs.ucl.ac.uk:8074/sso/
+The DSH webpage is composed by 3 [portals](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals)
+- [DSH Access (data portal)](https://accessgateway.idhs.ucl.ac.uk/vpn/index.html): Portal to access to DSH through the Citrix "XenApp & XenDesktop" technology.
+- [DSH file transfer portal](https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml): The ***only*** method available to transfer data in and out from DSH.
+- [DSH password and tokens](https://registration.idhs.ucl.ac.uk:8074/sso/): Portal to generate tokens and change the password. 
+
+The DSH publishes virtual desktops through the use of Citrix "XenApp & XenDesktop" technology. This is a web browser window from where users can connect to DSH Desktop from anywhere. The purpose of this functionality is to keep all information within the DSH environment secure, by utilising dedicated Citrix desktops the data held within the environment can be manipulated by users without having the need to bring it locally to their machine.
+
+The Data safe haven operates under a "walled garden" approach. All connections into the DSH are secured via dedicated fortigate firewall appliances. For this reason, there is not access to internet from inside DSH and the only way to tranfer data in/out from/DSH is through the [DSH file transfer portal](https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml).
 
 ## Charges for use of DSH services
 
