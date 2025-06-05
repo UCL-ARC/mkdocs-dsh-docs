@@ -1,11 +1,32 @@
+# Introduction to Data Save Haven (DSH) 
+
+It is a secure, isolated environment where sensitive data can be stored, processed, and analyzed, 
+while maintaining strict security measures to protect the confidentiality and privacy of individuals.
+
+Data safe havens are essential for conducting research that involves sensitive information like 
+healthcare data, financial records, or other personal data. They allow researchers to access and 
+analyze this data while adhering to strict data protection laws and ethical guidelines. By ensuring
+the security and confidentiality of sensitive data, data safe havens help build trust and foster 
+collaboration in research.
+
 # Account Services
 
-UCL DSH service is composed by two parts: The [DSH desktop](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals) and the [DSH cluster](DSH_Cluster.md).
+[UCL DSH service](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh) is
+composed by two parts: The **DSH desktop** and the **DSH cluster**.
 
-The DSH Desktop is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that allows multiple concurrent 
-interactive sessions. New sessions are connected to a virtual machine with the least load. 
+The [DSH desktop](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals) 
+is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that allows multiple concurrent interactive 
+sessions. New sessions are connected to a virtual machine with the least load. For detailed information related to 
+DSH Desktop, please visit the user guide documentation and FAQ: 
+https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs
 
-The DSH cluster is a set of machines in an isolated environment and it is accessed only from the DSH desktop.  
+
+The software available in DSH Desktop 
+can be checked here: https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services .
+#Research%20Computing
+https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs#Everything%20you%20need%20to%20know%20about%20the%20Data%20Safe%20Haven
+
+The [DSH cluster](DSH_Cluster.md) is a set of machines in an isolated environment and it is accessed only from the DSH desktop.  
 
 ## DSH account application
 
