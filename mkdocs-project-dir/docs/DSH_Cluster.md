@@ -59,10 +59,9 @@ finding where space is being used.
 
 ## Job sizes
 
-| Cores   | Max wallclock |
-| ------- | ------------- |
-| 1       | 72hrs         |
-| 2 to 36 | 48hrs         |
+| Cores   | Max wallclock   |
+| ------- | --------------- |
+| 1 to 40 | 48hrs suggested |
 
 [Interactive jobs](../Interactive_Jobs.md) run with `qrsh` have the same
 maximum wallclock time as other jobs.
