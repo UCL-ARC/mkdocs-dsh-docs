@@ -1,9 +1,9 @@
----
-title: DSH cluster
-layout: cluster
----
-DSH is designed for high I/O, high throughput jobs that will run within a single node rather than multi-node parallel jobs.
-Also, allows extensively parallel, multi-node batch-processing jobs, having high-bandwidth connections between each individual node.
+# DSH Cluster
+
+DSH is designed for single-node jobs, it is not possible to run multi-node parallel jobs. 
+
+
+We can only do single-node jobs, they are simply higher spec than the DSH Desktop virtual machines -- I believe the DSH Desktop machines are 4 core, 32 GB ram, whereas our HPC nodes are 16 core, 128 GB RAM (and two nodes have 80 GB A100 GPUs).
 
 ## Accounts
 DSH accounts can be applied for via the [Research Computing sign up process](../Account_Services.md).
