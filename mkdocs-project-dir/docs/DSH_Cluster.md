@@ -45,6 +45,34 @@ Young is a batch system. The login nodes allow you to manage your files, compile
 
 You will need to use the DSH portal. Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
 
+## Data storage
+
+Our clusters have local parallel filesystems consisting of your home where you can write data. They may also have local storage on the compute node that can be used during your job.
+
+Home
+
+Every user has a home directory. This is the directory you are in when you first log in.
+
+    Location: /home/<username>
+    May also be referred to as: ~, $HOME.
+
+Many programs will write hidden config files in here, with names beginning with . (eg .config, .cache). You can see these with ls -al.
+
+## Tips for use
+
+- Use different directories for different jobs. Do not write everything to the same place.
+- Clear up your work directory after your jobs. Keep the files you need, archive or delete the ones you do not.
+- Archive and compress directory trees you aren't currently using. (`tar` command for example). This
+  stores all their contents as one file, and compressing it saves space.
+- Back up your important data to somewhere off the cluster regularly.
+- If you haven't used particular files for some months and do not expect to in the near future, keep
+  them off-cluster and delete the copies on the cluster.
+- If you are no longer using the cluster, remove your data to maintain filesystem performance and allow
+  the space to be used by current active users.
+- Before you leave UCL, please consider what should happen to your data, and take steps to put it in
+  a Research Data archive and/or ensure that your colleagues are given access to it.
+
+  
 ## Quotas
 
 The default quota on DSH are 15B for home, backed up, no increases available
