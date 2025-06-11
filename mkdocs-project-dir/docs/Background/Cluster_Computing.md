@@ -1,11 +1,3 @@
----
-title: Cluster Computing
-categories:
- - User Guide
- - Background
-layout: docs
----
-
 # Cluster Computing
 
 ## What is a cluster?
@@ -28,25 +20,25 @@ Often these kinds of work are either impossible or would take far too long to do
 
 By running the programs on the computers in a cluster, researchers can use many powerful computers at once, without locking up their own one.
 
-## What is DAata Save Haven (DSH)? 
+## What is Data Save Haven (DSH) cluster? 
 
+It is a cluster that is isolated from the university network for security purposes. It also doesn't have any connection to internet. This restrictions allow our users to use the cluster to analyse data containing sensitive information in a secure environment. 
 
 ## How do I use a cluster in DSH?
 
 Most people use something like the following workflow:
+  
+ - Connect to the DSH desktop through the data portal : https://accessgateway.idhs.ucl.ac.uk/vpn/index.html
+ - Connect to the cluster's "login nodes" using ssh ("ssh client").
+ - If you need to copy data into the cluster, you can only do it if the data is already in the DSH desktop.
+     - If the data is outside DSH it must be copied into the DSH desktop thorough the file transfer portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
+ - Create a script of commands to run programs
+ - Submit the script to the scheduler
+ - Wait for the scheduler to find available "compute nodes" and run the script
+ - Look at the results in the files the script created
 
- - connect to the cluster's "login nodes"
- - create a script of commands to run programs
- - submit the script to the scheduler
- - wait for the scheduler to find available "compute nodes" and run the script
- - look at the results in the files the script created
+In order to connect to the cluster using ssh, you can use both **Gitbash** or **PuTTY**. Both programs are already installed in DSH desktop. Both of them will open a terminal where you can enter text commands to intercat with the cluster.
 
-Most people connect using a program called a Secure Shell Client ("ssh client" for short).
-
-The ssh client gives you a command prompt when you can enter text commands, but you can also tell it to 
-pass graphical windows through the network connection, using a system called X-Forwarding.
-This can be useful for visualising your data without transferring all the files back, but the network
- connection makes it a bit slower to use than running it on your own computer.
-You'll need an X server on your own computer to use this: check [our page on X-Forwarding](../Supplementary/X-Forwarding.md) for details.
+If you need to copu data already in the DSH desktop to the cluster you can do it using **SCP** command or in a more interactive way using FileZilla, that is already inside DSH.
 
 Please be aware that login nodes are shared resources, so users should not be running memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
