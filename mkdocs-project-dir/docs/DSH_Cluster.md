@@ -20,7 +20,8 @@ Your password will be requested. Enter it and press **Enter key**
 
 The first time you log in to an unknown server you will get a message like this:
 
-    The authenticity of host 'IDSH.rc.ucl.ac.uk can't be established. ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
+    The authenticity of host 'IDSH.rc.ucl.ac.uk can't be established.
+    ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
     Are you sure you want to continue connecting (yes/no)?
 
 Typing **yes** will allow you to continue logging in.
@@ -57,18 +58,43 @@ If you still cannot get access but can access DSH desktop, please contact us on 
 If you cannot access anything in DSH, you may need to request a password reset for the DSH service from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
 
-## Copying data onto DSH
+## Copying data onto DSH Cluster
 
-You will need to use the DSH portal. Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
+If you need to copy data into the cluster, you can only do it if the data is already in the DSH desktop.
+If the data is outside DSH it *must* be copied into the DSH desktop thorough the file transfer portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
+
+If you need to copy data already in the DSH desktop to the cluster you can do it using Secure Copy (SCP) protocol. The following template will copy a data file (preferably a single compressed file) from somewhere on your DSH machine to a specified location on the remote machine inside the DSH cluster (login node, etc) using the **SCP** command:
+
+```
+scp <local_data_file_path> <my_UCL_user>@<system_name>:<remote_path>
+```
+
+If you need to tranfer a folder with several files and directories inside, then use scp with the recursive option:
+
+```
+scp -r <local_data_file_path> <my_UCL_user>@<system_name>:<remote_path>
+```
+
+If you prefer to use a graphical interface, then you can use **WinSCP** or **Filezilla** that are already inside DSH.
+
+## Transferring data with WinSCP
 
 
-## How do I transfer data onto the system?
 
-You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. 
 
-### Copying files using Linux or macOS
 
-You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmi
+
+
+
+## Transferring data with Filezilla
+
+
+
+
+
+
+
+
 
 
 
