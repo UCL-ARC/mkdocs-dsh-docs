@@ -1,49 +1,77 @@
 # DSH Cluster
 
-DSH is designed for single-node jobs, it is not possible to run multi-node parallel jobs. 
-
-
-We can only do single-node jobs, they are simply higher spec than the DSH Desktop virtual machines -- I believe the DSH Desktop machines are 4 core, 32 GB ram, whereas our HPC nodes are 16 core, 128 GB RAM (and two nodes have 80 GB A100 GPUs).
+DSH is designed for single-node jobs, it is not possible to run multi-node parallel jobs. It is also not connected to internet and it is not connected to the UCL network. 
 
 ## Accounts
-DSH accounts can be applied for via the [Research Computing sign up process](../Account_Services.md).
+DSH accounts can be applied for via the [DSH sign up process](../Account_Services.md).
 
 ## Logging in
 
-You will use your UCL username and password to log in into the DSH portal.
-
-
-
+You *must* log in to the cluster from inside DSH Desktop. The connection to the cluster is done by SSH connection. DSH Desktop has **PuTTY** and **Gitbash** installed for this purpose. 
+To connect to the cluster using **Gitbash**, open a terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <my_UCL_user> with your internal UCL user and <system_name> with the name of the machine you want to log in to, eg. dsh-sge2log01:
 
 ```
-ssh uccaxxx@myriad.rc.ucl.ac.uk
+ssh <my_UCL_user>@<system_name>  
 ```
 
-If you are outside the UCL firewall you will need to follow the
-instructions for [Logging in from outside the UCL firewall](../howto.md#logging-in-from-outside-the-ucl-firewall).
+Your password will be requested. Enter it and press **Enter key** 
 
+*The prompt will not show your password when you are typing it. This is expected and it is for security reasons. Be careful entering your password*
+
+The first time you log in to an unknown server you will get a message like this:
+
+    The authenticity of host 'IDSH.rc.ucl.ac.uk can't be established. ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
+    Are you sure you want to continue connecting (yes/no)?
+
+Typing **yes** will allow you to continue logging in.
+
+If you have a personal virtual machine in the cluster put the name of your machine in <my_UCL_user>.
 Idle ssh sessions will be disconnected after 7 days.
 
+PuTTY is a common SSH client on Windows and is available on DSH Desktop. If you prefer to use it, you will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY.
+
+![PuTTY screenshot](img/PuTTY.png)
+
+You will then be asked to enter your username and password. Only enter your username, not @<my_UCL_user>.rc.ucl.ac.uk. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something.
+
+The first time you log in to a new server, you'll get a popup telling you that the server's host key is not cached in the registry - this is normal and is because you have never connected to this server before. If you want to, you can check the host fingerprint against our current key fingerprints.
+
 ### Login nodes
-The login nodes allow you to manage your files, compile code and submit jobs. Very short (< 15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job.
+
+DSH cluster has 2 login nodes, dsh-sge2log01 and  dsh-sge2log02 and you can connect to any. The login nodes allow you to manage your files, compile code and submit jobs. Very short (< 15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job.
 
 ### Logging in to a specific node
 
-You can access a specific Myriad login node with: 
+You can access any of both, dsh-sge2log01 and dsh-sge2log02 login nodes with: 
 
 ```
-ssh uccaxxx@login12.myriad.rc.ucl.ac.uk
-ssh uccaxxx@login13.myriad.rc.ucl.ac.uk
+ssh <my_UCL_user>@dsh-sge2log01
+ssh <my_UCL_user>@dsh-sge2log02
 ```
 
-The main address will redirect you on to either one of them.
+### Login problems
 
-Using the system
-Young is a batch system. The login nodes allow you to manage your files, compile code and submit jobs. Very short (<15mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job.
+If you experience difficulties with your login, please make sure that you are typing your UCL user ID and your password correctly. If you have recently updated your password, it takes some hours to propagate to all UCL systems.
+
+If you still cannot get access but can access DSH desktop, please contact us on rc-support@ucl.ac.uk indicating you are working in the DSH Cluster.
+If you cannot access anything in DSH, you may need to request a password reset for the DSH service from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
+
 
 ## Copying data onto DSH
 
 You will need to use the DSH portal. Please refer to the page on [How do I transfer data onto the system?](../howto.md#how-do-i-transfer-data-onto-the-system)
+
+
+## How do I transfer data onto the system?
+
+You can transfer data to and from our systems using any program capable of using the Secure Copy (SCP) protocol. This uses the same SSH system as you use to log in to a command line session, but then transfers data over it. This means that if you can use SSH to connect to a system, you can usually use SCP to transfer files to it. 
+
+### Copying files using Linux or macOS
+
+You can use the command-line utilities scp, sftp or rsync to copy your data about. You can also use a graphical client (Transmi
+
+
+
 
 ## Data storage
 
@@ -95,6 +123,10 @@ finding where space is being used.
 maximum wallclock time as other jobs.
 
 ## Node types
+
+
+We can only do single-node jobs, they are simply higher spec than the DSH Desktop virtual machines -- I believe the DSH Desktop machines are 4 core, 32 GB ram, whereas our HPC nodes are 16 core, 128 GB RAM (and two nodes have 80 GB A100 GPUs).
+
 
 Kathleen's compute capability comprises 192 diskless compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network.
 
