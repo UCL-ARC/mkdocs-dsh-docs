@@ -39,6 +39,6 @@ Most people use something like the following workflow:
 
 In order to connect to the cluster using ssh, you can use both **Gitbash** or **PuTTY**. Both programs are already installed in DSH desktop. Both of them will open a terminal where you can enter text commands to intercat with the cluster.
 
-If you need to copu data already in the DSH desktop to the cluster you can do it using **SCP** command or in a more interactive way using FileZilla, that is already inside DSH.
+If you need to copy data already in the DSH desktop to the cluster you can do it using **SCP** command or in a more interactive way using FileZilla, that is already inside DSH.
 
 Please be aware that login nodes are shared resources, so users should not be running memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
