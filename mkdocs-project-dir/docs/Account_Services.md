@@ -21,7 +21,7 @@ DSH Desktop, please visit the [user guide documentation and FAQ](https://www.ucl
 
 The software available in DSH Desktop can be checked [here](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services).
 
-The [DSH cluster](DSH_Cluster.md) is a set of machines in an isolated environment and it is accessed only from the DSH desktop.  
+The [DSH cluster](DSH_Cluster.md) is a set of machines in an isolated environment and it is accessed only from the DSH desktop. More detailed information about [what is a cluster here](Cluster_Computing.md) 
 
 ## DSH account application
 
