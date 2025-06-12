@@ -39,6 +39,17 @@ you should look at their CUDA docs: <http://docs.nvidia.com/cuda/>
 
 You can see [sample jobscripts here](../Example_Jobscripts.md#gpu-job-script-example).
 
+### Requesting multiple and specific types of GPU
+
+You can request a number of GPUs by adding them as a resource request to your jobscript: 
+
+```
+# For 1 GPU
+#$ -l gpu=1
+
+The [GPU nodes](../Supplementary/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
+
+
 Use this in your script to request up to 2 GPUs. 
 
 ```
