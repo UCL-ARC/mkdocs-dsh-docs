@@ -8,10 +8,10 @@ DSH accounts can be applied for via the [DSH sign up process](../Account_Service
 ## Logging in
 
 You *must* log in to the cluster from inside DSH Desktop. The connection to the cluster is done by SSH connection. DSH Desktop has **PuTTY** and **Gitbash** installed for this purpose. 
-To connect to the cluster using **Gitbash**, open a terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <my_UCL_user> with your internal UCL user and <system_name> with the name of the machine you want to log in to, eg. dsh-sge2log01:
+To connect to the cluster using **Gitbash**, open a terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <UCL_username> with your internal UCL user and <system_name> with the name of the machine you want to log in to, eg. dsh-sge2log01:
 
 ```
-ssh <my_UCL_user>@<system_name>  
+ssh <UCL_username>@<system_name>  
 ```
 
 Your password will be requested. Enter it and press **Enter key** 
@@ -26,14 +26,14 @@ The first time you log in to an unknown server you will get a message like this:
 
 Typing **yes** will allow you to continue logging in.
 
-If you have a personal virtual machine in the cluster put the name of your machine in <my_UCL_user>.
+If you have a personal virtual machine in the cluster put the name of your machine in <UCL_username>.
 Idle ssh sessions will be disconnected after 7 days.
 
 PuTTY is a common SSH client on Windows and is available on DSH Desktop. If you prefer to use it, you will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY.
 
 ![PuTTY screenshot](img/PuTTY.png)
 
-You will then be asked to enter your username and password. Only enter your username, not @<my_UCL_user>.rc.ucl.ac.uk. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something.
+You will then be asked to enter your username and password. Only enter your username, not @<UCL_username>.rc.ucl.ac.uk. The password field will remain entirely blank when you type in to it - it does not show placeholders to indicate you have typed something.
 
 The first time you log in to a new server, you'll get a popup telling you that the server's host key is not cached in the registry - this is normal and is because you have never connected to this server before. If you want to, you can check the host fingerprint against our current key fingerprints.
 
@@ -46,8 +46,8 @@ DSH cluster has 2 login nodes, dsh-sge2log01 and  dsh-sge2log02 and you can conn
 You can access any of both, dsh-sge2log01 and dsh-sge2log02 login nodes with: 
 
 ```
-ssh <my_UCL_user>@dsh-sge2log01
-ssh <my_UCL_user>@dsh-sge2log02
+ssh <UCL_username>@dsh-sge2log01
+ssh <UCL_username>@dsh-sge2log02
 ```
 
 ### Login problems
@@ -68,21 +68,21 @@ You can log out of the systems by typing `exit` and pressing enter.
 If you need to copy data into the cluster, you can only do it if the data is already in the DSH desktop.
 If the data is outside DSH it *must* be copied into the DSH desktop thorough the file transfer portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
 
-If you need to copy data already in the DSH desktop to the cluster you can do it using Secure Copy (SCP) protocol. The following template will copy a data file (preferably a single compressed file) from somewhere on your DSH machine to a specified location on the remote machine inside the DSH cluster (login node, etc) using the **SCP** command:
+If you need to copy data already in the DSH desktop to the cluster you can do it using **Secure Copy (SCP)** protocol. The following template will copy a data file (preferably a single compressed file) from somewhere on your DSH machine to a specified location on the remote machine inside the DSH cluster (login node, etc) using the **SCP** command:
 
 ```
-scp <local_data_file_path> <my_UCL_user>@<system_name>:<remote_path>
+scp <local_data_file_path> <UCL_username>@<system_name>:<remote_path>
 ```
 
 If you need to tranfer a folder with several files and directories inside, then use scp with the recursive option:
 
 ```
-scp -r <local_data_file_path> <my_UCL_user>@<system_name>:<remote_path>
+scp -r <local_data_file_path> <UCL_username>@<system_name>:<remote_path>
 ```
 
 If you prefer to use a graphical interface, then you can use **WinSCP** that are already inside DSH.  **Filezilla** is also installed but as the cluster does not have the SFTP (Secure File Transfer Protocol) installed, it is not possible to use it. 
 
-## Transfering data with WinSCP
+### Transfering data with WinSCP
 
 WinSCP is already installed in DSH Desktop. Once you click on the icon, a Windows GUI will open. The first step to connect is to fill in the connection information requested (File protocol, Server to connect, UCL user name and password) in the main window, as it is shown below:  
 
@@ -101,18 +101,18 @@ The left panel usually shows your local computer directories and the right one, 
 
 ## Data storage
 
-Our clusters have local parallel filesystems consisting of your home where you can write data. They may also have local storage on the compute node that can be used during your job.
+Our cluster have local parallel filesystem consisting of your home where you can write data. Each user has 50GB of local storage available. This is not a hard quota, so technically you can keep writing files once reached that amount but we and encourage you to keep its usage within the limits stablished out of consideration for other cluster users. We are continuously monitoring disk usage. If you need more storage for particular circumstances, please contact us at rc-support@ucl.ac.uk.
 
-Home
+### Home
 
 Every user has a home directory. This is the directory you are in when you first log in.
 
-    Location: /home/<username>
+    Location: /hpchome/<UCL_username>@IDHS.UCL.AC.UK
     May also be referred to as: ~, $HOME.
 
 Many programs will write hidden config files in here, with names beginning with . (eg .config, .cache). You can see these with ls -al.
 
-## Tips for use
+#### Tips for use
 
 - Use different directories for different jobs. Do not write everything to the same place.
 - Clear up your work directory after your jobs. Keep the files you need, archive or delete the ones you do not.
