@@ -143,384 +143,147 @@ Many programs will write hidden config files in here, with names beginning with 
 - Before you leave UCL, please consider what should happen to your data, and take steps to put it in
   a Research Data archive and/or ensure that your colleagues are given access to it.
 
+
+### Requesting transfer of your data to another user
+
+If you want to transfer ownership of all your data to another user, with their consent,  you can contact us at rc-support@ucl.ac.uk and ask us to do this or open a general request: [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
+
+If you are a UCL user, please arrange this while you still have access to the institutional credentials associated with the account. Without this, we cannot identify you as the owner of the account. You will need to tell us what data to transfer and the username of the recipient.
+
+### Requesting data belonging to a user who has left
+
+If a researcher you were working with has left and has not transferred their data to you before leaving there is a general UCL Data Protection process to gain access to that data.
+
+At [UCL Information Security Policy](https://www.ucl.ac.uk/information-security/information-security-policy) go to Monitoring Forms and take a copy of Form MO2 "Form MO2 - Request for Access to Stored Documents and Email - long-term absence or staff have left". (Note, it is also applicable to students). 
+
+Follow the guidance on that page for how to encrypt the form when sending it to them. The form needs to be signed by the head of department/division and the UCL data protection officer (data-protection@ucl.ac.uk).
+
+Make formal request by ticket : [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
+
+
 ## Node types
 
-DSH cluster's compute capability comprises 7 compute nodes, each with 16-core Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz processors, 128 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network. Two of this nodes have a  80 GB A100 GPUs
+DSH cluster's is composed by 11 nodes: 2 login nodes, 7 compute nodes and 2 compute nodes with a GPU each one. 
 
-Two nodes identical to these, serve as the login nodes.
-
-| Type          |   Hostname   | Cores per node     | RAM per node | tmpfs | Nodes |
-| --------------|--------------| ------------------ | ------------ | ----- | ----- |
-| Login         |dsh-sge2log0X |   4                | 128GB        | 1500G | 2     |
-| Compute       |dsh-sge2cpu0X |   16               | 128TB        | 1500G | 7     |
-| Compute + GPU |dsh-sge2gpu0X |   16 + 1 A100 GPUs | 128GB        | 1500G | 2     |
+| Type          |   Hostname   | Cores per node     | RAM per node | Nodes |
+| --------------|--------------| ------------------ | ------------ | ----- |
+| Login         |dsh-sge2log0X |   4                | 16GB         | 2     |
+| Compute       |dsh-sge2cpu0X |   16               | 128GB        | 7     |
+| Compute + GPU |dsh-sge2gpu0X |   16 + 1 A100 GPUs | 128GB        | 2     |
 
 You can tell the type of a node by its name: login nodes are `dsh-sge2log0X`, etc.
 
 Here are the processors each node type has:
 
-  - Login nodes         : Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
+  - Login nodes         : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
   - Compute nodes       : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
-  - Compute nodes + GPU : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
-  - 
+  - Compute nodes + GPU : Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+
+Hyperthreading is not available. 
+
 (If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
 for every core).
 
-## GPUs
+### GPUs
 
-DSH has 2 GPU nodes and each have 1 NVIDIA 40G A100s. (Compute Capability 80)
-You can include `nvidia-smi` in your jobscript to get information about the GPU your job ran on.
-
-### Compute Capability
+DSH has 2 GPU nodes and each have 1 NVIDIA 80G A100 (Compute Capability 8.0)
 
 [Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how NVIDIA categorises its generations of GPU architectures. 
-When code is compiled, it targets one or multiple of these and so it may only be able 
-to run on GPUs of a specific Compute Capability.
+When code is compiled, it targets one or multiple of these and so it may only be able to run on GPUs of a specific Compute Capability.
 
 If you get an error like this:
 
 ```
 CUDA runtime implicit initialization on GPU:0 failed. Status: device kernel image is invalid
 ```
+
 then the software you are running does not support the Compute Capability of the GPU
 you tried to run it on, and you probably need a newer version.
 
-### Requesting multiple and specific types of GPU
+You can include `nvidia-smi` in your jobscript to get information about the GPU your job ran on.
 
-You can request a number of GPUs by adding them as a resource request to your jobscript: 
-
-```
-# For 1 GPU
-#$ -l gpu=1
-
-# For 2 GPUs
-#$ -l gpu=2
-
-# For 4 GPUs
-#$ -l gpu=4
-```
-
-If you ask for one or two GPUs your job can run on any type of GPU since it can fit on
-any of the nodetypes. If you ask for four, it can only be a node that has four. 
-If you need to specify one node type over the others because you need a particular 
-Compute Capability, add a request for that type of node to your jobscript:
-
-```
-# request a V100 node only
-#$ -ac allow=EF
-
-# request an A100 node only
-#$ -ac allow=L
-```
-
-The [GPU nodes](../Supplementary/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
-
-
-## Job sizes
+### Job sizes
 
 | Cores   | Max wallclock   |
 | ------- | --------------- |
 | 1 to 16 | 48hrs suggested |
 
-[Interactive jobs](../Interactive_Jobs.md) run with `qrsh` have the same
-maximum wallclock time as other jobs.
+We do not have a wallclock but we strongly suggest our users to keep their jobs within the 48hrs time limit out of consideration for the other users. If you need more time to run your jobscript for particular circumstances, please contact us at rc-support@ucl.ac.uk.
 
+[Interactive jobs](../Interactive_Jobs.md) run with `qrsh` and have the same maximum wallclock time suggested as other jobs.
 
-### Submitting a job
-Create a jobscript for non-interactive use and submit your jobscript using qsub. Jobscripts must begin #!/bin/bash -l in order to run as a login shell and get your login environment and modules.
+## Software 
 
-### Memory requests
+The software already available in DSH cluster is summarized in the table below:
 
-Note: the memory you request is always per core, not the total amount. If you ask for 192GB RAM and 40 cores, that may run on 40 nodes using only one core per node. This allows you to have sparse process placement when you do actually need that much RAM per process.
-
-Young also has high memory nodes, where a job like this may run.
-
-If you want to avoid sparse process placement and your job taking up more nodes than you were expecting, the maximum memory request you can make when using all the cores in a standard node is 4.6G.
-
-### Requesting software installs
-
-To request software installs, email us at the [support address below](#support) or open an issue on our
-[GitHub](https://github.com/UCL-ARC/rcps-buildscripts/issues). You can
-see what software has already been requested in the Github issues and
-can add a comment if you're also interested in something already
-requested.
-
+| Software         | Version  |
+| -------------    | -------- |
+| Arrow            |          |
+| Bolt_llm         |          |
+| Cellranger       |          |
+| Conda            |          |
+| Epigenetic rlibs | Rv4.4.0  |
+| FSL              |          |
+| GCTA             |          |
+| gdal             |          |
+| gradle           |          |
+| h3               |          |
+| METAL             |          |
+| plink             |          |
+| plink_v2          |          |
+| PRSice_v1.25      |          |
+| PRSice_v2         |          |
+| Python            |          |
+| postgres          |          |
+| R-packages        |          |
+| sample_job_script |          |
+| stata             |          |
+| R             |   -4.4.0       |
+| testapps          |          |
+| voicetypeclassifier|          |
 
 ### Installing your own software
 
-You may install software in your own space. Please look at
-[Compiling Your Code](../Supplementary/Compiling_Your_Code.md) for tips.
-
-
-## Suggested job sizes
-
-The target job sizes for Young are 2-5 nodes. Jobs
-larger than this may have a longer queue time and are better suited to
-ARCHER, and single node jobs may be more suited to your local
-facilities.
-
-## Maximum job resources
-
-| Job type                  | Cores | GPUs | Max wallclock |
-| ------------------------- | ----- | ---- | ------------- |
-| Gold CPU job, any         | 5120  | 0    | 48hrs         |
-| Free CPU job, any         | 5120  | 0    | 24hrs         |
-| Free GPU job, any         | 320   | 40   | 48hrs         |
-| Free GPU fast interactive | 64    | 8    | 6hrs          |
-| HBM CPU job, any          | 2048  | 0    | 48hrs         |
-
-CPU jobs or [GPU jobs](#gpu-nodes) can be run on Young, and there are 
-different [nodes](#node-types) dedicated for each.
-
-These are numbers of physical cores: multiply by two for virtual cores 
-with [hyperthreads](#hyperthreading) on the CPU nodes.
-
-On Young, interactive sessions using qrsh have the same wallclock limit
-as other jobs.
-
-CPU jobs on Young **do not share nodes**, whereas GPU jobs do. 
-This means that if you request less than 40 cores for a CPU job, 
-your job is still taking up an entire node and no
-other jobs can run on it, but some of the cores are idle. Whenever
-possible, request a number of cores that is a multiple of 40 for full
-usage of your CPU nodes.
-
-There is a superqueue for use in exceptional circumstances that will
-allow access to a larger number of cores outside the nonblocking
-interconnect zones, going across the interconnect between blocks. A
-third of each CU is accessible this way, roughly approximating a 1:1
-connection. Access to the superqueue for larger jobs must be applied
-for: contact the support address below for details.
-
-Some normal multi-node jobs will use the superqueue - this is to make it
-easier for larger jobs to be scheduled, as otherwise they can have very
-long waits if every CU is half full.
-
-
-### Preventing a job from running cross-CU
-
-If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
-
-
-## Node types
-
-Young has five types of node: standard nodes, big memory nodes, really big memory nodes, 
-GPU nodes and HBM nodes. Note those last three have different processors and number of 
-CPU cores per node.
-
-| Type  | Cores per node | RAM per node | tmpfs | Nodes | Memory request necessary | GPU |
-| ----- | -------------- | ------------ | ----- | ----- | ------------------------ | --- |
-| C     | 40             | 192G (188G usable) | None  | 576   | Any | None |
-| Y     | 40             | 1.5T         | None  | 3     | mpi: mem >=19G, smp: >186G total | None |
-| Z     | 36             | 3.0T         | None  | 3     | mpi: mem >=42G, smp: >1530G total | None |
-| X     | 64             | 1T           | 200G  | 6     | Any | 8 x Nvidia 40G A100 |
-| W     | 64             | 503G usable | 3.5T  | 32    | Any | None |
-
-These are numbers of physical cores: multiply by two for virtual cores with
-hyperthreading. 
-
-The 'memory request necessary' column shows what memory requests a job needs to 
-make to be eligible for that node type. For MPI jobs it looks at the memory per 
-slot requested. For SMP jobs they will go on the node that their total memory 
-request (slots * mem) fits on.
-
-Here are the processors each node type has:
-
-  - C: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz 
-  - Y: Intel(R) Xeon(R) Gold 6248 CPU @ 2.50GHz
-  - Z: Intel(R) Xeon(R) Gold 6240M CPU @ 2.60GHz
-  - X: dual AMD EPYC 7543 32-Core Processor
-  - W: Intel (R) Xeon(R) CPU Max 9462
-
-(If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so 
-you get it in your job's .o file for the exact node your job ran on. You will get an entry
-for every core).
-
-## GPU nodes
-
-Now available for general use, for Free jobs only. There will be separate GPU Gold budgets in 
-future.
-
-[How to use the GPU nodes](../Supplementary/Young_GPU_Nodes.md).
-
-
-## High Bandwidth Memory nodes
-
-The HBM nodes have 64GB of integrated High Bandwidth Memory per socket and two sockets per node.
-
-HBM nodes can be set on the system level in two modes. 
-
-* HBM cache mode: In cache mode, HBM functions as a memory-side cache for contents of DDR memory. 
-  In this mode, HBM is transparent to all software because the HBM cache is managed by hardware 
-  memory controllers. No code changes are required.
-
-* HBM flat mode: In flat mode, both DDR and the HBM address spaces are visible to software. 
-  Applications may need to be modified or tuned to be aware of the additional memory hierarchy.
-
-At present, we have the nodes set in cache mode. We will be re-evaluating this after the 
-operating system is upgraded and will have full support for flat mode - at this point we 
-may have some nodes in each mode to allow you to experiment.
-
-There are more details about HBM and the modes at [Enabling High Bandwidth Memory for HPC and AI Applications for Next Gen Intel Xeon Processors](https://community.intel.com/t5/Blogs/Products-and-Solutions/HPC/Enabling-High-Bandwidth-Memory-for-HPC-and-AI-Applications-for/post/1335100)
-
-### Requesting HBM nodes
-
-You need to request these nodes explicitly in your job.
-
-```
-# Request HBM nodes
-#$ -ac allow=W
-```
-
-
-## Restricting to one node type
-
-The scheduler will schedule your job on the relevant nodetype 
-based on the resources you request, but if you really need to specify 
-the nodetype yourself, use:
-
-```
-# Only run on Z-type nodes
-#$ -ac allow=Z
-```
-
-## Hyperthreading
-
-Young has hyperthreading enabled and you can choose on a per-job basis 
-whether you want to use it.
-
-Hyperthreading lets you use two virtual cores instead of one physical 
-core - some programs can take advantage of this.
-
-If you do not ask for hyperthreading, your job only uses one thread per core as normal.
-
-The `-l threads=` request is not a true/false setting, instead you are telling the scheduler
-you want one slot to block one virtual cpu instead of the normal situation where it blocks two.
-If you have a script with a threads request and want to override it on the command line or set
-it back to normal, the usual case is `-l threads=2`. (Setting threads to 0 does not disable
-hyperthreading!)
-
-```
-# request hyperthreading in this job
-#$ -l threads=1
-
-# request the number of virtual cores
-#$ -pe mpi 160
-
-# request 2G RAM per virtual core
-#$ -l mem=2G
-
-# set number of OpenMP threads being used per MPI process
-export OMP_NUM_THREADS=2
-```
-
-This job would be using 80 physical cores, using 80 MPI processes each of 
-which would create two threads (on Hyperthreads).
-
-Note that memory requests are now per virtual core with hyperthreading enabled. 
-If you asked for `#$ -l mem=4G`on a node with 80 virtual cores and 192G RAM then 
-you are requiring 320G RAM in total which will not fit on that node and so you 
-would be given a sparse process layout across more nodes to meet this requirement.
-
-```
-# request hyperthreading in this job
-#$ -l threads=1
-
-# request the number of virtual cores
-#$ -pe mpi 160
-
-# request 2G RAM per virtual core
-#$ -l mem=2G
-
-# set number of OpenMP threads being used per MPI process
-# (a whole node's worth)
-export OMP_NUM_THREADS=80
-```
-
-This job would still be using 80 physical cores, but would use one MPI 
-process per node which would create 80 threads on the node (on Hyperthreads).
-
-
-The A-type nodes have hyperthreading enabled and you can choose on a per-job basis whether you want to use it.
-
-Hyperthreading lets you use two virtual cores instead of one physical core - some programs can take advantage of this.
-
-If you do not ask for hyperthreading, your job only uses one thread per core as normal.
-
-The -l threads= request is not a true/false setting, instead you are telling the scheduler you want one slot to block one virtual cpu instead of the normal situation where it blocks two. If you have a script with a threads request and want to override it on the command line or set it back to normal, the usual case is -l threads=2. (Setting threads to 0 does not disable hyperthreading!)
-
-```
-# request hyperthreading in this job
-#$ -l threads=1
-
-# request the number of virtual cores
-#$ -pe mpi 160
-
-# request 2G RAM per virtual core
-#$ -l mem=2G
-
-# set number of OpenMP threads being used per MPI process
-export OMP_NUM_THREADS=2
-```
-
-This job would be using 80 physical cores, using 80 MPI processes each of which would create two threads (on Hyperthreads).
-
-Note that memory requests are now per virtual core with hyperthreading enabled. If you asked for #$ -l mem=4Gon a node with 80 virtual cores and 192G RAM then you are requiring 320G RAM in total which will not fit on that node and so you would be given a sparse process layout across more nodes to meet this requirement.
-```
-# request hyperthreading in this job
-#$ -l threads=1
-
-# request the number of virtual cores
-#$ -pe mpi 160
-
-# request 2G RAM per virtual core
-#$ -l mem=2G
-
-# set number of OpenMP threads being used per MPI process
-# (a whole node's worth)
-export OMP_NUM_THREADS=80
-```
-This job would still be using 80 physical cores, but would use one MPI process per node which would create 80 threads on the node (on Hyperthreads).
-
-### Job deletion
-
-If you `qdel` a submitted Gold job, the reserved Gold will be made
-available again. This is done by a cron job that runs every 15 minutes,
-so you may not see it back instantly.
+You can install software available in Artifactory in your own space.  
+
+How to install packages using Artifactory:
+Notes:
+You can only access Artifactory from inside the DSH.
+You can use the same token for all package types/configuration files, but this token will need to be regenerated anytime you change your password.
+Tokens should be treated similarly to passwords, in terms of keeping them secret
+You can use Shift-Insert to paste in Linux (Ctrl-V won't work!)
+Create config files:
+Create relevant configuration files inside your cluster home directory: ~/.condarc (for Miniconda), ~/.Rprofile (for R and Rstudio), and/or ~/.pip/pip.conf (for Pip)
+We may want to include sample config files here, since some are slightly different to the guidance that Artifactory's "Set Me Up" shows, most notable .Rprofile. (I have templates readily available if you want them)
+Get an Artifactory token:
+Visit the Artifactory website using DSH Desktop web browser (https://artifactory.idhs.ucl.ac.uk/), click "Artifacts" in the left panel, and then click "Set Me Up" in the top right.
+Inside the "Set Me Up" interface, select a package type (doesn't matter which) and generate a personal Artifactory token by typing your password in the text box and clicking "Generate Token & Create Instructions".
+Update config files:
+Copy your token, and paste it into the appropriate place in the config files from step (1)
+Download/install packages:
+for R: use the command install.packages("MYPACKAGE") in an R console to install MYPACKAGE to your cluster R library
+for Conda: use the command conda install MYPACKAGE in a terminal to install MYPACKAGE to your current conda environment
+for Pip: use the command pip install MYPACKAGE in a terminal to install MYPACKAGE to your current python environment
+
+
+### Requesting software installs
+
+To request software installs, email us at rc-support@ucl.ac.uk with the software you need and indicating you are working in the DSH Cluster. You can also contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). 
+
+As DSH is a secure environment, all software that is not already available in **Artifactory** must be evaluated for vulnerabilities with a*risk assesment* before being installed. This might take some days and in some complex cases, it can extend to weeks. If dangeours vulnerabilities are found, DSH reserves the right to do not install the software requested for security reasons.  
 
 ## Support
 
-Email <rc-support@ucl.ac.uk> with any support queries. It will be helpful
-to include Young in the subject along with some descriptive text about
-the type of problem, and you should mention your username in the body.
+Please visit our [contact](Contact_Us.md) page.
 
-## Acknowledging the use of DSH in publications
-
-All work arising from this facility should be properly acknowledged in
-presentations and papers with the following text:
-
-"We are grateful to the UK Materials and Molecular Modelling Hub for
-computational resources, which is partially funded by EPSRC
-(EP/T022213/1, EP/W032260/1 and EP/P020194/1)"
-
-# Acknowledging the Use of DSH Systems
+## Acknowledging the Use of DSH Systems
 
 To keep running our services, we depend on being able to demonstrate that
 they are used in published research.
 
 When preparing papers describing work that has used the DSH services, please use the terms below.
 
-"The authors acknowledge the use of the Data Save Haven (DSH), and associated support services, in the
-completion of this work."
-
-# Acknowledging the Use of DSH Systems
-
-To keep running our services, we depend on being able to demonstrate that
-they are used in published research.
-
-When preparing papers describing work that has used the DSH services, please use the terms below.
-
-"The authors acknowledge the use of the Data Save Haven (DSH), and associated support services, in the
+"The authors acknowledge the use of the Data Safe Haven (DSH), and associated support services, in the
 completion of this work."
 
