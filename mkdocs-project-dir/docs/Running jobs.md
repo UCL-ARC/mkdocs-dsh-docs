@@ -14,7 +14,17 @@ It will be put in to the queue and will begin running on the compute nodes at so
 
 
 
+### Preventing a job from running cross-CU
 
+If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
+
+
+
+### Job deletion
+
+If you `qdel` a submitted Gold job, the reserved Gold will be made
+available again. This is done by a cron job that runs every 15 minutes,
+so you may not see it back instantly.
 
 
 ### Memory requests
