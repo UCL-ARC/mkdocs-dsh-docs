@@ -57,6 +57,11 @@ If you experience difficulties with your login, please make sure that you are ty
 If you still cannot get access but can access DSH desktop, please contact us on rc-support@ucl.ac.uk indicating you are working in the DSH Cluster.
 If you cannot access anything in DSH, you may need to request a password reset for the DSH service from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
+## Login out
+
+You can log out of the systems by typing `exit` and pressing enter.
+
+(`logout` or pressing Ctrl+D also work)
 
 ## Copying data onto DSH Cluster
 
@@ -75,28 +80,23 @@ If you need to tranfer a folder with several files and directories inside, then 
 scp -r <local_data_file_path> <my_UCL_user>@<system_name>:<remote_path>
 ```
 
-If you prefer to use a graphical interface, then you can use **WinSCP** or **Filezilla** that are already inside DSH.
+If you prefer to use a graphical interface, then you can use **WinSCP** that are already inside DSH.  **Filezilla** is also installed but as the cluster does not have the SFTP (Secure File Transfer Protocol) installed, it is not possible to use it. 
 
-## Transferring data with WinSCP
+## Transfering data with WinSCP
 
+WinSCP is already installed in DSH Desktop. Once you click on the icon, a Windows GUI will open. The first step to connect is to fill in the connection information requested (File protocol, Server to connect, UCL user name and password) in the main window, as it is shown below:  
 
+![WinSCP](img/WinSCP1.png)
 
+THe file Protocol *must* be **SCP**, as the other options are not available for the moment. Then press **Login** to connect. The first time you connect to a server you will see a message like this:  
 
+![WinSCP](img/WinSCP2.png)
 
+Press **accept**. You will see this window:
 
+![WinSCP](img/WinSCP3.png)
 
-
-## Transferring data with Filezilla
-
-
-
-
-
-
-
-
-
-
+The left panel usually shows your local computer directories and the right one, the ones in the server you are connected in. To transfer files, just drag the file or directory you want to copy from one panel to the other. It works in both senses, this means you can copy form your local directory in DSH Desktop to the DSH cluster and also from the DSH cluster to DSH Desktop.
 
 
 ## Data storage
