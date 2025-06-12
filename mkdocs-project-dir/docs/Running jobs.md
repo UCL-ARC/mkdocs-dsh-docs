@@ -12,6 +12,20 @@ qsub myjobscript
 
 It will be put in to the queue and will begin running on the compute nodes at some point later when it has been allocated resources.
 
+
+
+
+
+
+### Memory requests
+
+Note: the memory you request is always per core, not the total amount. If you ask for 192GB RAM and 40 cores, that may run on 40 nodes using only one core per node. This allows you to have sparse process placement when you do actually need that much RAM per process.
+
+Young also has high memory nodes, where a job like this may run.
+
+If you want to avoid sparse process placement and your job taking up more nodes than you were expecting, the maximum memory request you can make when using all the cores in a standard node is 4.6G.
+
+
 ### Passing in qsub options on the command line
 
 The `#$` lines in your jobscript are options to qsub. It will take each line which has `#$` as the first two characters and use the contents beyond that as an option. 
