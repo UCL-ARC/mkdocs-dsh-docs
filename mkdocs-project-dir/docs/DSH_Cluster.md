@@ -8,10 +8,10 @@ DSH accounts can be applied for via the [DSH sign up process](../Account_Service
 ## Logging in
 
 You *must* log in to the cluster from inside DSH Desktop. The connection to the cluster is done by SSH connection. DSH Desktop has **PuTTY** and **Gitbash** installed for this purpose. 
-To connect to the cluster using **Gitbash**, open a terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <UCL_username> with your internal UCL user and <system_name> with the name of the machine you want to log in to, eg. dsh-sge2log01:
+To connect to the cluster using **Gitbash**, open a terminal and type the below command to secure shell (ssh) into the machine you wish to access. Replace <UCL_username> with your internal UCL user and <DSH_system_name> with the name of the machine you want to log in to, eg. dsh-sge2log01:
 
 ```
-ssh <UCL_username>@<system_name>  
+ssh <UCL_username>@<DSH_system_name>  
 ```
 
 Your password will be requested. Enter it and press **Enter key** 
@@ -59,28 +59,45 @@ If you cannot access anything in DSH, you may need to request a password reset f
 
 ## Login out
 
-You can log out of the systems by typing `exit` and pressing enter.
-
-(`logout` or pressing Ctrl+D also work)
+You can log out of the systems by typing `exit` and pressing enter (pressing Ctrl+D also works).
 
 ## Copying data onto DSH Cluster
 
 If you need to copy data into the cluster, you can only do it if the data is already in the DSH desktop.
 If the data is outside DSH it *must* be copied into the DSH desktop thorough the file transfer portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
 
-If you need to copy data already in the DSH desktop to the cluster you can do it using **Secure Copy (SCP)** protocol. The following template will copy a data file (preferably a single compressed file) from somewhere on your DSH machine to a specified location on the remote machine inside the DSH cluster (login node, etc) using the **SCP** command:
+If you need to copy data already in the DSH desktop to the cluster you can do it using **Secure Copy (SCP)** protocol. For this you can use the **SCP** or **rsync** commands. If you prefer to use a graphical interface, then you can use **WinSCP** that are already inside DSH.  **Filezilla** is also installed but as the cluster does not have the SFTP (Secure File Transfer Protocol) installed, it is not possible to use it. 
+
+### SCP
+
+The following template will copy a data file (preferably a single compressed file) from somewhere on your DSH machine to a specified location on the remote machine inside the DSH cluster (login node, etc) using the **SCP** command:
 
 ```
-scp <local_data_file_path> <UCL_username>@<system_name>:<remote_path>
+scp <local_data_file_path> <UCL_username>@<DSH_system_name>:<remote_path>
 ```
 
 If you need to tranfer a folder with several files and directories inside, then use scp with the recursive option:
 
 ```
-scp -r <local_data_file_path> <UCL_username>@<system_name>:<remote_path>
+scp -r <local_data_file_path> <UCL_username>@<DSH_system_name>:<remote_path>
 ```
 
-If you prefer to use a graphical interface, then you can use **WinSCP** that are already inside DSH.  **Filezilla** is also installed but as the cluster does not have the SFTP (Secure File Transfer Protocol) installed, it is not possible to use it. 
+This will do the reverse, copying from the remote DSH machine to your local DSH Desktop. (This is still run from your local machine).
+
+```
+scp <UCL_username>@<DSH_system_name>:<remote_path><remote_data_file> <local_data_file_path>
+```
+
+And this will do recursive copy of files:
+
+```
+scp -r <UCL_username>@<DSH_system_name>:<remote_path><remote_data_file> <local_data_file_path>
+```
+
+#### rsync
+
+`rsync` is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at `man rsync` as there are many options. 
+
 
 ### Transfering data with WinSCP
 
@@ -101,11 +118,11 @@ The left panel usually shows your local computer directories and the right one, 
 
 ## Data storage
 
-Our cluster have local parallel filesystem consisting of your home where you can write data. Each user has 50GB of local storage available. This is not a hard quota, so technically you can keep writing files once reached that amount but we and encourage you to keep its usage within the limits stablished out of consideration for other cluster users. We are continuously monitoring disk usage. If you need more storage for particular circumstances, please contact us at rc-support@ucl.ac.uk.
+Our cluster have local parallel filesystem consisting of your home where you can write data. Each user has 15B of local storage available (Home directory) and it is not possible to request an increase. This is not a hard quota: once you reach them, you will still be able to write more data but we and encourage you to keep its usage within the limits stablished out of consideration for other cluster users. We are continuously monitoring the proper disk usage. If you need more storage for particular circumstances, please contact us at rc-support@ucl.ac.uk.
 
 ### Home
 
-Every user has a home directory. This is the directory you are in when you first log in.
+Every user has a home directory of 15GB. This is the directory you are in when you first log in.
 
     Location: /hpchome/<UCL_username>@IDHS.UCL.AC.UK
     May also be referred to as: ~, $HOME.
@@ -126,71 +143,33 @@ Many programs will write hidden config files in here, with names beginning with 
 - Before you leave UCL, please consider what should happen to your data, and take steps to put it in
   a Research Data archive and/or ensure that your colleagues are given access to it.
 
-  
-## Quotas
-
-The default quota on DSH are 15B for home, backed up, no increases available
-
-These is a soft quotas: once you reach them, you will still be able
-to write more data but try to Keep an eye on them in consideration to other users.
-
-You cannot apply for quota increases.
-
-Here are some tips for [managing your quota](../howto.md#managing-your-quota) and
-finding where space is being used.
-
-## Job sizes
-
-| Cores   | Max wallclock   |
-| ------- | --------------- |
-| 1 to 40 | 48hrs suggested |
-
-[Interactive jobs](../Interactive_Jobs.md) run with `qrsh` have the same
-maximum wallclock time as other jobs.
-
 ## Node types
 
+DSH cluster's compute capability comprises 7 compute nodes, each with 16-core Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz processors, 128 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network. Two of this nodes have a  80 GB A100 GPUs
 
-We can only do single-node jobs, they are simply higher spec than the DSH Desktop virtual machines -- I believe the DSH Desktop machines are 4 core, 32 GB ram, whereas our HPC nodes are 16 core, 128 GB RAM (and two nodes have 80 GB A100 GPUs).
+Two nodes identical to these, serve as the login nodes.
 
+| Type          |   Hostname   | Cores per node     | RAM per node | tmpfs | Nodes |
+| --------------|--------------| ------------------ | ------------ | ----- | ----- |
+| Login         |dsh-sge2log0X |   4                | 128GB        | 1500G | 2     |
+| Compute       |dsh-sge2cpu0X |   16               | 128TB        | 1500G | 7     |
+| Compute + GPU |dsh-sge2gpu0X |   16 + 1 A100 GPUs | 128GB        | 1500G | 2     |
 
-Kathleen's compute capability comprises 192 diskless compute nodes each with two 20-core Intel Xeon Gold 6248 2.5GHz processors, 192 gigabytes of 2933MHz DDR4 RAM, and an Intel OmniPath network.
-
-Two nodes identical to these, but with two 1 terabyte hard-disk drives added, serve as the login nodes.
-
-
-DSH contains three main node types: standard compute nodes, high memory
-nodes and GPU nodes. As new nodes as added over time with slightly newer processor
-variants, new letters are added.
-
-| Type  | Cores per node   | RAM per node | tmpfs | Nodes |
-| ----- | ---------------- | ------------ | ----- | ----- |
-| H,D   | 36               | 192GB        | 1500G | 342   |
-| I,B   | 36               | 1.5TB        | 1500G | 17    |
-| J     | 36 + 2 P100 GPUs | 192GB        | 1500G | 2     |
-| E,F   | 36 + 2 V100 GPUs | 192GB        | 1500G | 19    |
-| L     | 36 + 4 A100 GPUs | 192GB        | 1500G | 6     |
-
-You can tell the type of a node by its name: type H nodes are named
-`node-h00a-001` etc.
+You can tell the type of a node by its name: login nodes are `dsh-sge2log0X`, etc.
 
 Here are the processors each node type has:
 
-  - F, H, I, J: Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
-  - B, D, E, L: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
-
+  - Login nodes         : Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz
+  - Compute nodes       : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+  - Compute nodes + GPU : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+  - 
 (If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so
 you get it in your job's .o file for the exact node your job ran on. You will get an entry
 for every core).
 
 ## GPUs
 
-Myriad has four types of GPU nodes: E, F, J and L. 
-
-  - L-type nodes each have four NVIDIA 40G A100s. (Compute Capability 80)
-  - F-type and E-type nodes each have two NVIDIA Tesla V100s. The CPUs are slightly different on the different letters, see above. (Compute Capability 70)
-  - J-type nodes each have two NVIDIA Tesla P100s. (Compute Capability 60)
-
+DSH has 2 GPU nodes and each have 1 NVIDIA 40G A100s. (Compute Capability 80)
 You can include `nvidia-smi` in your jobscript to get information about the GPU your job ran on.
 
 ### Compute Capability
@@ -236,6 +215,17 @@ Compute Capability, add a request for that type of node to your jobscript:
 ```
 
 The [GPU nodes](../Supplementary/GPU_Nodes.md) page has some sample code for running GPU jobs if you need a test example.
+
+
+## Job sizes
+
+| Cores   | Max wallclock   |
+| ------- | --------------- |
+| 1 to 16 | 48hrs suggested |
+
+[Interactive jobs](../Interactive_Jobs.md) run with `qrsh` have the same
+maximum wallclock time as other jobs.
+
 
 ### Submitting a job
 Create a jobscript for non-interactive use and submit your jobscript using qsub. Jobscripts must begin #!/bin/bash -l in order to run as a login shell and get your login environment and modules.
