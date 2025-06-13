@@ -217,31 +217,27 @@ We do not have a wallclock but we strongly suggest our users to keep their jobs 
 
 The software already available in DSH cluster is summarized in the table below:
 
-| Software         | Version  |
-| -------------    | -------- |
-| Arrow            |          |
-| Bolt_llm         |          |
-| Cellranger       |          |
-| Conda            |          |
-| Epigenetic rlibs | Rv4.4.0  |
-| FSL              |          |
-| GCTA             |          |
-| gdal             |          |
-| gradle           |          |
-| h3               |          |
-| METAL             |          |
-| plink             |          |
-| plink_v2          |          |
-| PRSice_v1.25      |          |
-| PRSice_v2         |          |
-| Python            |          |
-| postgres          |          |
-| R-packages        |          |
-| sample_job_script |          |
-| stata             |          |
-| R             |   -4.4.0       |
-| testapps          |          |
-| voicetypeclassifier|          |
+| Software            | Version  |
+| --------------------| -------- |
+| Arrow               |  13.0    |
+| Bolt_llm            |  2.3.6   |
+| Cellranger          |  7.1.0   |
+| Conda               |  22.9.0  |
+| Epigenetic rlibs    |  4.4.0   |
+| FSL                 |  6.0.5   |
+| GCTA                |  1.94    |
+| gdal                |  3.3.1   |
+| gradle              |  8.1.1   |
+| h3                  |  3.7.1   |
+| METAL               |    -     |
+| plink               |  2, 3    |
+| Postgres            |  12      |
+| PRSice_v1.25        |  1.25,2  |
+| Python              |  3.10.6  |
+| R-packages          |    -     |
+| R                   |  4.4.0   |
+| stata               |  18.5    |
+| voicetypeclassifier |    -     |
 
 ### Installing your own software
 
