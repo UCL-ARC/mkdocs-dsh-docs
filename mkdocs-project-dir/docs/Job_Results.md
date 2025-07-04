@@ -1,7 +1,3 @@
----
-title: Where do my results go?
-layout: docs
----
 
 # Where do my results go?
 
