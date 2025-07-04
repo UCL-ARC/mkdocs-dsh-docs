@@ -6,35 +6,17 @@ After creating your script, submit it to the scheduler with:
 
 ## Working Directories and Output
 
-The parallel filesystems we use to provide the home and scratch filesystems perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary `$TMPDIR` storage, and compress and copy them to the scratch area at the end of the job.
+**The filesystems we use to provide the home perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary `$TMPDIR` storage, and compress and copy them to the scratch area at the end of the job.**
 
-This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to Scratch directly, however, your performance will generally not be as good as writing to `$TMPDIR`, and you may impact the general performance of the machine if you do this with many jobs simultaneously. This is particularly the case with single-core jobs, because that core is guaranteed to be writing out data.
+**This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to Scratch directly, however, your performance will generally not be as good as writing to `$TMPDIR`, and you may impact the general performance of the machine if you do this with many jobs simultaneously. This is particularly the case with single-core jobs, because that core is guaranteed to be writing out data.**
 
-Note that there is also the option of using [the `Local2Scratch` process](#example-array-job-using-local2scratch), 
-which takes place *after* the job has finished, in the clean-up step. This gives you the option of always
-getting the contents of `$TMPDIR` back, at the cost of possibly getting incomplete
-files and not having any control over where the files go.
+## Projects
 
-## Note about Projects
-
-Projects are a system used in the scheduler and the accounting system 
-to track budgets and access controls.
-
-Most users of UCL's internal clusters will not need to specify a project and will default to the AllUsers 
-project. Users of the Michael and Young services should refer to the specific 
-pages for those machines, and the information they were given when they registered.
-
-To specify a project ID in a job script, use the `-P` object as below:
-
-```
-#$ -P <your_project_id>
-```
+Our users will not need to specify a project in their jobscripts 
 
 ## Resources
 
-The lines starting with `#$ -l` are where you are requesting resources like wallclock 
-time (how long your job is allowed to run), memory, and possibly tmpfs (local hard 
-disk space on the node, if it is not diskless). In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue. More details on how to request resources can be found [here](https://www.rc.ucl.ac.uk/docs/Experienced_Users/#resources-you-can-request).
+The lines starting with `#$ -l` are where you are requesting resources like wallclock time (how long your job is allowed to run), memory, and possibly tmpfs (local hard disk space on the node, if it is not diskless). In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue. More details on how to request resources can be found [here](https://www.rc.ucl.ac.uk/docs/Experienced_Users/#resources-you-can-request).
 
 If you have no notion of how much you should request for any of these, have a look at [How do I estimate what resources to request in my jobscript?](howto.md#how-do-i-estimate-what-resources-to-request-in-my-jobscript)
 
