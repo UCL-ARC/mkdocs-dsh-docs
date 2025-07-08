@@ -13,28 +13,73 @@ qsub myjobscript
 It will be put in to the queue and will begin running on the compute nodes at some point later when it has been allocated resources.
 
 
-
-### Preventing a job from running cross-CU
-
-If your job must run within a single CU, you can request the parallel environment as `-pe wss` instead of `-pe mpi` (`wss` standing for 'wants single switch'). This will increase your queue times. It is suggested you only do this for benchmarking or if performance is being greatly affected by running in the superqueue.
-
-
-
 ### Job deletion
 
-If you `qdel` a submitted Gold job, the reserved Gold will be made
-available again. This is done by a cron job that runs every 15 minutes,
-so you may not see it back instantly.
+Use  `qdel` to delete a submitted job. You must give the job ID.
 
+```
+qdel 361829
+```
+You can also delete all the jobs from a user with 
 
-### Memory requests
+```
+qdel -u <username>
+```
 
-Note: the memory you request is always per core, not the total amount. If you ask for 192GB RAM and 40 cores, that may run on 40 nodes using only one core per node. This allows you to have sparse process placement when you do actually need that much RAM per process.
+### Asking for resources
 
-Young also has high memory nodes, where a job like this may run.
+#### Number of cores
 
-If you want to avoid sparse process placement and your job taking up more nodes than you were expecting, the maximum memory request you can make when using all the cores in a standard node is 4.6G.
+For MPI:
+```bash
+#$ -pe mpi <number of cores>
+```
 
+For threads:
+```bash
+#$ -pe smp <number of cores>
+```
+
+For single core jobs you don't need to request a number of cores.
+
+#### Memory requests (Amount of RAM per core)
+
+Note: the memory you request is always per core, not the total amount. If you ask for 128GB RAM and 4 cores, that may run on 4 nodes using only one core per node. This allows you to have sparse process placement when you do actually need that much RAM per process.
+
+If you want to avoid sparse process placement and your job taking up more nodes than you were expecting, the maximum memory request you can make when using all the cores in a standard node is 128/16 = 8G.
+
+```bash
+#$ -l mem=<integer amount of RAM in G or M>
+```
+
+e.g. `#$ -l mem=4G` requests 4 gigabytes of RAM per core.
+
+#### Run time
+```bash
+#$ -l h_rt=<hours:minutes:seconds>
+```
+
+e.g. `#$ -l h_rt=48:00:00` requests 48 hours.
+
+#### Working directory
+
+Either a specific working directory:
+
+```bash
+#$ -wd /path/to/working/directory
+```
+
+or the directory the script was submitted from:
+
+```bash
+#$ -cwd
+```
+
+#### GPUs 
+
+```bash 
+#$ -l gpu=<number of GPUs>
+```
 
 ### Passing in qsub options on the command line
 
@@ -117,86 +162,9 @@ If a job stays in `t` or `dr` state for a long time, the node it was on is likel
 
 A job in `Eqw` will remain in that state until you delete it - you should first have a look at what the error was with `qexplain`.
 
-### qexplain
-
-This is a utility to show you the non-truncated error reported by your job. `qstat -j` will show you a truncated version near the bottom of the output.
-
-```
-qexplain 123454
-```
-
-### qdel
-
-You use `qdel` to delete a job from the queue.
-
-```
-qdel 123454
-```
-
-You can delete all your jobs at once:
-```
-qdel '*'
-```
-
 ### More scheduler commands
 
 Have a look at `man qstat` and note the commands shown in the `SEE ALSO` section of the manual page. Exit the manual page and then look at the `man` pages for those. (You will not be able to run all commands).
-
-### nodesforjob
-
-This is a utility that shows you the current percentage load, memory used and swap used on the nodes your job is running on. If your job is sharing the node with other people's jobs, it will show you the total resources in use, not just those used by your job. This is a snapshot of the current time and resource usage may change over the course of your job. Bear in mind that memory use in particular can increase over time as your job runs.
-
-If a cluster has hyperthreading enabled and you aren't using it, full load will show as 50% and not 100% - this is normal and not a problem.
-
-For a parallel job, very low (or zero) usage of any of the nodes suggests your job is either not capable of running over multiple nodes, or not partitioning its work effectively - you may be asking for more cores than it can use, or asking for a number of cores that doesn't fit well into the node sizes, leaving many idle.
-
-```
-[uccacxx@login02 ~]$ nodesforjob 1234
-Nodes for job 1234:
-  Primary:
-    node-r99a-238:  103.1 % load, 12.9 % memory used, 0.1% swap used
-  Secondaries:
-    node-r99a-206:  1.7 % load, 1.6 % memory used, 0.1% swap used
-    node-r99a-238:  103.1 % load, 12.9 % memory used, 0.1% swap used
-    node-r99a-292:  103.1 % load, 12.9 % memory used, 0.1% swap used
-    node-r99a-651:  1.6 % load, 3.2 % memory used, 0.1% swap used
-```
-The above example shows a multi-node job, so all the usage belongs to this job itself. It is 
-running on four nodes, and node-r99a-238 is the head node (the one that launched the job) and 
-shows up in both Primary and Secondaries. The load is very unbalanced - it is using two nodes 
-flat out, and two are mostly doing nothing. Memory use is low. Swap use is essentially zero.
-
-### jobhist
-
-Once a job ends, it no longer shows up in `qstat`. To see information about your finished jobs - 
-when they started, when they ended, what node they ran on - use the command `jobhist`, part of
-the [`userscripts`](Installed_Software_Lists/module-packages.md) module.
-
-```
-[uccacxx@login02 ~]$ jobhist
-        FSTIME        |       FETIME        |   HOSTNAME    |  OWNER  | JOB NUMBER | TASK NUMBER | EXIT STATUS |   JOB NAME    
-----------------------+---------------------+---------------+---------+------------+-------------+-------------+---------------
-  2020-06-17 16:31:12 | 2020-06-17 16:34:19 | node-h00a-010 | uccacxx |    3854822 |           0 |           0 | m_job   
-  2020-06-17 16:56:50 | 2020-06-17 16:56:52 | node-d00a-023 | uccacxx |    3854836 |           0 |           1 | k_job  
-  2020-06-17 17:21:12 | 2020-06-17 17:21:46 | node-d00a-012 | uccacxx |    3854859 |           0 |           0 | k_job
-```
-
-`FSTIME` - when the job started running on the node
-`FETIME` - when the job ended
-`HOSTNAME` - the head node of the job (if it ran on multiple nodes, it only lists the first)
-`TASK NUMBER` - if it was an array job, it will have a different number here for each task
-
-This shows jobs that finished in the last 24 hours by default. You can search for longer as well:
-```
-jobhist --hours=200
-```
-
-If a job ended and didn't create the files you expect, check the start and end times to see whether 
-it ran out of wallclock time. 
-
-If a job only ran for seconds and didn't produce the expected output, there was probably something 
-wrong in your script - check the `.o` and `.e` files in the directory you submitted the job from 
-for errors.
 
 ## How do I run interactive jobs?
 
@@ -214,106 +182,10 @@ where `myprogram myargs` is however you normally run your program, with whatever
 
 When your job finishes, you will get output about the resources it used and how long it took - the relevant one for memory is `maxrss` (maximum resident set size) which roughly tells you the largest amount of memory it used.
 
-If your job is not completing successfully or you need to know how the memory usage 
-changes throughout the job, there is a tool called [Ruse](https://github.com/JanneM/Ruse)
-that can measure this for you.
-
-Run your program as:
-```
-module load ruse/2.0
-
-# sample the current memory usage every 120s and output each step to stdout
-ruse --stdout --time=120 -s myprogram myargs
-```
-where `myprogram myargs` is however you normally run your program, with whatever options you 
-pass to it.
-
 Remember that memory requests in your jobscript are always per core, so check the total you are requesting is sensible - if you increase it too much you may end up with a job that cannot be submitted.
-
-You can also look at [nodesforjob](#nodesforjob) while a job is running to see a snapshot of the memory, swap and load on the nodes your job is running on.
-
-## How can I see what types of node a cluster has?
-
-As well as looking at the cluster-specific page in this documentation for more details (for example 
-[Myriad](Clusters/Myriad.md)), you can run `nodetypes`, which will give you basic information about 
-the nodes that exist in that cluster.
-
-```
-[uccacxx@login12 ~]$ nodetypes
-    3 type * nodes: 36 cores, 188.4G RAM
-    7 type B nodes: 36 cores,   1.5T RAM
-   66 type D nodes: 36 cores, 188.4G RAM
-    9 type E nodes: 36 cores, 188.4G RAM
-    1 type F nodes: 36 cores, 188.4G RAM
-   55 type H nodes: 36 cores, 188.4G RAM
-    3 type I nodes: 36 cores,   1.5T RAM
-    2 type J nodes: 36 cores, 188.4G RAM
-```
-
-This shows how many of each letter-labelled nodetype the cluster has, then the number of cores 
-and amount of memory the node is reporting it has. It also shows the cluster has some utility 
-nodes - those are part of the infrastructure. The `*` nodes are the login nodes.
-
 
 ## How do I run a graphical program?
 
-To run a graphical program on the cluster and be able to view the user interface on your own 
-local computer, you will need to have an X-Windows Server installed on your local computer and 
-use X-forwarding.
+Unfortunately, at the moment it is not possible to run a graphical program in DSH cluster
 
-### X-forwarding on Linux
 
-Desktop Linux operating systems already have X-Windows installed, so you just need to ssh in with the correct flags.
-
-You need to make sure you use either the `-X` or `-Y` (look at `man ssh` for details) flags on all ssh commands you run to establish a connection to the cluster.
-
-For example, connecting from outside of UCL:
-```
-ssh -X <your_UCL_user_id>@ssh-gateway.ucl.ac.uk
-```
-and then
-```
-ssh -X <your_UCL_user_id>@myriad.rc.ucl.ac.uk
-```
-
-[A video walkthrough of running remote applications using X11, X-forwarding on compute nodes](https://www.youtube.com/watch?v=nVQlnuo3GSc).
-
-### X-forwarding on macOS
-
-You will need to install XQuartz to provide an X-Window System for macOS. (Previously known as X11.app).
-
-You can then follow the Linux instructions using Terminal.app.
-
-### X-forwarding on Windows
-
-You will need:
-
-* An SSH client; e.g., PuTTY
-* An X server program; e.g., Exceed, Xming
-
-Exceed is available on Desktop@UCL machines and downloadable from the [UCL software database](http://swdb.ucl.ac.uk). Xming is open source (and mentioned here without testing).
-
-#### Exceed on Desktop@UCL
-
-1. Load Exceed. You can find it under Start > All Programs > Applications O-P > Open Text Exceed 14 > Exceed
-2. Open PuTTY (Applications O-P > PuTTY)
-3. In PuTTY, set up the connection with the host machine as usual:
-    * Host name: `myriad.rc.ucl.ac.uk` (for example)
-    * Port: `22`
-    * Connection type: `SSH`
-4. Then, from the Category menu, select Connection > SSH > X11 for 'Options controlling SSH X11 forwarding'.
-    * Make sure the box marked 'Enable X11 forwarding' is checked.
-5. Return to the session menu and save these settings with a new identifiable name for reuse in future.
-6. Click 'Open' and login to the host as usual
-7. To test that X-forwarding is working, try running `nedit` which is a text editor in our default modules.
-
-If `nedit` works, you have successfully enabled X-forwarding for graphical applications.
-
-#### Installing Xming
-
-Xming is a popular open source X server for Windows. These are instructions for using it alongside PuTTY. Other SSH clients and X servers are available. We cannot verify how well it may be working.
-
-1. Install both PuTTY and Xming if you have not done so already. During Xming installation, choose not to install an SSH client.
-2. Open Xming - the Xming icon should appear on the task bar.
-3. Open PuTTY
-4. Set up PuTTY as shown in the Exceed section.
