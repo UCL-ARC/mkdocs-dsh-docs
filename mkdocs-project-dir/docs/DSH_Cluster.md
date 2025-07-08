@@ -216,10 +216,10 @@ We do not have a wallclock but we strongly suggest our users to keep their jobs 
 ## Creating, submitting and checking jobs
 
 We have pages that will explain you how to create, submit and check the results of your jobscripts.
-- To learn about the basic SGE commands to run, check, delete and manage your jobscript, please check our [running jobs ](../Running_jobs.md) page.
-- To create a jobscript, please check our [job examples](../Example_Jobscripts.md) page.
-- To run an interactive job, please cehck our [interactive jobs](../Interactive_Jobs.md) page
-- To learn about how to check the results after a job has finished, please check our [job results](../Job_Results.md) page.
+- To learn about the basic SGE commands to run, check, delete and manage your jobscript, please check our [running jobs ](Running_jobs.md) page.
+- To create a jobscript, please check our [job examples](Example_Jobscripts.md) page.
+- To run an interactive job, please cehck our [interactive jobs](Interactive_Jobs.md) page
+- To learn about how to check the results after a job has finished, please check our [job results](Job_Results.md) page.
 
 
 ## Software 
