@@ -39,7 +39,7 @@ The first time you log in to a new server, you'll get a popup telling you that t
 
 ### Login nodes
 
-DSH cluster has 2 login nodes, dsh-sge2log01 and  dsh-sge2log02 and you can connect to any. The login nodes allow you to manage your files, compile code and submit jobs. Very short (< 15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job.
+DSH cluster has 2 login nodes, dsh-sge2log01 and  dsh-sge2log02 and you can connect to any. The login nodes allow you to manage your files, compile code and submit jobs. Very short (< 15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job as login nodes are shared resources.  Running memory intensive jobs or jobs with long runtimes on them may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
 
 ### Logging in to a specific node
 
@@ -115,6 +115,9 @@ Press **accept**. You will see this window:
 
 The left panel usually shows your local computer directories and the right one, the ones in the server you are connected in. To transfer files, just drag the file or directory you want to copy from one panel to the other. It works in both senses, this means you can copy form your local directory in DSH Desktop to the DSH cluster and also from the DSH cluster to DSH Desktop.
 
+## Software stack
+
+DSH cluster use software stack based upon RHEL 8.x. 
 
 ## Data storage
 
