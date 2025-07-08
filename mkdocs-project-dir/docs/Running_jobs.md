@@ -12,6 +12,40 @@ qsub myjobscript
 
 It will be put in to the queue and will begin running on the compute nodes at some point later when it has been allocated resources.
 
+ You can also use options on the command-line to override options you have put in your job script.
+
+| Command | Action |
+|:--------|--------|
+| `qsub myscript.sh`                 | Submit the script as-is  |
+| `qsub -N NewName myscript.sh`      | Submit the script but change the job's name |
+| `qsub -l h_rt=24:0:0 myscript.sh`  | Submit the script but change the maximum run-time |
+| `qsub -hold_jid 12345 myscript.sh` | Submit the script but make it wait for job 12345 to finish |
+| `qsub -ac allow=XYZ myscript.sh`   | Submit the script but only let it run on node classes X, Y, and Z |
+
+## qsub emailing
+We also have a mailing system that can be implemented to send emails with reminders of the status of your job through `qsub`. In your jobscript, or when you use `qsub` to submit your job, you can use the option `-m`. You can specify when you want an email sent to you by using the below options after `qsub -m`:
+
+|   |   |
+|---|---|
+| `b` | Mail is sent at the beginning of the job. |
+| `e` | Mail is sent at the end of the job. |
+| `a` | Mail is sent when the job is aborted or rescheduled. |
+| `s` | Mail is sent when the job is suspended. |
+| `n` | No mail is sent. (The default.) |
+
+You specify where the email should be sent with `-M`.
+
+You can use more than one of these options by putting them together after the `-m` option; for example, adding the following to your job script would mean you get an email when the job begins and when it ends:
+
+```
+#$ -m be
+#$ -M me@example.com
+```
+
+Further resources can be found here:
+
+* [Scheduler fundamentals (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845666) (UCL users)
+* [Scheduler fundamentals (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98368) (non-UCL users)
 
 ### Job deletion
 
@@ -26,6 +60,8 @@ You can also delete all the jobs from a user with
 qdel -u <username>
 ```
 
+ To delete a batch of jobs, creating a file with the list of job IDs that you would like to delete and placing it in the following commands will delete the following jobs: `cat <filename> | xargs qdel`
+ 
 ### Asking for resources
 
 #### Number of cores
@@ -124,7 +160,7 @@ Note that for debugging purposes, it helps us if you have these options inside y
 
 ### qstat
 
-The `qstat` command shows the status of your jobs. By default, if you run it with no options, it shows only your jobs (and no-one else’s). This makes it easier to keep track of your jobs. 
+The `qstat` command shows the status of your jobs. By default, if you run it with no options, it shows only your jobs (and no-one else’s). This makes it easier to keep track of your jobs. By adding in the option `-f -j <job-ID>` you will get more detail on the specified job.
 
 The output will look something like this:
 ```
