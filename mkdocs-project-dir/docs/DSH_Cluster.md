@@ -250,11 +250,17 @@ The software already available in DSH cluster is summarized in the table below:
 
 ### Installing your own software
 
-You can install software available in Artifactory in your own space.  
+You can install software available in Artifactory in your own space. **You can only access Artifactory from inside the DSH.**
+
+
+
+You must log in using your UCL credentials first:
+
+![jFrog login](img/jFrog_login.png)
+
 
 How to install packages using Artifactory:
-Notes:
-You can only access Artifactory from inside the DSH.
+
 You can use the same token for all package types/configuration files, but this token will need to be regenerated anytime you change your password.
 Tokens should be treated similarly to passwords, in terms of keeping them secret
 You can use Shift-Insert to paste in Linux (Ctrl-V won't work!)
