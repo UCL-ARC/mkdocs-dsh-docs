@@ -4,11 +4,9 @@ After creating your script, submit it to the scheduler with:
 
 `qsub my_script.sh`
 
-## Working Directories and Output
+## tmpfs
 
-**The filesystems we use to provide the home perform best when reading or writing single large files, and worst when operating on many different small files. To avoid causing problems, many of the scripts below are written to create all their files in the temporary `$TMPDIR` storage, and compress and copy them to the scratch area at the end of the job.**
-
-**This can be a problem if your job is not finishing and you need to see the output, or if your job is crashing or failing to produce what you expected. Feel free to modify the scripts to read from or write to Scratch directly, however, your performance will generally not be as good as writing to `$TMPDIR`, and you may impact the general performance of the machine if you do this with many jobs simultaneously. This is particularly the case with single-core jobs, because that core is guaranteed to be writing out data.**
+Our system does not have tmpfs (local hard disk space on the node).
 
 ## Projects
 
@@ -16,9 +14,8 @@ Our users will not need to specify a project in their jobscripts
 
 ## Resources
 
-The lines starting with `#$ -l` are where you are requesting resources like wallclock time (how long your job is allowed to run), memory, and possibly tmpfs (local hard disk space on the node, if it is not diskless). In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue. More details on how to request resources can be found [here](https://www.rc.ucl.ac.uk/docs/Experienced_Users/#resources-you-can-request).
-
-If you have no notion of how much you should request for any of these, have a look at [How do I estimate what resources to request in my jobscript?](howto.md#how-do-i-estimate-what-resources-to-request-in-my-jobscript)
+The lines starting with `#$ -l` are where you are requesting resources like wallclock time (how long your job is allowed to run) and memory. In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue. 
+For more information related, please check our documentation: https://github.com/NicoleLabrAvila/mkdocs-dsh/blob/main/mkdocs-project-dir/docs/Running_jobs.md#asking-for-resources
 
 Useful resources:
 
@@ -44,25 +41,19 @@ Shown below is a simple job script that runs /bin/date (which prints the current
 # Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set the name of the job.
 #$ -N Serial_Job
 
 # Set the working directory to somewhere in your scratch space.  
 #  This is a necessary step as compute nodes cannot write to $HOME.
 # Replace "<your_UCL_id>" with your UCL user ID.
-#$ -wd /home/<your_UCL_id>/Scratch/workspace
-
-# Your work should be done in $TMPDIR 
-cd $TMPDIR
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/
 
 # Run the application and put the output into a file called date.txt
 /bin/date > date.txt
 
 # Preferably, tar-up (archive) all output files onto the shared scratch area
-tar -zcvf $HOME/Scratch/workspace/files_from_job_$JOB_ID.tar.gz $TMPDIR
+tar -zcvf $HOME/files_from_job_$JOB_ID.tar.gz .
 
 # Make sure you have given enough time for the copy to complete!
 ```
@@ -85,9 +76,6 @@ Note that this job script works directly in scratch instead of in the temporary 
 # (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set the name of the job.
 #$ -N Multi-threaded_Job
 
@@ -96,7 +84,7 @@ Note that this job script works directly in scratch instead of in the temporary 
 
 # Set the working directory to somewhere in your scratch space.
 # Replace "<your_UCL_id>" with your UCL user ID
-#$ -wd /home/<your_UCL_id>/Scratch/output
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
 # 8. Run the application.
 $HOME/my_program/example
@@ -105,12 +93,6 @@ $HOME/my_program/example
 ## MPI Job Script Example
 
 The default MPI implementation on our clusters is the Intel MPI stack. MPI programs don’t use a shared memory model so they can be run across multiple nodes.
-This script differs considerably from the serial and OpenMP jobs in that MPI programs need to be invoked by a program called gerun. This is our wrapper for mpirun and takes care of passing the number of processors and a file called a machine file.
-
-***Important***: If you wish to pass a file or stream of data to the standard input (stdin) of an MPI program, there are specific command-line options you need to use to control which MPI tasks are able to receive it. (`-s` for Intel MPI, `--stdin` for OpenMPI.) Please consult the help output of the `mpirun` command for further information. The `gerun` launcher does not automatically handle this.
-
-If you use OpenMPI, you need to make sure the Intel MPI modules are removed and the OpenMPI 
-modules are loaded, either in your jobscript or in your shell start-up files (e.g. `~/.bashrc`).
 
 ```bash
 #!/bin/bash -l
@@ -123,10 +105,6 @@ modules are loaded, either in your jobscript or in your shell start-up files (e.
 # Request 1 gigabyte of RAM per process (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space per node 
-# (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set the name of the job.
 #$ -N MadScience_1_16
 
@@ -135,7 +113,7 @@ modules are loaded, either in your jobscript or in your shell start-up files (e.
 
 # Set the working directory to somewhere in your scratch space.
 # Replace "<your_UCL_id>" with your UCL user ID :
-#$ -wd /home/<your_UCL_id>/Scratch/output
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
 # Run our MPI job.  GERun is a wrapper that launches MPI jobs on our clusters.
 gerun $HOME/src/science/simulate
@@ -164,9 +142,6 @@ arrays.
 # Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set up the job array.  In this instance we have requested 10000 tasks
 # numbered 1 to 10000.
 #$ -t 1-10000
@@ -176,7 +151,7 @@ arrays.
 
 # Set the working directory to somewhere in your scratch space. 
 # Replace "<your_UCL_id>" with your UCL user ID :)
-#$ -wd /home/<your_UCL_id>/Scratch/output
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
 # Run the application.
 
@@ -218,9 +193,6 @@ thousands or tens of thousands of tasks.
 # Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set up the job array.  In this instance we have requested 1000 tasks
 # numbered 1 to 1000.
 #$ -t 1-1000
@@ -230,11 +202,11 @@ thousands or tens of thousands of tasks.
 
 # Set the working directory to somewhere in your scratch space.
 # Replace "<your_UCL_id>" with your UCL user ID :)
-#$ -wd /home/<your_UCL_id>/Scratch/output
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
 # Parse parameter file to get variables.
 number=$SGE_TASK_ID
-paramfile=/home/<your_UCL_id>/Scratch/input/params.txt
+paramfile=/hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/input/params.txt
 
 index="`sed -n ${number}p $paramfile | awk '{print $1}'`"
 variable1="`sed -n ${number}p $paramfile | awk '{print $2}'`"
@@ -268,9 +240,6 @@ The example below does this for a job array, but this works for any job type.
 # Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set up the job array.  In this instance we have requested 10000 tasks
 # numbered 1 to 10000.
 #$ -t 1-10000
@@ -280,13 +249,12 @@ The example below does this for a job array, but this works for any job type.
 
 # Set the working directory to somewhere in your scratch space.
 # Replace "<your_UCL_id>" with your UCL user ID :)
-#$ -wd /home/<your_UCL_id>/Scratch/output
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
 # Automate transfer of output to Scratch from $TMPDIR.
 #Local2Scratch
 
-# Run the application in TMPDIR.
-cd $TMPDIR
+# Run the application 
 hostname > hostname.txt
 ```
 
@@ -311,9 +279,6 @@ Your script can then have a loop that runs task IDs from `$SGE_TASK_ID` to `$SGE
 # Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set up the job array.  In this instance we have requested task IDs
 # numbered 1 to 10000 with a stride of 10.
 #$ -t 1-10000:10
@@ -323,13 +288,10 @@ Your script can then have a loop that runs task IDs from `$SGE_TASK_ID` to `$SGE
 
 # Set the working directory to somewhere in your scratch space.
 # Replace "<your_UCL_id>" with your UCL user ID :)
-#$ -wd /home/<your_UCL_id>/Scratch/output
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
 # Automate transfer of output to Scratch from $TMPDIR.
 #Local2Scratch
-
-# Do your work in $TMPDIR 
-cd $TMPDIR
 
 # 10. Loop through the IDs covered by this stride and run the application if 
 # the input file exists. (This is because the last stride may not have that
@@ -377,9 +339,6 @@ supported by the MPI).
 # Request 1 gigabyte of RAM per core (must be an integer)
 #$ -l mem=1G
 
-# Request 15 gigabytes of TMPDIR space per node (default is 10 GB - remove if cluster is diskless)
-#$ -l tmpfs=15G
-
 # Set the name of the job.
 #$ -N MadIntelHybrid
 
@@ -388,7 +347,7 @@ supported by the MPI).
 
 # Set the working directory to somewhere in your scratch space. 
 # This directory must exist.
-#$ -wd /home/<your_UCL_id/scratch/output/
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output/
 
 # Automatically set threads using ppn. On a cluster with 40 cores
 # per node this will be 80/2 = 40 threads.
@@ -428,29 +387,15 @@ You also need to use the `-l gpu=<number>` option to request the GPUs from the s
 # Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
 #$ -l mem=1G
 
-# Request 15 gigabyte of TMPDIR space (default is 10 GB)
-#$ -l tmpfs=15G
-
 # Set the name of the job.
 #$ -N GPUJob
 
 # Set the working directory to somewhere in your scratch space.
 # Replace "<your_UCL_id>" with your UCL user ID :)
-#$ -wd /home/<your_UCL_id>/Scratch/output
-
-# Change into temporary directory to run work
-cd $TMPDIR
-
-# load the cuda module (in case you are running a CUDA program)
-module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load cuda/7.5.18/gnu-4.9.2
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
 # Run the application - the line below is just a random example.
 mygpucode
-
-# 10. Preferably, tar-up (archive) all output files onto the shared scratch area
-tar zcvf $HOME/Scratch/files_from_job_$JOB_ID.tar.gz $TMPDIR
 
 # Make sure you have given enough time for the copy to complete!
 ```
@@ -469,19 +414,14 @@ It is possible to run MPI programs that use GPUs but our clusters currently only
 #$ -l mem=1G
 #$ -l gpu=2
 #$ -pe mpi 12
-#$ -l tmpfs=15G
 
 # Set the name of the job.
 #$ -N GPUMPIrun
 
 # Set the working directory to somewhere in your scratch space.
-#$ -wd /home/<your user id>/Scratch/output/
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output/
 
 # Run our MPI job. You can choose OpenMPI or IntelMPI for GCC.
-module unload compilers mpi
-module load compilers/gnu/4.9.2
-module load mpi/openmpi/1.10.1/gnu-4.9.2
-module load cuda/7.5.18/gnu-4.9.2
 
 gerun myGPUapp
 ```
