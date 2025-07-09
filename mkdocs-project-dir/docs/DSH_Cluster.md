@@ -261,6 +261,19 @@ To request software installs, email us at rc-support@ucl.ac.uk with the software
 
 As DSH is a secure environment, all software that is not already available in **Artifactory** must be evaluated for vulnerabilities with a*risk assesment* before being installed. This might take some days and in some complex cases, it can extend to weeks. If dangeours vulnerabilities are found, DSH reserves the right to do not install the software requested for security reasons.  
 
+## JupyterHub and RStudio
+
+DSH cluster provides an interactive way with a graphical interface to use **Jupyter Hub** and **RStudio** softwares. To access the service go to the following URL from inside DSH:
+
+<https://cluster.idhs.ucl.ac.uk/>
+
+There, a menu will be displayed with both options. 
+
+![Menu_JupyterHub_R](img/Menu_JupyterHub_R.png)
+
+For more information related to these services, visit our pages [Jupyter Hub](JupyterHub.md) and [RStudio](Rstudio.md)
+
+
 ## Support
 
 Please visit our [contact](Contact_Us.md) page.
