@@ -1,16 +1,10 @@
-On this page we describe some basic example scripts to submit jobs to DSH cluster.
+# Example jobscripts
+
+On this page we describe some basic example scripts to submit jobs to DSH cluster. Our system does not have tmpfs (local hard disk space on the node) and our users will not need to specify a project in their jobscripts.
 
 After creating your script, submit it to the scheduler with:
 
 `qsub my_script.sh`
-
-## tmpfs
-
-Our system does not have tmpfs (local hard disk space on the node).
-
-## Projects
-
-Our users will not need to specify a project in their jobscripts 
 
 ## Resources
 
@@ -51,11 +45,6 @@ Shown below is a simple job script that runs /bin/date (which prints the current
 
 # Run the application and put the output into a file called date.txt
 /bin/date > date.txt
-
-# Preferably, tar-up (archive) all output files onto the shared scratch area
-tar -zcvf $HOME/files_from_job_$JOB_ID.tar.gz .
-
-# Make sure you have given enough time for the copy to complete!
 ```
 
 ## Multi-threaded Job Example
@@ -90,46 +79,9 @@ Note that this job script works directly in scratch instead of in the temporary 
 $HOME/my_program/example
 ```
 
-## MPI Job Script Example
-
-The default MPI implementation on our clusters is the Intel MPI stack. MPI programs don’t use a shared memory model so they can be run across multiple nodes.
-
-```bash
-#!/bin/bash -l
-
-# Batch script to run an MPI parallel job under SGE with Intel MPI.
-
-# Request ten minutes of wallclock time (format hours:minutes:seconds).
-#$ -l h_rt=0:10:0
-
-# Request 1 gigabyte of RAM per process (must be an integer followed by M, G, or T)
-#$ -l mem=1G
-
-# Set the name of the job.
-#$ -N MadScience_1_16
-
-# Select the MPI parallel environment and 16 processes.
-#$ -pe mpi 16
-
-# Set the working directory to somewhere in your scratch space.
-# Replace "<your_UCL_id>" with your UCL user ID :
-#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
-
-# Run our MPI job.  GERun is a wrapper that launches MPI jobs on our clusters.
-gerun $HOME/src/science/simulate
-```
-
-
 ## Array Job Script Example
 
-If you want to submit a large number of similar serial jobs then it may be
-easier to submit them as an array job. Array jobs are similar to serial jobs
-except we use the `-t` option to get Sun Grid Engine to run 10,000 copies of
-this job numbered 1 to 10,000. Each job in this array will have the same job ID
-but a different task ID. The task ID is stored in the `$SGE_TASK_ID` environment
-variable in each task. All the usual SGE output files have the task ID
-appended. MPI jobs and parallel shared memory jobs can also be submitted as
-arrays.
+If you want to submit a large number of similar serial jobs then it may be easier to submit them as an array job. Array jobs are similar to serial jobs except we use the `-t` option to get Sun Grid Engine to run 10,000 copies of this job numbered 1 to 10,000. Each job in this array will have the same job ID but a different task ID. The task ID is stored in the `$SGE_TASK_ID` environment variable in each task. All the usual SGE output files have the task ID appended.
 
 ```bash
 #!/bin/bash -l
@@ -172,15 +124,9 @@ For example:
 0005 ...
 ```
 
-Assuming that this file is stored in `~/Scratch/input/params.txt` (you can call
-this file anything you want) then the user can use awk/sed to get the
-appropriate variables out of the file. The script below does this and stores
-them in `$index`, `$variable1`, `$variable2` and `$variable3`.  So for example in task
-4, `$index = 0004`, `$variable1 = 1.112`, `$variable2 = 23` and `$variable3 = panda`.
+Assuming that this file is stored in `~/Scratch/input/params.txt` (you can call this file anything you want) then the user can use awk/sed to get the appropriate variables out of the file. The script below does this and stores them in `$index`, `$variable1`, `$variable2` and `$variable3`.  So for example in task 4, `$index = 0004`, `$variable1 = 1.112`, `$variable2 = 23` and `$variable3 = panda`.
 
-Since the parameter file can be generated automatically from a user's datasets,
-this approach allows the simple automation, submission and management of
-thousands or tens of thousands of tasks.
+Since the parameter file can be generated automatically from a user's datasets, this approach allows the simple automation, submission and management of thousands or tens of thousands of tasks.
 
 ```bash
 #!/bin/bash -l
@@ -218,46 +164,6 @@ variable3="`sed -n ${number}p $paramfile | awk '{print $4}'`"
 echo "$index" "$variable1" "$variable2" "$variable3"
 ```
 
-## Example Array Job Using Local2Scratch
-
-Users can automate the transfer of data from `$TMPDIR` to their scratch space by
-adding the text `#Local2Scratch` to their script on a line alone as a special comment.
-During the clean-up phase of the job, a tool checks whether the script contains that
-text, and if so, files are transferred from `$TMPDIR` to a directory in scratch
-with the structure `<job id>/<job id>.<task id>.<queue>/`.
-
-The example below does this for a job array, but this works for any job type.
-
-```bash
-#!/bin/bash -l
-
-# Batch script to run an array job under SGE and 
-#  transfer the output to Scratch from local.
-
-# Request ten minutes of wallclock time (format hours:minutes:seconds).
-#$ -l h_rt=0:10:0
-
-# Request 1 gigabyte of RAM (must be an integer followed by M, G, or T)
-#$ -l mem=1G
-
-# Set up the job array.  In this instance we have requested 10000 tasks
-# numbered 1 to 10000.
-#$ -t 1-10000
-
-# Set the name of the job.
-#$ -N local2scratcharray
-
-# Set the working directory to somewhere in your scratch space.
-# Replace "<your_UCL_id>" with your UCL user ID :)
-#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
-
-# Automate transfer of output to Scratch from $TMPDIR.
-#Local2Scratch
-
-# Run the application 
-hostname > hostname.txt
-```
-
 ## Array Job Script with a Stride
 
 If each task for your array job is very small, you will get better use of the cluster if you can combine a number of these so each has a couple of hours' worth of work to do. There is a startup cost associated with the amount of time it takes to set up a new job. If your job's runtime is very small, this cost is proportionately high, and you incur it with every array task.
@@ -290,10 +196,7 @@ Your script can then have a loop that runs task IDs from `$SGE_TASK_ID` to `$SGE
 # Replace "<your_UCL_id>" with your UCL user ID :)
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
-# Automate transfer of output to Scratch from $TMPDIR.
-#Local2Scratch
-
-# 10. Loop through the IDs covered by this stride and run the application if 
+# Loop through the IDs covered by this stride and run the application if 
 # the input file exists. (This is because the last stride may not have that
 # many inputs available). Or you can leave out the check and get an error.
 for (( i=$SGE_TASK_ID; i<$SGE_TASK_ID+10; i++ ))
@@ -303,68 +206,6 @@ do
     echo "$JOB_NAME" "$SGE_TASK_ID" "input.$i"
   fi
 done
-```
-
-## Hybrid MPI plus OpenMP jobscript example
-
-This is a type of job where you have a small number of MPI processes, and each
-one of those launches a number of threads. One common form of this is to have
-only one MPI process per node which handles communication between nodes, and 
-the work on each node is done in a shared memory style by threads.
-
-When requesting resources for this type of job, what you are asking the scheduler
-for is the physical number of cores and amount of memory per core that you need.
-Whether you end up running MPI processes or threads on that core is up to your code.
-(The `-pe mpi xx` request is telling it you want an MPI parallel environment and 
-xx number of cores, not that you want xx MPI processes - this can be confusing).
-
-### Setting number of threads
-
-You can either set `$OMP_NUM_THREADS` for the number of OpenMP threads yourself, 
-or allow it to be worked out automatically by setting it to `OMP_NUM_THREADS=$(ppn)`. 
-That is a helper script on our clusters which will set `$OMP_NUM_THREADS` to 
-`$NSLOTS/$NHOSTS`, so you will use threads within a node and MPI between nodes 
-and don't need to know in advance what size of node you are running on. Gerun 
-will then run `$NSLOTS/$OMP_NUM_THREADS` processes, round-robin allocated (if 
-supported by the MPI).
-
-```bash
-#!/bin/bash -l
-
-# Batch script to run a hybrid parallel job under SGE.
-
-# Request ten minutes of wallclock time (format hours:minutes:seconds).
-#$ -l h_rt=0:10:0
-
-# Request 1 gigabyte of RAM per core (must be an integer)
-#$ -l mem=1G
-
-# Set the name of the job.
-#$ -N MadIntelHybrid
-
-# Select the MPI parallel environment and 80 cores.
-#$ -pe mpi 80
-
-# Set the working directory to somewhere in your scratch space. 
-# This directory must exist.
-#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output/
-
-# Automatically set threads using ppn. On a cluster with 40 cores
-# per node this will be 80/2 = 40 threads.
-export OMP_NUM_THREADS=$(ppn)
-
-# Run our MPI job with the default modules. Gerun is a wrapper script for mpirun. 
-gerun $HOME/src/madscience/madhybrid
-```
-
-If you want to specify a specific number of OMP threads yourself, you would alter 
-the relevant lines above to this:
-
-```
-# Request 80 cores and run 4 MPI processes per 40-core node, each spawning 10 threads
-#$ -pe mpi 80
-export OMP_NUM_THREADS=10
-gerun your_binary
 ```
 
 ## GPU Job Script Example
@@ -396,33 +237,89 @@ You also need to use the `-l gpu=<number>` option to request the GPUs from the s
 
 # Run the application - the line below is just a random example.
 mygpucode
-
-# Make sure you have given enough time for the copy to complete!
 ```
 
-## Job using MPI and GPUs
+## Example with R
 
-It is possible to run MPI programs that use GPUs but our clusters currently only support this within a single node. The script below shows how to run a program using 2 gpus and 12 cpus.
+Current R version available is 4.4.0. R can be run on a single core or multithreaded using many cores.
+This script runs R using only one core.
 
-```bash
+```
 #!/bin/bash -l
 
+# Example jobscript to run a single core R job
+
 # Request ten minutes of wallclock time (format hours:minutes:seconds).
+# Change this to suit your requirements.
 #$ -l h_rt=0:10:0
 
-# Request 12 cores, 2 GPUs, 1 gigabyte of RAM per CPU, 15 gigabyte of TMPDIR space
+# Request 1 gigabyte of RAM. Change this to suit your requirements.
 #$ -l mem=1G
-#$ -l gpu=2
-#$ -pe mpi 12
 
-# Set the name of the job.
-#$ -N GPUMPIrun
+# Set the name of the job. You can change this if you wish.
+#$ -N R_job_1
 
-# Set the working directory to somewhere in your scratch space.
-#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output/
+# Set the working directory to somewhere in your scratch space.  This is
+# necessary because the compute nodes cannot write to your $HOME
+# NOTE: this directory must exist.
+# Replace "<your_UCL_id>" with your UCL user ID
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/R_output
 
-# Run our MPI job. You can choose OpenMPI or IntelMPI for GCC.
-
-gerun myGPUapp
+# Run your R program
+R --no-save < /home/username/Scratch/myR_job.R > myR_job.out
 ```
+
+You will need to change the `-wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/R_output` location and the location of your R input file, called `myR_job.R` here.  `myR_job.out` is the file we are redirecting the output into.
+
+If your jobscript is called `run-R.sh` then your job submission command would be:
+```
+qsub run-R.sh
+``` 
+
+## Example shared memory threaded parallel job
+
+This script uses multiple cores on the same node. It cannot run across multiple nodes.
+
+```
+#!/bin/bash -l
+
+# Example jobscript to run an OpenMP threaded R job across multiple cores on one node.
+# This may be using the foreach packages foreach(...) %dopar% for example.
+
+# Request ten minutes of wallclock time (format hours:minutes:seconds).
+# Change this to suit your requirements.
+#$ -l h_rt=0:10:0
+
+# Request 1 gigabyte of RAM per core. Change this to suit your requirements.
+#$ -l mem=1G
+
+# Set the name of the job. You can change this if you wish.
+#$ -N R_jobMC_2
+
+# Select 12 threads. The number of threads here must equal the number of worker 
+# processes in the registerDoMC call in your R program.
+#$ -pe smp 12
+
+# Set the working directory to somewhere in your scratch space.  This is
+# necessary because the compute nodes cannot write to your $HOME
+# NOTE: this directory must exist.
+# Replace "<your_UCL_id>" with your UCL user ID
+#$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/R_output
+
+# Run your R program
+R --no-save < /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/myR_job.R > myR_job.out
+```
+
+You will need to change the `-wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/R_output` location and the location of your R input file, called `myR_job.R` here.  `myR_job.out` is the file we are redirecting the output into.
+
+If your jobscript is called `run-R.sh` then your job submission command would be:
+```
+qsub run-R.sh
+``` 
+
+
+
+
+
+
 
