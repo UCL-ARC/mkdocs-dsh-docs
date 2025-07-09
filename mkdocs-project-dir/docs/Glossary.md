@@ -1,8 +1,4 @@
----
-title: Research Computing Glossary
-layout: definitions
----
-
+# Glossary
 
 Bash { #bash }
 : A [shell](#shell) and [scripting](#script) language, which is the default
