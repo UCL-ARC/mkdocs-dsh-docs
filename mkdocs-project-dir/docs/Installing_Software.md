@@ -63,6 +63,45 @@ You also can create relevant configuration files inside your cluster home direct
        ```
        These will install into `.python2local ` or `.python3local` in your home directory. 
 
+### Installing your own R packages
+
+If we do not have R packages installed centrally that you wish to use, you can install them in your space on the cluster and tell R where to find them. First you need to tell R where to install your package to and where to look for user-installed packages, using the R library path.
+
+#### Set your R library path
+
+There are several ways to modify your R library path so you can pick up packages that you have installed in your own space.
+
+The easiest way is to add them to the `R_LIBS` environment variable (insert the correct path):
+```
+export R_LIBS=/your/local/R/library/path:$R_LIBS
+```
+
+This is a colon-separated list of directories that R will search through. 
+
+Setting that in your terminal will let you install to that path from inside R and should also be put in your jobscript (or your `.bashrc`) when you submit a job 
+using those libraries. This appends your directory to the existing value of `$R_LIBS` rather than overwriting it so the centrally-installed libraries can still be found.
+You can also change the library path for a session from within R:
+
+```
+.libPaths(c('~/MyRlibs',.libPaths()))
+```
+
+This puts your directory at the beginning of R's search path, and means that `install.packages()` will automatically put packages there and the `library()` function will find libraries in your local directory.
+
+#### Install an R package
+
+To install, after setting your library path:
+
+From inside R, you can do
+```
+install.packages('package_name', repos="http://cran.r-project.org")
+```
+
+Or if you have downloaded the tar file, you can do
+```
+R CMD INSTALL -l /hpchome/username/your_R_libs_directory package.tar.gz
+```
+If you want to keep some libraries separate, you can have multiple colon-separated paths in your `$R_LIBS` and specify which one you want to install into with `R CMD INSTALL`.
 
 ## Generating an Aryifactory token.
 
