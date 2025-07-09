@@ -61,6 +61,17 @@ qdel -u <username>
 ```
 
  To delete a batch of jobs, creating a file with the list of job IDs that you would like to delete and placing it in the following commands will delete the following jobs: `cat <filename> | xargs qdel`
+
+ ### Why is my job in Eqw status?
+
+If your job goes straight into Eqw state, there was an error in your jobscript that meant your job couldn't be started. The standard `qstat` job information command will give you a truncated version of the error:
+
+```
+qstat -j <job_ID>
+```
+
+The most common reason jobs go into this error state is that a file or directory your job is trying to use doesn't exist. Creating it after the job is in the `Eqw` state won't make the job run: it'll still have to be deleted and re-submitted.
+
  
 ### Asking for resources
 
