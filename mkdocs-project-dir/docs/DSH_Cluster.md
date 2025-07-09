@@ -105,7 +105,7 @@ WinSCP is already installed in DSH Desktop. Once you click on the icon, a Window
 
 ![WinSCP](img/WinSCP1.png)
 
-THe file Protocol *must* be **SCP**, as the other options are not available for the moment. Then press **Login** to connect. The first time you connect to a server you will see a message like this:  
+The file Protocol *must* be **SCP**, as the other options are not available for the moment. Then press **Login** to connect. The first time you connect to a server you will see a message like this:  
 
 ![WinSCP](img/WinSCP2.png)
 
