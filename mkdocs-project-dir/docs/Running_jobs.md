@@ -47,7 +47,7 @@ Further resources can be found here:
 * [Scheduler fundamentals (moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4845666) (UCL users)
 * [Scheduler fundamentals (mediacentral)](https://mediacentral.ucl.ac.uk/Play/98368) (non-UCL users)
 
-### Job deletion
+## Job deletion
 
 Use  `qdel` to delete a submitted job. You must give the job ID.
 
@@ -62,7 +62,7 @@ qdel -u <username>
 
  To delete a batch of jobs, creating a file with the list of job IDs that you would like to delete and placing it in the following commands will delete the following jobs: `cat <filename> | xargs qdel`
 
- ### Why is my job in Eqw status?
+ ## Why is my job in Eqw status?
 
 If your job goes straight into Eqw state, there was an error in your jobscript that meant your job couldn't be started. The standard `qstat` job information command will give you a truncated version of the error:
 
@@ -73,9 +73,9 @@ qstat -j <job_ID>
 The most common reason jobs go into this error state is that a file or directory your job is trying to use doesn't exist. Creating it after the job is in the `Eqw` state won't make the job run: it'll still have to be deleted and re-submitted.
 
  
-### Asking for resources
+## Asking for resources
 
-#### Number of cores
+### Number of cores
 
 For MPI:
 ```bash
@@ -89,7 +89,7 @@ For threads:
 
 For single core jobs you don't need to request a number of cores.
 
-#### Memory requests (Amount of RAM per core)
+### Memory requests (Amount of RAM per core)
 
 Note: the memory you request is always per core, not the total amount. If you ask for 128GB RAM and 4 cores, that may run on 4 nodes using only one core per node. This allows you to have sparse process placement when you do actually need that much RAM per process.
 
@@ -101,14 +101,14 @@ If you want to avoid sparse process placement and your job taking up more nodes 
 
 e.g. `#$ -l mem=4G` requests 4 gigabytes of RAM per core.
 
-#### Run time
+### Run time
 ```bash
 #$ -l h_rt=<hours:minutes:seconds>
 ```
 
 e.g. `#$ -l h_rt=48:00:00` requests 48 hours.
 
-#### Working directory
+### Working directory
 
 Either a specific working directory:
 
@@ -122,7 +122,7 @@ or the directory the script was submitted from:
 #$ -cwd
 ```
 
-#### GPUs 
+### GPUs 
 
 ```bash 
 #$ -l gpu=<number of GPUs>
@@ -235,4 +235,11 @@ Remember that memory requests in your jobscript are always per core, so check th
 
 Unfortunately, at the moment it is not possible to run a graphical program in DSH cluster
 
+## What can I do to minimise the time I need to wait for my job(s) to run?
+
+1.  Minimise the amount of wall clock time you request.
+2.  Use job arrays instead of submitting large numbers of jobs (see our
+    [job script examples](../Example_Jobscripts.md)).
+3.  Plan your work so that you can do other things while your jobs are
+    being scheduled.
 
