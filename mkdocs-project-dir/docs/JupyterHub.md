@@ -1,4 +1,4 @@
-# JupyterHub
+# Jupyter Hub
 
 ## Overview
 
