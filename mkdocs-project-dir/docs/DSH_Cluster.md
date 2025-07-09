@@ -214,7 +214,7 @@ You can include `nvidia-smi` in your jobscript to get information about the GPU 
 
 We do not have a wallclock but we strongly suggest our users to keep their jobs within the 48hrs time limit out of consideration for the other users. If you need more time to run your jobscript for particular circumstances, please contact us at rc-support@ucl.ac.uk.
 
-[Interactive jobs](../Interactive_Jobs.md) run with `qrsh` and have the same maximum wallclock time suggested as other jobs.
+[Interactive jobs](Interactive_Jobs.md) run with `qrsh` and have the same maximum wallclock time suggested as other jobs.
 
 ## Creating, submitting and checking jobs
 
@@ -253,51 +253,7 @@ The software already available in DSH cluster is summarized in the table below:
 
 ### Installing your own software
 
-You can install software available in Artifactory in your own space. **You can only access Artifactory from inside the DSH.**
-
-To download and install software available in Artifactory, you must log in using your UCL credentials first, in the Artifactory website using DSH Desktop web browser (https://artifactory.idhs.ucl.ac.uk/):
-![jFrog login](img/jFrog_login.png)
-
-The main page will show the existent packages. Some of them have been scanned and other do not. For security purposes, only already scanned packages, without vulnerabilities can be installed. 
-![jFrog download](img/jFrog_download.png)
-
-If the package you want to install is one of them, then you can proceed to download it by pressing the download icon.
-![jFrog packages](img/jFrog_packages.png)
-
-You can also download/install packages using R, Conda and Pip:
-
-    - For R: use the command install.packages("MYPACKAGE") in an R console to install MYPACKAGE to your cluster R library
-    - For Conda: use the command conda install MYPACKAGE in a terminal to install MYPACKAGE to your current conda environment
-    - For Pip: use the command pip install MYPACKAGE in a terminal to install MYPACKAGE to your current python environment
-
-The installation will require the use of a **token** that must be generated using Artifactory. You can use the same token for all package types/configuration files, but this token will **need to be regenerated anytime you change your password**. Tokens should be treated similarly to passwords, in terms of keeping them secret. In DSH cluster you can use <Shift-Insert> to paste in Linux (Ctrl-V won't work!).
-
-You also can create relevant configuration files inside your cluster home directory. In this config files you must copy your token, and paste it into the appropriate place. You must update this token **everytime you change your password**. Here you have some templates for the most common software: 
-
-    - ~/.condarc (for Miniconda)
-
-    
-    - ~/.Rprofile (for R and Rstudio)
-
-
-    - ~/.pip/pip.conf (for Pip)
-
-
-To generate an Artifactory token, visit the Artifactory website using DSH Desktop web browser (https://artifactory.idhs.ucl.ac.uk/), click "Artifacts" in the left panel, and then click "Set Me Up" in the top right.
-
-![jFrog artifacts](img/jFrog_artifacts.png)
-
-![jFrog setmeup](img/jFrog_setmeup.png)
-
-Inside the "Set Me Up" interface, select a package type (doesn't matter which) and generate a personal Artifactory token by typing your password in the text box and clicking "Generate Token & Create Instructions".
-
-![jFrog token](img/jFrog_token.png)
-
-![jFrog token](img/jFrog_token2.png)
-
-
-Now you can use your token!
-
+You can install in your home directory software available in **Artifactory** or packages available in Python, R and Jupyter. Check our documentation related [Installing your own software](Installing_Software.md).
 
 ### Requesting software installs
 
