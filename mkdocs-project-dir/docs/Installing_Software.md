@@ -1,30 +1,91 @@
-## Installing software
+# Installing your own software
 
-If you want to request that software be installed centrally, you can email us at 
-rc-support@ucl.ac.uk. When you send in a request please address the following questions so 
-that the install can be properly prioitised and planned,
+## Downloading software from Artifactory
+You can install software available in Artifactory in your own space. **You can only access Artifactory from inside the DSH.**
 
-* Can you provide some details as to why and give an idea of the timeline you would like us 
-to build it in?
-* Do you have an idea of the user base for this software within your community?
-* If the software is only required by you would you be open to trying to install the software in 
-your home space? We can provide some assistance here if you tell us what problems you are
-encountering.
+To download and install software available in Artifactory, you must log in using your UCL credentials first, in the Artifactory website using DSH Desktop web browser (https://artifactory.idhs.ucl.ac.uk/):
+![jFrog login](img/jFrog_login.png)
 
-You can install software yourself in your space on the cluster. Below are some tips for 
-installing packages for languages such as Python or R as well as compiling software.
+The main page will show the existent packages. Some of them have been scanned and other do not. For security purposes, only already scanned packages, without vulnerabilities can be installed. 
+![jFrog download](img/jFrog_download.png)
 
-### No sudo!
+If the package you want to install is one of them, then you can proceed to download it by pressing the download icon.
+![jFrog packages](img/jFrog_packages.png)
 
-You cannot install anything using `sudo` (and neither can we!). If the instructions tell you to do that, read further to see if they also have instructions for installing in user space, or for doing an install from source if they are RPMs.
+## Downloading and installing packages with R, Conda and Pip.
+
+You can download/install packages using R, Conda and Pip. We encourage our users to create a new virtualenvs for this purpose, where only packages you are installing yourself will be in it.
+
+### Create a virtualenv using Conda.
+```
+# create the new virtualenv, with any name you want
+conda create --name <my-env>
+# activate it
+conda activate ./<my-env>
+```
+
+Your bash prompt will change to show you that a different virtualenv is active.
+(This one is called `venv`).
+
+```
+(venv) [uccacxx@login03 ~]$ 
+```
+
+`deactivate` will deactivate your virtualenv and your prompt will return to normal.
+
+You only need to create the virtualenv the first time. 
+
+
+## Installing packages.
+
+Then, you can install the packages with:
+
+    - For R: use the command install.packages("MYPACKAGE") in an R console to install MYPACKAGE to your cluster R library
+    - For Conda: use the command conda install MYPACKAGE in a terminal to install MYPACKAGE to your current conda environment
+    - For Pip: use the command pip install MYPACKAGE in a terminal to install MYPACKAGE to your current python environment
+
+The installation will require the use of a **token** that must be generated using Artifactory. You can use the same token for all package types/configuration files, but this token will **need to be regenerated anytime you change your password**. Tokens should be treated similarly to passwords, in terms of keeping them secret. In DSH cluster you can use <Shift-Insert> to paste in Linux (Ctrl-V won't work!).
+
+You also can create relevant configuration files inside your cluster home directory. In this config files you must copy your token, and paste it into the appropriate place. You must update this token **everytime you change your password**. Here you have some templates for the most common software: 
+
+    - ~/.condarc (for Miniconda)
+
+    
+    - ~/.Rprofile (for R and Rstudio)
+
+
+    - ~/.pip/pip.conf (for Pip)
+       ```
+       # for Python 2
+       pip install --user <python2pkg>
+       # for Python 3
+       pip3 install --user <python3pkg>
+       ```
+       These will install into `.python2local ` or `.python3local` in your home directory. 
+
+
+## Generating an Aryifactory token.
+
+To generate an Artifactory token, visit the Artifactory website using DSH Desktop web browser (https://artifactory.idhs.ucl.ac.uk/), click "Artifacts" in the left panel, and then click "Set Me Up" in the top right.
+
+![jFrog artifacts](img/jFrog_artifacts.png)
+
+![jFrog setmeup](img/jFrog_setmeup.png)
+
+Inside the "Set Me Up" interface, select a package type (doesn't matter which) and generate a personal Artifactory token by typing your password in the text box and clicking "Generate Token & Create Instructions".
+
+![jFrog token](img/jFrog_token.png)
+
+![jFrog token](img/jFrog_token2.png)
+
+
+Now you can use your token!
+
+## Installing software with no sudo.
+
+You cannot install anything using `sudo`. If the instructions tell you to do that, read further to see if they also have instructions for installing in user space, or for doing an install from source if they are RPMs.
 
 Alternatively, just leave off the `sudo` from the command they tell you to run and look for an alternative way to give it an install location if it tries to install somewhere that isn't in your space (examples for some common build systems are below).
-
-### Download source code
-
-
-
-
 
 ### Automake configure
 
@@ -35,7 +96,7 @@ it where to install (or you can build it in place and not use make
 install at all).
 
 ```
-./configure --prefix=/home/username/place/you/want/to/install
+./configure --prefix=/hpchome/username/place/you/want/to/install
 make
 # if it has a test suite, good idea to use it
 make test 
@@ -79,7 +140,7 @@ cmake with `-D`. This allows you to script an install and run it again later.
 # making a build directory allows you to clean it up more easily
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=/home/username/place/you/want/to/install
+cmake .. -DCMAKE_INSTALL_PREFIX=/hpchome/username/place/you/want/to/install
 ```
 
 If you need to rerun cmake/ccmake and reconfigure, remember to delete the
@@ -133,60 +194,6 @@ LDLIBS="-lfoo -lbar"
 Remember to `make clean` first if you are recompiling with new options. This will delete
 object files from previous attempts. 
 
-## Installing additional packages for an existing scripting language
-
-### Python
-
- These use a virtualenv, have a lot of Python packages installed already, 
-like numpy and scipy (see [the Python package list](../Installed_Software_Lists/python-packages.md)) 
-and have `pip` set up for you.
-
-#### Install your own packages in the same virtualenv
-
-This will use our central virtualenv and the packages we have already installed.
-
-```
-# for Python 2
-pip install --user <python2pkg>
-# for Python 3
-pip3 install --user <python3pkg>
-```
-These will install into `.python2local` or `.python3local` in your home directory. 
-
-If your own installed Python packages get into a mess, you can delete (or rename) the whole 
-`.python3local` and start again.
-
-#### Using your own virtualenv
-
-If you need different packages that are not compatible with the centrally installed versions (eg. 
-what you are trying to install depends on a different version of something we have already installed)
-then you can create a new virtualenv and only packages you are installing yourself will be in it.
-
-In this case, you do not want our virtualenv with our packages to also be active.
-We have two types of Python modules. If you type `module avail python` there are 
-"bundles" which are named like `python3/3.7` - these include our virtualenv and
-packages. Then there are the base modules for just python itself, like `python/3.7.4`. 
-
-When using your own virtualenv, you want to load one of the base python modules.
-
-```
-# load a base python module (you will always need to do this)
-module load python/3.7.4
-# create the new virtualenv, with any name you want
-virtualenv <DIR>
-# activate it
-source <DIR>/bin/activate
-```
-Your bash prompt will change to show you that a different virtualenv is active.
-(This one is called `venv`).
-```
-(venv) [uccacxx@login03 ~]$ 
-```
-
-`deactivate` will deactivate your virtualenv and your prompt will return to normal.
-
-You only need to create the virtualenv the first time. 
-
 #### Installing via setup.py
 
 If you need to install by downloading a package and using `setup.py`, you can use the `--user` 
@@ -205,24 +212,23 @@ This type of install makes it easier for you to only have this package in your p
 want to use it, which is helpful if it conflicts with something else.
 ```
 # add location to PYTHONPATH so Python can find it
-export PYTHONPATH=/home/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
+export PYTHONPATH=/hpchome/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
 # if necessary, create lib/pythonx.x/site-packages in your desired install location
-mkdir -p /home/username/your/path/lib/python3.7/site-packages
+mkdir -p /hpchome/username/your/path/lib/python3.7/site-packages
 # do the install
-python setup.py install --prefix=/home/username/your/path
+python setup.py install --prefix=/hpchome/username/your/path
 ```
 It will tend to tell you at install time if you need to change or create the `$PYTHONPATH` directory.
 
 To use this package, you'll need to add it to your paths in your jobscript or `.bashrc`.
 Check that the `PATH` is where your Python executables were installed.
 ```
-export PYTHONPATH=/home/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
-export PATH=/home/username/your/path/bin:$PATH
+export PYTHONPATH=/hpchome/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
+export PATH=/hpchome/username/your/path/bin:$PATH
 ```
 It is very important that you keep the `:$PYTHONPATH` or `:$PATH` at the end of these - you
 are putting your location at the front of the existing contents of the path. If you leave 
 them out, then only your package location will be found and nothing else.
-
 
 #### Troubleshooting: remove your pip cache
 
