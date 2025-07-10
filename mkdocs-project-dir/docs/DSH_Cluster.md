@@ -216,6 +216,10 @@ We do not have a wallclock but we strongly suggest our users to keep their jobs 
 
 [Interactive jobs](Interactive_Jobs.md) run with `qrsh` and have the same maximum wallclock time suggested as other jobs.
 
+## Requesting Customer Specialist Servers
+
+If you need a server with particular characteristics to carry on your work, you can request one. Check our page to request a [Customer Specialist Server](Customer_Specialist_Server.md)
+
 ## Creating, submitting and checking jobs
 
 We have pages that will explain you how to create, submit and check the results of your jobscripts.
