@@ -55,13 +55,8 @@ You also can create relevant configuration files inside your cluster home direct
 
 
     - ~/.pip/pip.conf (for Pip)
-       ```
-       # for Python 2
-       pip install --user <python2pkg>
-       # for Python 3
-       pip3 install --user <python3pkg>
-       ```
-       These will install into `.python2local ` or `.python3local` in your home directory. 
+
+
 
 ### Installing your own R packages
 
@@ -119,6 +114,74 @@ Inside the "Set Me Up" interface, select a package type (doesn't matter which) a
 
 
 Now you can use your token!
+
+## Python
+
+ You can create and use your own virtualenvs:
+ 
+```
+virtualenv <DIR> 
+source <DIR>/bin/activate
+```
+
+Your bash prompt will show you that a different virtualenv is active.
+
+### Installing via setup.py
+
+If you need to install using setup.py, you can use the `--user` flag and as long as one of the python bundles is loaded, it will install into the same `.python2local` or `.python3local` as pip and you won't need to add any new paths to your environment.
+
+```
+python setup.py install --user
+```
+You can alternatively use `--prefix` in which case you will have to set the install prefix to somewhere in your space, and also set PYTHONPATH and PATH to include your install location. Some installs won't create the prefix directory for you, in which case create it first. This is useful if you want to keep this package entirely separate and only in
+your paths on demand.
+
+```
+# For Python 2.7
+export PYTHONPATH=/hpchome/username/your/path/lib/python2.7/site-packages:$PYTHONPATH  
+# if necessary, create install path  
+mkdir -p hpchome/username/your/path/lib/python2.7/site-packages  
+python setup.py install --prefix=/hpchome/username/your/path
+
+# add these to your .bashrc or jobscript  
+export PYTHONPATH=/hpchome/username/your/path/lib/python2.7/site-packages:$PYTHONPATH  
+export PATH=/hpchome/username/your/path/bin:$PATH
+```
+
+```
+# For Python 3.7
+# add location to PYTHONPATH so Python can find it
+export PYTHONPATH=/hpchome/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
+# if necessary, create lib/pythonx.x/site-packages in your desired install location
+mkdir -p /hpchome/username/your/path/lib/python3.7/site-packages
+# do the install
+python setup.py install --prefix=/hpchome/username/your/path
+
+# It will tend to tell you at install time if you need to change or create the `$PYTHONPATH` directory.
+# To use this package, you'll need to add it to your paths in your jobscript or `.bashrc`.
+#Check that the `PATH` is where your Python executables were installed.
+
+export PYTHONPATH=/hpchome/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
+export PATH=/hpchome/username/your/path/bin:$PATH
+```
+
+Check that the PATH is where your Python executables were installed, and the PYTHONPATH is correct.. It is very important that you keep the `:$PYTHONPATH` or `:$PATH` at the end of these - you are putting your location at the front of the existing contents of the path. If you leave them out, then only your package location will be found and nothing else.
+
+
+### Python script executable paths
+
+If you have an executable python script giving the location of python like this, and it fails because that python doesn't exist in that
+location or isn't the one that has the additional packages installed:
+
+```
+#!/usr/bin/python2.7
+```
+
+You should change it so it uses the first python found in your environment. 
+
+```
+#!/usr/bin/env python 
+```
 
 ## Installing software with no sudo.
 
@@ -233,41 +296,34 @@ LDLIBS="-lfoo -lbar"
 Remember to `make clean` first if you are recompiling with new options. This will delete
 object files from previous attempts. 
 
-#### Installing via setup.py
+## Set your PATH and other environment variables
 
-If you need to install by downloading a package and using `setup.py`, you can use the `--user` 
-flag and as long as one of our python module bundles are loaded, it will install into the same 
-`.python2local` or `.python3local` as `pip` does and your packages will be found automatically.
+After you have installed your software, you'll need to add it to your
+`PATH` environment variable so you can run it without having to give the
+full path to its location.
+
+Put this in your `~/.bashrc` file so it will set this with every new session you
+create. Replace username with your username and point to the directory
+your binary was built in (frequently `program/bin`). This adds it to the
+front of your PATH, so if you install a newer version of something, it
+will be found before the system one.
+
 ```
-python setup.py install --user
+export PATH=/hpchome/username/location/of/software/binary:$PATH
 ```
 
-If you want to install to a different directory in your space to keep this package separate,
-you can use `--prefix` instead. You'll need to add that location to your `$PYTHONPATH` and `$PATH`
-as well so it can be found. Some install methods won't create the prefix directory you requested
-for you automatically, so you would need to create it yourself first.
+If you built a library that you'll go on to compile other software with,
+you probably want to also add the lib directory to your
+LD\_LIBRARY\_PATH and LIBRARY\_PATH, and the include directory to CPATH
+(add export statements as above). This may mean your configure step will
+pick your library up correctly without any further effort on your part.
 
-This type of install makes it easier for you to only have this package in your paths when you
-want to use it, which is helpful if it conflicts with something else.
-```
-# add location to PYTHONPATH so Python can find it
-export PYTHONPATH=/hpchome/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
-# if necessary, create lib/pythonx.x/site-packages in your desired install location
-mkdir -p /hpchome/username/your/path/lib/python3.7/site-packages
-# do the install
-python setup.py install --prefix=/hpchome/username/your/path
-```
-It will tend to tell you at install time if you need to change or create the `$PYTHONPATH` directory.
+To make these changes to your .bashrc take effect in your current
+session:
 
-To use this package, you'll need to add it to your paths in your jobscript or `.bashrc`.
-Check that the `PATH` is where your Python executables were installed.
 ```
-export PYTHONPATH=/hpchome/username/your/path/lib/python3.7/site-packages:$PYTHONPATH
-export PATH=/hpchome/username/your/path/bin:$PATH
+source ~/.bashrc
 ```
-It is very important that you keep the `:$PYTHONPATH` or `:$PATH` at the end of these - you
-are putting your location at the front of the existing contents of the path. If you leave 
-them out, then only your package location will be found and nothing else.
 
 #### Troubleshooting: remove your pip cache
 
