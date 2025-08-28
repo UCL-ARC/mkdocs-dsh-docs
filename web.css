@@ -10,7 +10,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("./background.jpeg") fixed no-repeat;
+  background: url("./Template.pdf") fixed no-repeat;
   background-size: cover;
 }
 
