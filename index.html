@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UCL Data Safe Haven (DSH) </title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -14,30 +14,10 @@
   <main>
     <p>All you need to know about the DSH Cluster and more!</p>
   </main>
-
-  <section id="github-content">
-  <h2>GitHub File Content</h2>
-  <pre id="file-output">Loading...</pre>
-</section>
-
-<script>
-  // Replace with the raw URL of your GitHub file
-  const fileUrl = "https://github.com/NicoleLabrAvila/mkdocs-dsh/blob/main/mkdocs-project-dir/docs/index.md";
-
-  fetch(fileUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.text();
-    })
-    .then(data => {
-      document.getElementById("file-output").textContent = data;
-    })
-    .catch(error => {
-      document.getElementById("file-output").textContent = "Error loading file: " + error;
-    });
-</script>
+  
+  <section>
+  <script src="./mkdocs-project-dir/docs/index.md"></script>
+  </section>
   
   <footer>
     <p>&copy; 2025 Nicole Labra Avila</p>
