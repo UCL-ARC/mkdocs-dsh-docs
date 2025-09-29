@@ -6,21 +6,21 @@ This documentation is maintained by the Data Safe Haven Cluster Services team fo
 
 General User Information:
 
-- [Cluster Computing Intro](Cluster_Computing.md)
-- [DSH Intro](DSH_Intro.md)
-- [DSH Cluster](DSH_Cluster.md)
-- [Installing Software](Installing_Software.md)
-- [Customer Specialist Servers](Customer_Specialist_Servers.md)
-- [Running jobs](Running_jobs.md)
-- [Example jobscripts](Example_Jobscripts.md)
-- [Job_Results](Job_Results.md)
-- [Interactive_Jobs](Interactive_Jobs.md)
-- [JupyterHub](JupyterHub.md)
-- [RStudio](RStudio.md)
-- [Cluster status page](Cluster_status_page.md)
-- [Terms and Conditions](Terms_and_Conditions.md)
-- [Contact us](Contact_Us.md)
-- [Glossary](Glossary.md)
+- [Cluster Computing Intro](mkdocs-project-dir/docs/Cluster_Computing.md)
+- [DSH Intro](mkdocs-project-dir/docs/DSH_Intro.md)
+- [DSH Cluster](mkdocs-project-dir/docs/DSH_Cluster.md)
+- [Installing Software](mkdocs-project-dir/docs/Installing_Software.md)
+- [Customer Specialist Servers](mkdocs-project-dir/docs/Customer_Specialist_Servers.md)
+- [Running jobs](mkdocs-project-dir/docs/Running_jobs.md)
+- [Example jobscripts](mkdocs-project-dir/docs/Example_Jobscripts.md)
+- [Job_Results](mkdocs-project-dir/docs/Job_Results.md)
+- [Interactive_Jobs](mkdocs-project-dir/docs/Interactive_Jobs.md)
+- [JupyterHub](mkdocs-project-dir/docs/JupyterHub.md)
+- [RStudio](mkdocs-project-dir/docs/RStudio.md)
+- [Cluster status page](mkdocs-project-dir/docs/Cluster_status_page.md)
+- [Terms and Conditions](mkdocs-project-dir/docs/Terms_and_Conditions.md)
+- [Contact us](mkdocs-project-dir/docs/Contact_Us.md)
+- [Glossary](mkdocs-project-dir/docs/Glossary.md)
 
 ## Training
 
