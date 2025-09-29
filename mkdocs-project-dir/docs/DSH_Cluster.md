@@ -3,7 +3,7 @@
 DSH is designed for single-node jobs, it is not possible to run multi-node parallel jobs. It is also not connected to internet and it is not connected to the UCL network. You can find extra information about the DSH cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
 
 ## Accounts
-DSH accounts can be applied for via the [DSH sign up process](https://github.com/NicoleLabrAvila/mkdocs-dsh/blob/main/mkdocs-project-dir/docs/DSH_Intro.md#dsh-account-application).
+DSH accounts can be applied for via the [DSH sign up process](mkdocs-project-dir/docs/DSH_Intro.md#dsh-account-application).
 
 ## Logging in
 
