@@ -20,14 +20,15 @@ Your password will be requested. Enter it and press **Enter key**
 
 The first time you log in to an unknown server you will get a message like this:
 
-    The authenticity of host 'IDSH.rc.ucl.ac.uk can't be established.
-    ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
-    Are you sure you want to continue connecting (yes/no)?
+```
+The authenticity of host 'IDSH.rc.ucl.ac.uk can't be established.
+ECDSA key fingerprint is SHA256:7FTryal3mIhWr9CqM3EPPeXsfezNk8Mm8HPCCAGXiIA.
+Are you sure you want to continue connecting (yes/no)?
+```
 
 Typing **yes** will allow you to continue logging in.
 
-If you have a personal virtual machine in the cluster put the name of your machine in <UCL_username>.
-Idle ssh sessions will be disconnected after 7 days.
+If you have a personal virtual machine in the cluster put the name of your machine in `<UCL_username>`. Idle ssh sessions will be disconnected after 7 days.
 
 PuTTY is a common SSH client on Windows and is available on DSH Desktop. If you prefer to use it, you will need to create an entry for the host you are connecting to with the settings below. If you want to save your settings, give them an easily-identifiable name in the "Saved Sessions" box and press "Save". Then you can select it and "Load" next time you use PuTTY.
 
@@ -39,11 +40,11 @@ The first time you log in to a new server, you'll get a popup telling you that t
 
 ### Login nodes
 
-DSH cluster has 2 login nodes, dsh-sge2log01 and  dsh-sge2log02 and you can connect to any. The login nodes allow you to manage your files, compile code and submit jobs. Very short (< 15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job as login nodes are shared resources.  Running memory intensive jobs or jobs with long runtimes on them may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
+DSH cluster has two login nodes: `dsh-sge2log01` and  `dsh-sge2log02` and you can connect to either. The login nodes allow you to manage your files, compile code and submit jobs. Very short (< 15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted as a job as login nodes are shared resources.  Running memory intensive jobs or jobs with long runtimes on them may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
 
 ### Logging in to a specific node
 
-You can access any of both, dsh-sge2log01 and dsh-sge2log02 login nodes with: 
+You can access either the `dsh-sge2log01` or `dsh-sge2log02` login nodes with: 
 
 ```
 ssh <UCL_username>@dsh-sge2log01
@@ -57,9 +58,9 @@ If you experience difficulties with your login, please make sure that you are ty
 If you still cannot get access but can access DSH desktop, please contact us on rc-support@ucl.ac.uk indicating you are working in the DSH Cluster.
 If you cannot access anything in DSH, you may need to request a password reset for the DSH service from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
-## Login out
+## Logging out
 
-You can log out of the systems by typing `exit` and pressing enter (pressing Ctrl+D also works).
+You can log out of the systems by typing `exit` and pressing enter (pressing `Ctrl`+`D` also works).
 
 ## Copying data onto DSH Cluster
 
@@ -99,7 +100,7 @@ scp -r <UCL_username>@<DSH_system_name>:<remote_path><remote_data_file> <local_d
 `rsync` is used to remotely synchronise directories, so can be used to only copy files which have changed. Have a look at `man rsync` as there are many options. 
 
 
-### Transfering data with WinSCP
+### Transferring data with WinSCP
 
 WinSCP is already installed in DSH Desktop. Once you click on the icon, a Windows GUI will open. The first step to connect is to fill in the connection information requested (File protocol, Server to connect, UCL user name and password) in the main window, as it is shown below:  
 
@@ -121,30 +122,23 @@ DSH cluster use software stack based upon RHEL 8.x.
 
 ## Data storage
 
-Our cluster have local parallel filesystem consisting of your home where you can write data. Each user has 15B of local storage available (Home directory) and it is not possible to request an increase. This is not a hard quota: once you reach them, you will still be able to write more data but we and encourage you to keep its usage within the limits stablished out of consideration for other cluster users. We are continuously monitoring the proper disk usage. If you need more storage for particular circumstances, please contact us at rc-support@ucl.ac.uk.
+Our cluster has a local parallel filesystem consisting of your home where you can write data. Each user has 15B of local storage available (Home directory) and it is not possible to request an increase. This is not a hard quota: once you reach them, you will still be able to write more data but we and encourage you to keep its usage within the limits stablished out of consideration for other cluster users. We are continuously monitoring the proper disk usage. If you need more storage for particular circumstances, please contact us at rc-support@ucl.ac.uk.
 
 ### Home
 
-Every user has a home directory of 15GB. This is the directory you are in when you first log in.
+Every user has a home directory of 15GB. This is the directory you are in when you first log in, and is located at `/hpchome/<UCL_username>@IDHS.UCL.AC.UK` (this can be verified with `echo $HOME`).
 
-    Location: /hpchome/<UCL_username>@IDHS.UCL.AC.UK
-    May also be referred to as: ~, $HOME.
-
-Many programs will write hidden config files in here, with names beginning with . (eg .config, .cache). You can see these with ls -al.
+Many programs will save config files to your home directory using filenames beginning with `.` (e.g., `.config`, `.cache`), which causes them to be hidden. You can list all files (including hidden ones) using `ls -al`.
 
 #### Tips for use
 
 - Use different directories for different jobs. Do not write everything to the same place.
 - Clear up your work directory after your jobs. Keep the files you need, archive or delete the ones you do not.
-- Archive and compress directory trees you aren't currently using. (`tar` command for example). This
-  stores all their contents as one file, and compressing it saves space.
-- Back up your important data to somewhere off the cluster regularly.
-- If you haven't used particular files for some months and do not expect to in the near future, keep
-  them off-cluster and delete the copies on the cluster.
-- If you are no longer using the cluster, remove your data to maintain filesystem performance and allow
-  the space to be used by current active users.
-- Before you leave UCL, please consider what should happen to your data, and take steps to put it in
-  a Research Data archive and/or ensure that your colleagues are given access to it.
+- Archive and compress directory trees you aren't currently using. (`tar` command for example). This stores all their contents as one file, and compressing it saves space.
+- Regularly back-up your important data to somewhere off the cluster.
+- If you haven't used particular files for some months and do not expect to in the near future, keep them off-cluster and delete the copies on the cluster.
+- If you are no longer using the cluster, remove your data to maintain filesystem performance and allow the space to be used by current active users.
+- Before you leave UCL, please consider what should happen to your data, and take steps to put it in a Research Data archive and/or ensure that your colleagues are given access to it.
 
 
 ### Requesting transfer of your data to another user
