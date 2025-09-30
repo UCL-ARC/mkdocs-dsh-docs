@@ -20,4 +20,4 @@ The Jupyter Hub and all of its components are only accessible from inside DSH ne
 
 ### Jupyter Hub not starting or Initialisation Error
 
-If you get an error pop-up Jupyter Hub Initialisation Error: Unable toconnect to service or an ever-spinning loading screen please,[get in touch with RC support](../Contact_Us.md).
+If you get an error pop-up in Jupyter Hub `Initialisation Error: Unable to connect to service` or an ever-spinning loading screen please,[get in touch with RC support](../Contact_Us.md).

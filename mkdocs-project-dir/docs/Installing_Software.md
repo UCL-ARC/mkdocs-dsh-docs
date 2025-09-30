@@ -40,21 +40,24 @@ You only need to create the virtualenv the first time.
 
 Then, you can install the packages with:
 
-    - For R: use the command install.packages("MYPACKAGE") in an R console to install MYPACKAGE to your cluster R library
-    - For Conda: use the command conda install MYPACKAGE in a terminal to install MYPACKAGE to your current conda environment
-    - For Pip: use the command pip install MYPACKAGE in a terminal to install MYPACKAGE to your current python environment
+In R, use the following code in an R console to install MYPACKAGE to your cluster R library:  
+`install.packages("MYPACKAGE")`
 
-The installation will require the use of a **token** that must be generated using Artifactory. You can use the same token for all package types/configuration files, but this token will **need to be regenerated anytime you change your password**. Tokens should be treated similarly to passwords, in terms of keeping them secret. In DSH cluster you can use <Shift-Insert> to paste in Linux (Ctrl-V won't work!).
+For Conda, use the following command in a terminal to install MYPACKAGE to your current conda environment:  
+`conda install MYPACKAGE`
+
+For pip, use the following command in a terminal to install MYPACKAGE to your current python environment:  
+`pip install MYPACKAGE`
+
+The installation will require the use of a **token** that must be generated using Artifactory. You can use the same token for all package types/configuration files, but this token will **need to be regenerated anytime you change your password**. Tokens should be treated similarly to passwords, in terms of keeping them secret. In DSH cluster you can use `Shift`+`Insert` to paste in Linux (`Ctrl`+`V` won't work!).
 
 You also can create relevant configuration files inside your cluster home directory. In this config files you must copy your token, and paste it into the appropriate place. You must update this token **everytime you change your password**. Here you have some templates for the most common software: 
 
-    - ~/.condarc (for Miniconda)
+`~/.condarc` (for Miniconda)
 
-    
-    - ~/.Rprofile (for R and Rstudio)
+`~/.Rprofile` (for R and Rstudio)
 
-
-    - ~/.pip/pip.conf (for Pip)
+`~/.pip/pip.conf` (for Pip)
 
 
 

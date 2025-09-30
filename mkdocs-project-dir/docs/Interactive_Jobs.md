@@ -17,7 +17,7 @@ In this example you are asking to run eight parallel processes within an MPI env
 All job types we support on the system are supported via an interactive session (see our [examples section](Example_Jobscripts.md)).
 Likewise, all qsub options are supported like regular job submission with the difference that with qrsh they must be given at the command line, and not with any job script (or via -@).
 
-In addition the `-now` option is useful when a cluster is busy. By default qrsh and qlogin jobs will run on the next scheduling cycle or give up. The `-now no` option tells it to keep waiting until it gets scheduled. Pressing Ctrl+C (i.e. the control key and the C key at the same time) will safely cancel the request if it doesn't seem to be able to get you a session.
+In addition the `-now` option is useful when a cluster is busy. By default qrsh and qlogin jobs will run on the next scheduling cycle or give up. The `-now no` option tells it to keep waiting until it gets scheduled. Pressing `Ctrl`+`C` will safely cancel the request if it doesn't seem to be able to get you a session.
 
 More resources can be found here:
 
@@ -27,11 +27,11 @@ More resources can be found here:
 
 ## Working on the nodes
 
- If you want to run a command on one of your other allocated nodes, you can use a standard `ssh` command from the interactive session: 
+If you want to run a command on one of your other allocated nodes, you can use a standard `ssh` command from the interactive session to access other nodes within your allocation: 
 ```
-ssh <<DSH_system_name> <command> [args]
+ssh <DSH_system_name> <command> [args]
 ```
-to access other nodes within your allocation. Note that you are not able to `ssh` directly from the login node.
+*Note that you are not able to `ssh` directly from the login node*
 
 In the above, `<hostname>` can be obtained by inspecting the file `$TMPDIR/machines`. (CHECK THISSSS)
 

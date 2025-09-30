@@ -126,7 +126,7 @@ Our cluster has a local parallel filesystem consisting of your home where you ca
 
 ### Home
 
-Every user has a home directory of 15GB. This is the directory you are in when you first log in, and is located at `/hpchome/<UCL_username>@IDHS.UCL.AC.UK` (this can be verified with `echo $HOME`).
+Every user has a home directory of 15GB. This is the directory you are in when you first log in, and is located at `/hpchome/<UCL_username>@IDHS.UCL.AC.UK` (this can be verified with `echo $HOME`). From another directory, you can jump to your home directory with `cd $HOME`, or `cd ~`.
 
 Many programs will save config files to your home directory using filenames beginning with `.` (e.g., `.config`, `.cache`), which causes them to be hidden. You can list all files (including hidden ones) using `ls -al`.
 
@@ -184,9 +184,7 @@ for every core).
 
 ### GPUs
 
-DSH has 2 GPU nodes and each have 1 NVIDIA 80G A100 (Compute Capability 8.0)
-
-[Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how NVIDIA categorises its generations of GPU architectures. 
+DSH has two GPU nodes, each equipped with a Nvidia 80G A100 card (Compute Capability 8.0).  [Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how Nvidia categorises its generations of GPU architectures. 
 When code is compiled, it targets one or multiple of these and so it may only be able to run on GPUs of a specific Compute Capability.
 
 If you get an error like this:
