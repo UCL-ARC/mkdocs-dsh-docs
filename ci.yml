@@ -1,4 +1,8 @@
 name: ci 
+#theme: jekyll-theme-minimal
+title: DSH Documentation webpage 
+description: A page dedicated to the use of the DSH cluster!
+
 on:
   push:
     branches:
