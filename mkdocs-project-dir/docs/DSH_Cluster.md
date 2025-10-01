@@ -211,7 +211,7 @@ We do not have a wallclock but we strongly suggest our users to keep their jobs 
 
 ## Requesting Customer Specialist Servers
 
-If you need a server with particular characteristics to carry on your work, you can request one. Check our page to request a [Customer Specialist Server](Customer_Specialist_Server.md)
+If you need a server with particular characteristics to carry on your work, you can request one. Check our page to request a [Customer Specialist Server](Customer_Specialist_Servers.md)
 
 ## Creating, submitting and checking jobs
 
