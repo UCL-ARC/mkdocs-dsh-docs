@@ -239,7 +239,7 @@ Unfortunately, at the moment it is not possible to run a graphical program in DS
 
 1.  Minimise the amount of wall clock time you request.
 2.  Use job arrays instead of submitting large numbers of jobs (see our
-    [job script examples](../Example_Jobscripts.md)).
+    [job script examples](Example_Jobscripts.md)).
 3.  Plan your work so that you can do other things while your jobs are
     being scheduled.
 
