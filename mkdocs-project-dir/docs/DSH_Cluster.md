@@ -268,7 +268,7 @@ There, a menu will be displayed with both options.
 
 ![Menu_JupyterHub_R](img/Menu_JupyterHub_R.png)
 
-For more information related to these services, visit our pages [Jupyter Hub](JupyterHub.md) and [RStudio](Rstudio.md)
+For more information related to these services, visit our pages [Jupyter Hub](JupyterHub.md) and [RStudio](RStudio.md)
 
 
 ## Support
