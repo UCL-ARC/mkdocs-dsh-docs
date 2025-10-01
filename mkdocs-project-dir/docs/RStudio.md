@@ -6,7 +6,7 @@ The DSH cluster team provide a RStudio service with graphical interface.
 
 To access the service go to the following URL from inside DSH:
 
-[https://cluster.idhs.ucl.ac.uk/rstudio/]()
+[https://cluster.idhs.ucl.ac.uk/rstudio/auth-sign-in]()
 
 Then login with your UCL userid and password.
 
