@@ -1,5 +1,6 @@
 site_name: Data Safe Haven Cluster Services
 site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
+docs_dir: mkdocs-project-dir/docs
 theme:
   name: material
   features:
