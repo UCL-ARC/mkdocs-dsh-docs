@@ -3,9 +3,9 @@ site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
 theme:
   name: material
   features:
-    - navigation.tabs
+    #- navigation.tabs #turning off tabs (can be turned on later)
     - navigation.sections
-    - toc.integrate
+    - toc.follow
     - navigation.top
     - search.suggest
     - search.highlight
@@ -16,13 +16,13 @@ theme:
   palette:
     - scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/eye
         name: Switch to dark mode
       primary: teal
       accent: purple 
     - scheme: slate 
       toggle:
-        icon: material/toggle-switch
+        icon: material/eye-outline
         name: Switch to light mode    
       primary: teal
       accent: lime
