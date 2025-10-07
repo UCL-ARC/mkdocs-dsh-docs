@@ -31,9 +31,10 @@ They also have an online Moodle course "Introduction to High Performance Computi
 getting users comfortable with using HPC at UCL. ["Introduction to High Performance Computing at UCL" (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=33216) 
 (UCL users), [UCL mediacentral](https://mediacentral.ucl.ac.uk) and search for "HPC" (non-UCL users). 
 
------
 
-## How this repository works (admins only)
+<!-- (This content will not appear in the rendered Markdown)
+
+# How this repository works:
 
 This repository uses [MkDocs](https://www.mkdocs.org/) with the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme to build and deploy documentation as a static website.
 
@@ -42,5 +43,7 @@ This repository uses [MkDocs](https://www.mkdocs.org/) with the [Material for Mk
 - On every push to the `main` branch, the workflow installs MkDocs Material, builds the site, and publishes the output to the `gh-pages` branch.
 - GitHub Pages is configured to serve the site from the `gh-pages` branch.
 - To update to the site, just edit the markdown files in `/docs`, commit and push to have your changes take effect in the site re-build.
+
+-->
 
 
