@@ -27,6 +27,8 @@ General User Information:
 There is an online Moodle course "Introduction to the Unix Shell" provided by the Research Computing team and
 infrequently provide a training course aimed at getting users up and running on a cluster: ["Introduction to the Unix Shell (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=12953) (UCL users), [GitHub-Pages](http://rits.github-pages.ucl.ac.uk/intro-unix-shell/index.html) (non-UCL users), additional resources can be found on [UCL mediacentral](https://mediacentral.ucl.ac.uk).
 
+-----
+
 They also have an online Moodle course "Introduction to High Performance Computing at UCL" aimed at 
 getting users comfortable with using HPC at UCL. ["Introduction to High Performance Computing at UCL" (Moodle)](https://moodle.ucl.ac.uk/course/view.php?id=33216) 
 (UCL users), [UCL mediacentral](https://mediacentral.ucl.ac.uk) and search for "HPC" (non-UCL users). 
