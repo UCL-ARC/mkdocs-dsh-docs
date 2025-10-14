@@ -1,0 +1,741 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/DSH_Intro/">
+      
+      
+        <link rel="prev" href="../DSH_Cluster/">
+      
+      
+        <link rel="next" href="../Example_Jobscripts/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Introduction to Data Save Haven (DSH) - Data Safe Haven Cluster Services</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction-to-data-save-haven-dsh" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Data Safe Haven Cluster Services" class="md-header__button md-logo" aria-label="Data Safe Haven Cluster Services" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Safe Haven Cluster Services
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction to Data Save Haven (DSH)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Data Safe Haven Cluster Services" class="md-nav__button md-logo" aria-label="Data Safe Haven Cluster Services" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Data Safe Haven Cluster Services
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Safe Haven Cluster Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cluster_Computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cluster Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cluster_status_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Status of the cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contact_Us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact and Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Customer_Specialist_Servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customer Specialist Servers.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSH_Cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DSH Cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Data Save Haven (DSH)
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example_Jobscripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example jobscripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installing_Software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installing your own software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interactive_Jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Job Sessions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Job_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Where do my results go?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JupyterHub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jupyter Hub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RStudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RStudio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Running_jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submitting a job
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Terms_and_Conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terms and Conditions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="introduction-to-data-save-haven-dsh">Introduction to Data Save Haven (DSH)</h1>
+<p>It is a secure, isolated environment where sensitive data can be stored, processed, and analyzed, 
+while maintaining strict security measures to protect the confidentiality and privacy of individuals.</p>
+<p>Data safe havens are essential for conducting research that involves sensitive information like 
+healthcare data, financial records, or other personal data. They allow researchers to access and 
+analyze this data while adhering to strict data protection laws and ethical guidelines. By ensuring
+the security and confidentiality of sensitive data, data safe havens help build trust and foster 
+collaboration in research.</p>
+<h1 id="account-services">Account Services</h1>
+<p><a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh">UCL DSH service</a> is
+composed by two parts: The <strong>DSH desktop</strong> and the <strong>DSH cluster</strong>.</p>
+<p>The <a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals">DSH desktop</a> 
+is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that allows multiple concurrent interactive 
+sessions. New sessions are connected to a virtual machine with the least load. For detailed information related to 
+DSH Desktop, please visit the <a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs">user guide documentation and FAQ</a>.</p>
+<p>The software available in DSH Desktop can be checked <a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services">here</a>.</p>
+<p>The <a href="../DSH_Cluster/">DSH cluster</a> is a set of machines in an isolated environment and it is accessed only from the DSH desktop. More detailed information about <a href="../Cluster_Computing/">what is a cluster here</a> </p>
+<h2 id="dsh-account-application">DSH account application</h2>
+<p>Internal UCL users and external users can apply for a DSH account but before to do so, the user must have completed the 
+<a href="https://portal.e-lfh.org.uk/register"><strong>NHS Digital’s Data Security Awareness (NHSD) course provided by e-Learning for Health</strong></a>
+in the last 12 months.  This training is mandatory for all members. For more information, please visit: 
+https://www.ucl.ac.uk/isd/information-governance-training-awareness-service.</p>
+<p>Once the course is finished, the applicant must upload the training certification in the <a href="https://liveuclac.sharepoint.com/sites/ISD.IGAdvisoryService/Lists/Training%20Certification/NewForm.aspx?pa=1">following sharepoint</a>.</p>
+<p><strong>Internal UCL users</strong>, can apply for an account to DSH clusters by filling in the following form in MyServices: https://uk.4me.io/cnQ9MjkzNw
+The person must also read and sign the Acceptable Use Statement prior to submitting this request.</p>
+<p><em>Please note in order for the person to upload the training completion certificate and sign the acceptable use statement they
+require an active UCL account.</em></p>
+<p>For <strong>external users</strong> there are some additional steps so submit this request and the instructions will be provided by the ISD team. If the user does not have a UCL account please use their email address in the 'DSH User ID' field.</p>
+<p>Joiners must be a member of at least one <strong>share</strong> (or project), enter the name of the share when you are filling in the New User Account form.
+You can add or remove additional shares or createn new shares if they do exist. DSH users who are not a member of any share will be disabled.
+More information related to the addition/remove/creation of shares and account request can be found in the <a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/service-requests#">service request page</a>.</p>
+<p>All granted applications give you a DSH windows portal and access to the DSH cluster from there. You will then receive an email when 
+your account is approved.</p>
+<h2 id="dsh-account-access">DSH account access</h2>
+<p>Once the account is created, the ISD team will provide the user with the necessary information to gain access to the DSH. 
+It is required a mobile phone number or an alternative e-mail address for the user, this is to provide the <a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs#Security%20&amp;%20Tokens%20Portal">PIN number separately 
+from the Token for security purposes</a>. This information  is stored securely and used only for this purpose. After the password and PIN has been changed, users will get access to the DSH portals and their shares.</p>
+<p>The DSH webpage is composed by 3 <a href="https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals">portals</a>
+- <a href="https://accessgateway.idhs.ucl.ac.uk/vpn/index.html">DSH Access (data portal)</a>: Portal to access to DSH through the Citrix "XenApp &amp; XenDesktop" technology.
+- <a href="https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml">DSH file transfer portal</a>: The <strong><em>only</em></strong> method available to transfer data in and out from DSH.
+- <a href="https://registration.idhs.ucl.ac.uk:8074/sso/">DSH password and tokens</a>: Portal to generate tokens and change the password. </p>
+<p>The DSH publishes virtual desktops through the use of Citrix "XenApp &amp; XenDesktop" technology. This is a web browser window from where users can connect to DSH Desktop from anywhere. The purpose of this functionality is to keep all information within the DSH environment secure, by utilising dedicated Citrix desktops the data held within the environment can be manipulated by users without having the need to bring it locally to their machine.</p>
+<p>The Data safe haven operates under a "walled garden" approach. All connections into the DSH are secured via dedicated fortigate firewall appliances. For this reason, there is not access to internet from inside DSH and the only way to tranfer data in/out from/DSH is through the <a href="https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml">DSH file transfer portal</a>.</p>
+<h2 id="charges-for-use-of-dsh-services">Charges for use of DSH services</h2>
+<p>Data Save Haven services are free at point of use by default. </p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Check our <a href="../Cluster_status_page/">Status page</a> to see the current status of clusters and planned outages. </p>
+</div>
+<p>Use of these services is subject to a common set of <a href="../Terms_and_Conditions/">terms and conditions</a></p>
+<h2 id="contact">Contact</h2>
+<p>You can contact us <a href="../Contact_Us/">here</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

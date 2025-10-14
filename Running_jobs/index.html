@@ -1,0 +1,1286 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/Running_jobs/">
+      
+      
+        <link rel="prev" href="../RStudio/">
+      
+      
+        <link rel="next" href="../Terms_and_Conditions/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Submitting a job - Data Safe Haven Cluster Services</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#submitting-a-job" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Data Safe Haven Cluster Services" class="md-header__button md-logo" aria-label="Data Safe Haven Cluster Services" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Safe Haven Cluster Services
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Submitting a job
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Data Safe Haven Cluster Services" class="md-nav__button md-logo" aria-label="Data Safe Haven Cluster Services" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Data Safe Haven Cluster Services
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Safe Haven Cluster Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cluster_Computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cluster Computing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Cluster_status_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Status of the cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contact_Us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact and Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Customer_Specialist_Servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Customer Specialist Servers.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSH_Cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DSH Cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DSH_Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Data Save Haven (DSH)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Example_Jobscripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example jobscripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installing_Software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installing your own software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Interactive_Jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Interactive Job Sessions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Job_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Where do my results go?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JupyterHub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jupyter Hub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RStudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RStudio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Submitting a job
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Submitting a job
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-submit-a-job-to-the-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I submit a job to the scheduler?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qsub-emailing" class="md-nav__link">
+    <span class="md-ellipsis">
+      qsub emailing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job deletion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asking-for-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asking for resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asking for resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-cores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number of cores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-requests-amount-of-ram-per-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory requests (Amount of RAM per core)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPUs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-in-qsub-options-on-the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing in qsub options on the command line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-monitor-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I monitor a job?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do I monitor a job?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qstat" class="md-nav__link">
+    <span class="md-ellipsis">
+      qstat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="qstat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job states
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-scheduler-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      More scheduler commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-run-interactive-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I run interactive jobs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-estimate-what-resources-to-request-in-my-jobscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I estimate what resources to request in my jobscript?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-run-a-graphical-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I run a graphical program?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      What can I do to minimise the time I need to wait for my job(s) to run?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Terms_and_Conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terms and Conditions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-submit-a-job-to-the-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I submit a job to the scheduler?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qsub-emailing" class="md-nav__link">
+    <span class="md-ellipsis">
+      qsub emailing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job deletion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asking-for-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asking for resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asking for resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-cores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number of cores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-requests-amount-of-ram-per-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory requests (Amount of RAM per core)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run time
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPUs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-in-qsub-options-on-the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passing in qsub options on the command line
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-monitor-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I monitor a job?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do I monitor a job?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qstat" class="md-nav__link">
+    <span class="md-ellipsis">
+      qstat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="qstat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job states
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-scheduler-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      More scheduler commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-run-interactive-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I run interactive jobs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-estimate-what-resources-to-request-in-my-jobscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I estimate what resources to request in my jobscript?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-run-a-graphical-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do I run a graphical program?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      What can I do to minimise the time I need to wait for my job(s) to run?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="submitting-a-job">Submitting a job</h1>
+<p>Create a jobscript for non-interactive use and submit your jobscript using qsub. Jobscripts must begin #!/bin/bash -l in order to run as a login shell and get your login environment and modules.</p>
+<h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?</h2>
+<p>To submit a job to the scheduler you need to write a jobscript that contains the resources the job is asking for and the actual commands you want to run. This jobscript is then submitted using the <code>qsub</code> command.</p>
+<pre><code>qsub myjobscript
+</code></pre>
+<p>It will be put in to the queue and will begin running on the compute nodes at some point later when it has been allocated resources.</p>
+<p>You can also use options on the command-line to override options you have put in your job script.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>qsub myscript.sh</code></td>
+<td>Submit the script as-is</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>qsub -N NewName myscript.sh</code></td>
+<td>Submit the script but change the job's name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>qsub -l h_rt=24:0:0 myscript.sh</code></td>
+<td>Submit the script but change the maximum run-time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>qsub -hold_jid 12345 myscript.sh</code></td>
+<td>Submit the script but make it wait for job 12345 to finish</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>qsub -ac allow=XYZ myscript.sh</code></td>
+<td>Submit the script but only let it run on node classes X, Y, and Z</td>
+</tr>
+</tbody>
+</table>
+<h2 id="qsub-emailing">qsub emailing</h2>
+<p>We also have a mailing system that can be implemented to send emails with reminders of the status of your job through <code>qsub</code>. In your jobscript, or when you use <code>qsub</code> to submit your job, you can use the option <code>-m</code>. You can specify when you want an email sent to you by using the below options after <code>qsub -m</code>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b</code></td>
+<td>Mail is sent at the beginning of the job.</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>Mail is sent at the end of the job.</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>Mail is sent when the job is aborted or rescheduled.</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Mail is sent when the job is suspended.</td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>No mail is sent. (The default.)</td>
+</tr>
+</tbody>
+</table>
+<p>You specify where the email should be sent with <code>-M</code>.</p>
+<p>You can use more than one of these options by putting them together after the <code>-m</code> option; for example, adding the following to your job script would mean you get an email when the job begins and when it ends:</p>
+<pre><code>#$ -m be
+#$ -M me@example.com
+</code></pre>
+<p>Further resources can be found here:</p>
+<ul>
+<li><a href="https://moodle.ucl.ac.uk/mod/page/view.php?id=4845666">Scheduler fundamentals (moodle)</a> (UCL users)</li>
+<li><a href="https://mediacentral.ucl.ac.uk/Play/98368">Scheduler fundamentals (mediacentral)</a> (non-UCL users)</li>
+</ul>
+<h2 id="job-deletion">Job deletion</h2>
+<p>Use  <code>qdel</code> to delete a submitted job. You must give the job ID.</p>
+<pre><code>qdel 361829
+</code></pre>
+<p>You can also delete all the jobs from a user with </p>
+<pre><code>qdel -u &lt;username&gt;
+</code></pre>
+<p>To delete a batch of jobs, creating a file with the list of job IDs that you would like to delete and placing it in the following commands will delete the following jobs: <code>cat &lt;filename&gt; | xargs qdel</code></p>
+<p>## Why is my job in Eqw status?</p>
+<p>If your job goes straight into Eqw state, there was an error in your jobscript that meant your job couldn't be started. The standard <code>qstat</code> job information command will give you a truncated version of the error:</p>
+<pre><code>qstat -j &lt;job_ID&gt;
+</code></pre>
+<p>The most common reason jobs go into this error state is that a file or directory your job is trying to use doesn't exist. Creating it after the job is in the <code>Eqw</code> state won't make the job run: it'll still have to be deleted and re-submitted.</p>
+<h2 id="asking-for-resources">Asking for resources</h2>
+<h3 id="number-of-cores">Number of cores</h3>
+<p>For MPI:</p>
+<pre><code class="language-bash">#$ -pe mpi &lt;number of cores&gt;
+</code></pre>
+<p>For threads:</p>
+<pre><code class="language-bash">#$ -pe smp &lt;number of cores&gt;
+</code></pre>
+<p>For single core jobs you don't need to request a number of cores.</p>
+<h3 id="memory-requests-amount-of-ram-per-core">Memory requests (Amount of RAM per core)</h3>
+<p>Note: the memory you request is always per core, not the total amount. If you ask for 128GB RAM and 4 cores, that may run on 4 nodes using only one core per node. This allows you to have sparse process placement when you do actually need that much RAM per process.</p>
+<p>If you want to avoid sparse process placement and your job taking up more nodes than you were expecting, the maximum memory request you can make when using all the cores in a standard node is 128/16 = 8G.</p>
+<pre><code class="language-bash">#$ -l mem=&lt;integer amount of RAM in G or M&gt;
+</code></pre>
+<p>e.g. <code>#$ -l mem=4G</code> requests 4 gigabytes of RAM per core.</p>
+<h3 id="run-time">Run time</h3>
+<pre><code class="language-bash">#$ -l h_rt=&lt;hours:minutes:seconds&gt;
+</code></pre>
+<p>e.g. <code>#$ -l h_rt=48:00:00</code> requests 48 hours.</p>
+<h3 id="working-directory">Working directory</h3>
+<p>Either a specific working directory:</p>
+<pre><code class="language-bash">#$ -wd /path/to/working/directory
+</code></pre>
+<p>or the directory the script was submitted from:</p>
+<pre><code class="language-bash">#$ -cwd
+</code></pre>
+<h3 id="gpus">GPUs</h3>
+<pre><code class="language-bash">#$ -l gpu=&lt;number of GPUs&gt;
+</code></pre>
+<h3 id="passing-in-qsub-options-on-the-command-line">Passing in qsub options on the command line</h3>
+<p>The <code>#$</code> lines in your jobscript are options to qsub. It will take each line which has <code>#$</code> as the first two characters and use the contents beyond that as an option. </p>
+<p>You can also pass options directly to the qsub command and this will override the settings in your script. This can be useful if you are scripting your job submissions in more complicated ways.</p>
+<p>For example, if you want to change the name of the job for this one instance of the job you can submit your script with:</p>
+<pre><code>qsub -N NewName myscript.sh
+</code></pre>
+<p>Or if you want to increase the wall-clock time to 24 hours:</p>
+<pre><code>qsub -l h_rt=24:0:0 myscript.sh
+</code></pre>
+<p>You can submit jobs with dependencies by using the <code>-hold_jid</code> option. For example, the command below submits a job that won't run until job 12345 has finished:</p>
+<pre><code>qsub -hold_jid 12345 myscript.sh
+</code></pre>
+<p>You may specify node type with the <code>-ac allow=</code> flags as below: </p>
+<pre><code>qsub -ac allow=L myscript.sh
+</code></pre>
+<p>This command tells this GPU job to only run the type L nodes which have Nvidia A100s</p>
+<pre><code>qsub -ac allow=EF myscript.sh
+</code></pre>
+<p>This tells this GPU job to only run on the type E and F nodes which have Nvidia V100s.</p>
+<!--- provide an alternate example, e.g., using Myriad's or Kathleen's nodes  --->
+
+<p>Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.</p>
+<h2 id="how-do-i-monitor-a-job">How do I monitor a job?</h2>
+<h3 id="qstat">qstat</h3>
+<p>The <code>qstat</code> command shows the status of your jobs. By default, if you run it with no options, it shows only your jobs (and no-one else’s). This makes it easier to keep track of your jobs. By adding in the option <code>-f -j &lt;job-ID&gt;</code> you will get more detail on the specified job.</p>
+<p>The output will look something like this:</p>
+<pre><code>job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
+-----------------------------------------------------------------------------------------------------------------
+123454 2.00685 DI_m3      ccxxxxx      Eqw   10/13/2017 15:29:11                                    12 
+123456 2.00685 DI_m3      ccxxxxx      r     10/13/2017 15:29:11 Yorick@node-x02e-006               24 
+123457 2.00398 DI_m2      ucappka      qw    10/12/2017 14:42:12                                    1 
+</code></pre>
+<p>This shows you the job ID, the numeric priority the scheduler has assigned to the job, the name you have given the job, your username, the state the job is in, the date and time it was submitted at (or started at, if it has begun), the head node of the job, the number of 'slots' it is taking up, and if it is an array job the last column shows the task ID.</p>
+<p>The queue name (<code>Yorick</code> here) is generally not useful. The head node name (<code>node-x02e-006</code>) is useful - the <code>node-x</code> part tells you this is an X-type node. </p>
+<p>If you want to get more information on a particular job, note its job ID and then use the -f and -j flags to get full output about that job. Most of this information is not very useful.</p>
+<pre><code>qstat -f -j 12345
+</code></pre>
+<h4 id="job-states">Job states</h4>
+<ul>
+<li><code>qw</code>: queueing, waiting</li>
+<li><code>r</code>: running</li>
+<li><code>Rq</code>: a pre-job check on a node failed and this job was put back in the queue</li>
+<li><code>Rr</code>: this job was rescheduled but is now running on a new node</li>
+<li><code>Eqw</code>: there was an error in this jobscript. This will not run.</li>
+<li><code>t</code>: this job is being transferred</li>
+<li><code>dr</code>: this job is being deleted</li>
+</ul>
+<!--- dRr  --->
+<!--- hqw  --->
+
+<p>Many jobs cycling between <code>Rq</code> and <code>Rr</code> generally means there is a dodgy compute node which is failing pre-job checks, but is free so everything tries to run there. In this case, let us know and we will investigate. </p>
+<p>If a job stays in <code>t</code> or <code>dr</code> state for a long time, the node it was on is likely to be unresponsive - again let us know and we'll investigate.</p>
+<p>A job in <code>Eqw</code> will remain in that state until you delete it - you should first have a look at what the error was with <code>qexplain</code>.</p>
+<h3 id="more-scheduler-commands">More scheduler commands</h3>
+<p>Have a look at <code>man qstat</code> and note the commands shown in the <code>SEE ALSO</code> section of the manual page. Exit the manual page and then look at the <code>man</code> pages for those. (You will not be able to run all commands).</p>
+<h2 id="how-do-i-run-interactive-jobs">How do I run interactive jobs?</h2>
+<p>Sometimes you need to run interactive programs, sometimes with a GUI. This can be achieved through <code>qrsh</code>.  We have a detailed guide to running <a href="../Interactive_Jobs/">interactive jobs</a>.</p>
+<h2 id="how-do-i-estimate-what-resources-to-request-in-my-jobscript">How do I estimate what resources to request in my jobscript?</h2>
+<p>It can be difficult to know where to start when estimating the resources your job will need. One way you can find out what resources your jobs need is to submit one job which requests far more than you think necessary, and gather data on what it actually uses. If you aren't sure what 'far more' entails, request the maximum wallclock time and job size that will fit on one node, and reduce this after you have some idea. In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue.</p>
+<p>Run your program as:</p>
+<pre><code> /usr/bin/time --verbose myprogram myargs
+</code></pre>
+<p>where <code>myprogram myargs</code> is however you normally run your program, with whatever options you pass to it.</p>
+<p>When your job finishes, you will get output about the resources it used and how long it took - the relevant one for memory is <code>maxrss</code> (maximum resident set size) which roughly tells you the largest amount of memory it used.</p>
+<p>Remember that memory requests in your jobscript are always per core, so check the total you are requesting is sensible - if you increase it too much you may end up with a job that cannot be submitted.</p>
+<h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?</h2>
+<p>Unfortunately, at the moment it is not possible to run a graphical program in DSH cluster</p>
+<h2 id="what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run">What can I do to minimise the time I need to wait for my job(s) to run?</h2>
+<ol>
+<li>Minimise the amount of wall clock time you request.</li>
+<li>Use job arrays instead of submitting large numbers of jobs (see our
+    <a href="../Example_Jobscripts/">job script examples</a>).</li>
+<li>Plan your work so that you can do other things while your jobs are
+    being scheduled.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
