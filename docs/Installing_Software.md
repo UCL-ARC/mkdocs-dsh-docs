@@ -101,7 +101,7 @@ R CMD INSTALL -l /hpchome/username/your_R_libs_directory package.tar.gz
 ```
 If you want to keep some libraries separate, you can have multiple colon-separated paths in your `$R_LIBS` and specify which one you want to install into with `R CMD INSTALL`.
 
-## Generating an Aryifactory token.
+## Generating an Artifactory token.
 
 To generate an Artifactory token, visit the Artifactory website using DSH Desktop web browser (https://artifactory.idhs.ucl.ac.uk/), click "Artifacts" in the left panel, and then click "Set Me Up" in the top right.
 
