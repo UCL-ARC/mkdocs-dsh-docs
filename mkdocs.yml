@@ -3,6 +3,7 @@ site_description: Documentation for using the DSH cluster
 site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
 theme:
   name: material
+  logo: icon-ucl-logo.png
   features:
     #- navigation.tabs #turning off tabs (can be turned on later)
     - navigation.sections
