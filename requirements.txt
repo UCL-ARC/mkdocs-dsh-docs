@@ -1,7 +1,0 @@
-mkdocs
-mkdocs-material
-mkdocs-awesome-pages-plugin
-#pygments
-#requests
-#Mako
-#mkdocs-htmlproofer-plugin
