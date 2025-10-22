@@ -28,6 +28,9 @@ theme:
       primary: gold
       accent: sun
 
+  extra_css:
+  - style.css    
+
 markdown_extensions:
   - admonition
   - footnotes
