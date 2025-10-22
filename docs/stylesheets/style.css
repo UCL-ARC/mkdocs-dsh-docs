@@ -1,9 +1,3 @@
-/* Header */
-.md-header {
-    background-color: amber !important; /* your header color */
-    color: black !important;
-}
-
 /* Move logo to right side */
 .md-header-nav__title {
     width: 100%;
@@ -14,12 +8,6 @@
 .md-header-nav__title img {
     height: 20px;
     margin-left: auto;
-}
-
-/* Footer */
-.md-footer {
-    background-color: amber !important; /* your footer color */
-    color: black !important;
 }
 
 /* Side menu / navigation panel */
