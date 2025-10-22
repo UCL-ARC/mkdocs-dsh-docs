@@ -1,11 +1,25 @@
 /* Header */
 .md-header {
     background-color: #fdd017 !important; /* your header color */
+    color: white !important;
+}
+
+/* Move logo to right side */
+.md-header-nav__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Split title and logo */
+    align-items: center;
+}
+.md-header-nav__title img {
+    height: 45px;
+    margin-left: auto;
 }
 
 /* Footer */
 .md-footer {
     background-color: #ffe87c !important; /* your footer color */
+    color: white !important;
 }
 
 /* Side menu / navigation panel */
