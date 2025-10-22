@@ -21,7 +21,7 @@ DSH Desktop, please visit the [user guide documentation and FAQ](https://www.ucl
 
 The software available in DSH Desktop can be checked [here](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services).
 
-The [DSH cluster](DSH_Cluster.md) is a set of machines in an isolated environment and it is accessed only from the DSH desktop. More detailed information about [what is a cluster here](Cluster_Computing.md) 
+The [DSH cluster](DSH_Cluster.md) is a set of machines in an isolated environment and it is accessed only from the DSH desktop. More detailed information about [what is a cluster here](1-Cluster_Computing.md) 
 
 ## DSH account application
 
@@ -67,10 +67,10 @@ The Data safe haven operates under a "walled garden" approach. All connections i
 Data Save Haven services are free at point of use by default. 
 
 !!! important
-    Check our [Status page](Cluster_status_page.md) to see the current status of clusters and planned outages. 
+    Check our [Status page](6-Cluster_status_page.md) to see the current status of clusters and planned outages. 
 
-Use of these services is subject to a common set of [terms and conditions](Terms_and_Conditions.md)
+Use of these services is subject to a common set of [terms and conditions](7-Terms_and_Conditions.md)
 
 ## Contact 
 
-You can contact us [here](Contact_Us.md).
+You can contact us [here](8-Contact_Us.md).
