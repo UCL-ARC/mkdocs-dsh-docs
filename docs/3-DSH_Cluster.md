@@ -3,7 +3,7 @@
 DSH is designed for single-node jobs, it is not possible to run multi-node parallel jobs. It is also not connected to internet and it is not connected to the UCL network. You can find extra information about the DSH cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
 
 ## Accounts
-DSH accounts can be applied for via the [DSH sign up process](DSH_Intro.md#dsh-account-application).
+DSH accounts can be applied for via the [DSH sign up process](2-DSH_Intro.md#dsh-account-application).
 
 
 ## Logging in
@@ -211,15 +211,15 @@ We do not have a wallclock but we strongly suggest our users to keep their jobs 
 
 ## Requesting Customer Specialist Servers
 
-If you need a server with particular characteristics to carry on your work, you can request one. Check our page to request a [Customer Specialist Server](Customer_Specialist_Servers.md)
+If you need a server with particular characteristics to carry on your work, you can request one. Check our page to request a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md)
 
 ## Creating, submitting and checking jobs
 
 We have pages that will explain you how to create, submit and check the results of your jobscripts.
 - To learn about the basic SGE commands to run, check, delete and manage your jobscript, please check our [running jobs ](Running_jobs.md) page.
-- To create a jobscript, please check our [job examples](Example_Jobscripts.md) page.
-- To run an interactive job, please cehck our [interactive jobs](Interactive_Jobs.md) page
-- To learn about how to check the results after a job has finished, please check our [job results](Job_Results.md) page.
+- To create a jobscript, please check our [job examples](3.4-Example_Jobscripts.md) page.
+- To run an interactive job, please cehck our [interactive jobs](3.6-Interactive_Jobs.md) page
+- To learn about how to check the results after a job has finished, please check our [job results](3.5-Job_Results.md) page.
 
 
 ## Software 
@@ -250,7 +250,7 @@ The software already available in DSH cluster is summarized in the table below:
 
 ### Installing your own software
 
-You can install in your home directory software available in **Artifactory** or packages available in Python, R and Jupyter. Check our documentation related [Installing your own software](Installing_Software.md).
+You can install in your home directory software available in **Artifactory** or packages available in Python, R and Jupyter. Check our documentation related [Installing your own software](3.1-Installing_Software.md).
 
 ### Requesting software installs
 
