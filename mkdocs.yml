@@ -29,7 +29,7 @@ theme:
       primary: gold
       accent: sun
   extra_css:
-  - css/style.css    
+  - stylesheets/style.css    
 
 markdown_extensions:
   - admonition
