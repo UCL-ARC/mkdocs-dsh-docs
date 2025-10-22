@@ -1,6 +1,6 @@
 # Machine Learning workflows
 
-For many ML workflows, we use conda environments to simplify setup and reproducibility (link to conda page).
+For many ML workflows, we use conda environments to simplify setup and reproducibility (see our [Installing Software](https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/Installing_Software/?h=conda#create-a-virtualenv-using-conda) page for more details).
 Where possible, for each new project we recommend building a new environment from scratch, then gradually adding functionality to it as you scale up your testing (i.e. start with making an environment that can see and use gpu, then add ML libraries and test, and finally start debugging your ML code). In the DSH, GPU libraries like CUDA are pre-installed and accessible for all users (i.e., we don't need to load their software modules), so all we have to do is install software that utilises these GPU's libraries. 
 
 For reference, the commands below can be used to create a conda environment that provides pytorch with cuda capability:
