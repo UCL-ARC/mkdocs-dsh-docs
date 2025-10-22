@@ -6,21 +6,22 @@ This documentation is maintained by the Data Safe Haven Cluster Services team fo
 
 General User Information:
 
-- [Cluster Computing Intro](mkdocs-project-dir/docs/Cluster_Computing.md)
-- [DSH Intro](mkdocs-project-dir/docs/DSH_Intro.md)
-- [DSH Cluster](mkdocs-project-dir/docs/DSH_Cluster.md)
-- [Installing Software](mkdocs-project-dir/docs/Installing_Software.md)
-- [Customer Specialist Servers](mkdocs-project-dir/docs/Customer_Specialist_Servers.md)
-- [Running jobs](mkdocs-project-dir/docs/Running_jobs.md)
-- [Example jobscripts](mkdocs-project-dir/docs/Example_Jobscripts.md)
-- [Job_Results](mkdocs-project-dir/docs/Job_Results.md)
-- [Interactive_Jobs](mkdocs-project-dir/docs/Interactive_Jobs.md)
-- [JupyterHub](mkdocs-project-dir/docs/JupyterHub.md)
-- [RStudio](mkdocs-project-dir/docs/RStudio.md)
-- [Cluster status page](mkdocs-project-dir/docs/Cluster_status_page.md)
-- [Terms and Conditions](mkdocs-project-dir/docs/Terms_and_Conditions.md)
-- [Contact us](mkdocs-project-dir/docs/Contact_Us.md)
-- [Glossary](mkdocs-project-dir/docs/Glossary.md)
+- [Introduction to Cluster Computing](1-Cluster_Computing.md)
+- [Introduction to Data Safe Haven (DSH)](2-DSH_Intro.md)
+- [DSH Cluster](3-DSH_Cluster.md)
+- [Installing Software](3.1-Installing_Software.md)
+- [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md)
+- [Running jobs](3.3-Running_jobs.md)
+- [Example jobscripts](3.4-Example_Jobscripts.md)
+- [Job_Results](3.5-Job_Results.md)
+- [Interactive_Jobs](3.6-Interactive_Jobs.md)
+- [Machine learning workflows](3.7-ML_workflows.md)
+- [JupyterHub](4-JupyterHub.md)
+- [RStudio](5-RStudio.md)
+- [Cluster status page](6-Cluster_status_page.md)
+- [Terms and Conditions](7-Terms_and_Conditions.md)
+- [Contact us](8-Contact_Us.md)
+- [Glossary](9-Glossary.md)
 
 ## Training
 
