@@ -216,7 +216,7 @@ If you need a server with particular characteristics to carry on your work, you 
 ## Creating, submitting and checking jobs
 
 We have pages that will explain you how to create, submit and check the results of your jobscripts.
-- To learn about the basic SGE commands to run, check, delete and manage your jobscript, please check our [running jobs ](Running_jobs.md) page.
+- To learn about the basic SGE commands to run, check, delete and manage your jobscript, please check our [running jobs ](3.3-Running_jobs.md) page.
 - To create a jobscript, please check our [job examples](3.4-Example_Jobscripts.md) page.
 - To run an interactive job, please cehck our [interactive jobs](3.6-Interactive_Jobs.md) page
 - To learn about how to check the results after a job has finished, please check our [job results](3.5-Job_Results.md) page.
@@ -268,12 +268,12 @@ There, a menu will be displayed with both options.
 
 ![Menu_JupyterHub_R](img/Menu_JupyterHub_R.png)
 
-For more information related to these services, visit our pages [Jupyter Hub](JupyterHub.md) and [RStudio](RStudio.md)
+For more information related to these services, visit our pages [Jupyter Hub](4-JupyterHub.md) and [RStudio](5-RStudio.md)
 
 
 ## Support
 
-Please visit our [contact](Contact_Us.md) page.
+Please visit our [contact](8-Contact_Us.md) page.
 
 ## Acknowledging the Use of DSH Systems
 
