@@ -24,21 +24,21 @@
 
 /* Side menu / navigation panel */
 .md-nav__title {
-    background-color: #e6dd9c !important;
+    background-color: amber !important;
     font-weight: bold;
     color: #000 !important;
 }
 .md-nav__item{
-    background-color: #f7f5bc !important;
+    background-color: amber !important;
 } 
 .md-nav__link {
-    background-color: #fdd017 !important; /* side menu background */
+    background-color: amber !important; /* side menu background */
     color: #333333 !important;            /* link text color */
 }
 
 /* Optional: hover effect for menu items */
 .md-nav__link:hover {
-    background-color: #e0d77a !important;
+    background-color: amber !important;
 }
 
 .md-main {
