@@ -9,7 +9,6 @@ After creating your script, submit it to the scheduler with:
 ## Resources
 
 The lines starting with `#$ -l` are where you are requesting resources like wallclock time (how long your job is allowed to run) and memory. In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue. 
-For more information related, please check our documentation: https://github.com/NicoleLabrAvila/mkdocs-dsh/blob/main/mkdocs-project-dir/docs/Running_jobs.md#asking-for-resources
 
 Useful resources:
 
@@ -38,7 +37,7 @@ Shown below is a simple job script that runs /bin/date (which prints the current
 # Set the name of the job.
 #$ -N Serial_Job
 
-# Set the working directory to somewhere in your scratch space.  
+# Set the working directory to somewhere in your home space.  
 #  This is a necessary step as compute nodes cannot write to $HOME.
 # Replace "<your_UCL_id>" with your UCL user ID.
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/
@@ -51,7 +50,7 @@ Shown below is a simple job script that runs /bin/date (which prints the current
 
 For programs that can use multiple threads, you can request multiple processor cores using the `-pe smp <number>` option. One common method for using multiple threads in a program is OpenMP, and the `$OMP_NUM_THREADS` environment variable is set automatically in a job of this type to tell OpenMP how many threads it should use. Most methods for running multi-threaded applications should correctly detect how many cores have been allocated, though (*via* a mechanism called `cgroups`).
 
-Note that this job script works directly in scratch instead of in the temporary `$TMPDIR` storage.
+Note that this job script works directly in home instead of in the temporary `$TMPDIR` storage, as our system is diskless.
 
 ```bash
 #!/bin/bash -l
@@ -71,7 +70,7 @@ Note that this job script works directly in scratch instead of in the temporary 
 # Request 16 cores.
 #$ -pe smp 16
 
-# Set the working directory to somewhere in your scratch space.
+# Set the working directory to somewhere in your home space.
 # Replace "<your_UCL_id>" with your UCL user ID
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
@@ -101,7 +100,7 @@ If you want to submit a large number of similar serial jobs then it may be easie
 # Set the name of the job.
 #$ -N MyArrayJob
 
-# Set the working directory to somewhere in your scratch space. 
+# Set the working directory to somewhere in your home space. 
 # Replace "<your_UCL_id>" with your UCL user ID :)
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
@@ -124,7 +123,7 @@ For example:
 0005 ...
 ```
 
-Assuming that this file is stored in `~/Scratch/input/params.txt` (you can call this file anything you want) then the user can use awk/sed to get the appropriate variables out of the file. The script below does this and stores them in `$index`, `$variable1`, `$variable2` and `$variable3`.  So for example in task 4, `$index = 0004`, `$variable1 = 1.112`, `$variable2 = 23` and `$variable3 = panda`.
+Assuming that this file is stored in `~/hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/input/params.txt` (you can call this file anything you want) then the user can use awk/sed to get the appropriate variables out of the file. The script below does this and stores them in `$index`, `$variable1`, `$variable2` and `$variable3`.  So for example in task 4, `$index = 0004`, `$variable1 = 1.112`, `$variable2 = 23` and `$variable3 = panda`.
 
 Since the parameter file can be generated automatically from a user's datasets, this approach allows the simple automation, submission and management of thousands or tens of thousands of tasks.
 
@@ -146,7 +145,7 @@ Since the parameter file can be generated automatically from a user's datasets, 
 # Set the name of the job.
 #$ -N array-params
 
-# Set the working directory to somewhere in your scratch space.
+# Set the working directory to somewhere in your home space.
 # Replace "<your_UCL_id>" with your UCL user ID :)
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
@@ -192,7 +191,7 @@ Your script can then have a loop that runs task IDs from `$SGE_TASK_ID` to `$SGE
 # Set the name of the job.
 #$ -N arraystride
 
-# Set the working directory to somewhere in your scratch space.
+# Set the working directory to somewhere in your home space.
 # Replace "<your_UCL_id>" with your UCL user ID :)
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
@@ -210,9 +209,7 @@ done
 
 ## GPU Job Script Example
 
-To use NVIDIA GPUs with the CUDA libraries, you need to load the CUDA runtime libraries module or else set up the environment yourself. The script below shows what you'll need to unload and load the appropriate modules.
-
-You also need to use the `-l gpu=<number>` option to request the GPUs from the scheduler.
+You need to use the `-l gpu=<number>` option to request the GPUs from the scheduler.
 
 ```bash
 #!/bin/bash -l
@@ -231,7 +228,7 @@ You also need to use the `-l gpu=<number>` option to request the GPUs from the s
 # Set the name of the job.
 #$ -N GPUJob
 
-# Set the working directory to somewhere in your scratch space.
+# Set the working directory to somewhere in your home space.
 # Replace "<your_UCL_id>" with your UCL user ID :)
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/output
 
@@ -259,14 +256,14 @@ This script runs R using only one core.
 # Set the name of the job. You can change this if you wish.
 #$ -N R_job_1
 
-# Set the working directory to somewhere in your scratch space.  This is
+# Set the working directory to somewhere in your space.  This is
 # necessary because the compute nodes cannot write to your $HOME
 # NOTE: this directory must exist.
 # Replace "<your_UCL_id>" with your UCL user ID
 #$ -wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/R_output
 
 # Run your R program
-R --no-save < /home/username/Scratch/myR_job.R > myR_job.out
+R --no-save < /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/home/myR_job.R > myR_job.out
 ```
 
 You will need to change the `-wd /hpchome/<your_UCL_id>.IDHS.UCL.AC.UK/R_output` location and the location of your R input file, called `myR_job.R` here.  `myR_job.out` is the file we are redirecting the output into.
@@ -300,7 +297,7 @@ This script uses multiple cores on the same node. It cannot run across multiple 
 # processes in the registerDoMC call in your R program.
 #$ -pe smp 12
 
-# Set the working directory to somewhere in your scratch space.  This is
+# Set the working directory to somewhere in your home space.  This is
 # necessary because the compute nodes cannot write to your $HOME
 # NOTE: this directory must exist.
 # Replace "<your_UCL_id>" with your UCL user ID
