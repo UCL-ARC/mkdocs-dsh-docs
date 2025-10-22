@@ -1,0 +1,24 @@
+/* Header */
+.md-header {
+    background-color: #fdd017 !important; /* your header color */
+}
+
+/* Footer */
+.md-footer {
+    background-color: #ffe87c !important; /* your footer color */
+}
+
+/* Side menu / navigation panel */
+.md-nav__title, 
+.md-nav__item, 
+.md-nav__link {
+    background-color: #fdd017 !important; /* side menu background */
+    color: #333333 !important;            /* link text color */
+}
+
+/* Optional: hover effect for menu items */
+.md-nav__link:hover {
+    background-color: #e0d77a !important;
+}
+
+
