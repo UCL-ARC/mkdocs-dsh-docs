@@ -6,27 +6,27 @@
     align-items: center;
 }
 .md-header-nav__title img {
-    height: 20px;
+    height: 50px;
     margin-left: auto;
 }
 
 /* Side menu / navigation panel */
 .md-nav__title {
-    background-color: amber !important;
+    background-color: #FDD835 !important;
     font-weight: bold;
     color: #000 !important;
 }
 .md-nav__item{
-    background-color: amber !important;
+    background-color: #FDD835 !important;
 } 
 .md-nav__link {
-    background-color: amber !important; /* side menu background */
+    background-color: #FDD835 !important; /* side menu background */
     color: #333333 !important;            /* link text color */
 }
 
 /* Optional: hover effect for menu items */
 .md-nav__link:hover {
-    background-color: amber !important;
+    background-color: #FDD835 !important;
 }
 
 .md-main {
