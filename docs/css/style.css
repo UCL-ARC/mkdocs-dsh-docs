@@ -6,13 +6,13 @@
 
 /* Move logo to right side */
 .md-header-nav__title {
-    width: 100%;
+    width: 10%;
     display: flex;
     justify-content: space-between; /* Split title and logo */
     align-items: center;
 }
 .md-header-nav__title img {
-    height: 60px;
+    height: 100px;
     margin-left: auto;
 }
 
