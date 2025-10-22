@@ -1,6 +1,6 @@
 /* Header */
 .md-header {
-    background-color: #400 !important; /* your header color */
+    background-color: amber !important; /* your header color */
     color: black !important;
 }
 
@@ -12,13 +12,13 @@
     align-items: center;
 }
 .md-header-nav__title img {
-    height: 2000px;
+    height: 20px;
     margin-left: auto;
 }
 
 /* Footer */
 .md-footer {
-    background-color: #fdd017 !important; /* your footer color */
+    background-color: amber !important; /* your footer color */
     color: black !important;
 }
 
