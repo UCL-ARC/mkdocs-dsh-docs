@@ -6,13 +6,13 @@
 
 /* Move logo to right side */
 .md-header-nav__title {
-    width: 1000%;
+    width: 100%;
     display: flex;
     justify-content: space-between; /* Split title and logo */
     align-items: center;
 }
 .md-header-nav__title img {
-    height: 1000px;
+    height: 2000px;
     margin-left: auto;
 }
 
@@ -23,8 +23,14 @@
 }
 
 /* Side menu / navigation panel */
-.md-nav__title, 
-.md-nav__item, 
+.md-nav__title {
+    background-color: #e6dd9c !important;
+    font-weight: bold;
+    color: #000 !important;
+}
+.md-nav__item{
+    background-color: #f7f5bc !important;
+} 
 .md-nav__link {
     background-color: #fdd017 !important; /* side menu background */
     color: #333333 !important;            /* link text color */
@@ -35,4 +41,7 @@
     background-color: #e0d77a !important;
 }
 
+.md-main {
+    background-color: white !important;
+}
 
