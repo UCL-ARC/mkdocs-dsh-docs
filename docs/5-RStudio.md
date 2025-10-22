@@ -18,6 +18,6 @@ RStudio and all of its components are only accessible from inside DSH network.
 
 ### R session not starting or RStudio Initialisation Error
 
-If you get an RStudio error pop-up: `Initialisation Error: Unable to connect to service` or an ever-spinning loading screen please, [get in touch with RC support](Contact_Us.md). 
+If you get an RStudio error pop-up: `Initialisation Error: Unable to connect to service` or an ever-spinning loading screen please, [get in touch with RC support](8-Contact_Us.md). 
 
 
