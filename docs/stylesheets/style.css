@@ -1,3 +1,10 @@
+/* Increase logo size in header */
+.md-logo img {
+    height: 150px !important;      /* Change size here */
+    max-height: none !important;   /* Remove default limit */
+    width: auto !important;        /* Keep proportions */
+}
+
 /* Move logo to right side */
 .md-header-nav__title {
     width: 100%;
