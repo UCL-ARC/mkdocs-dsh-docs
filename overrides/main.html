@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block header_logo %}
-<a href="https://www.ucl.ac.uk/" target="_blank">
-    <img src="{{ base_url }} images/icon-ucl-logo.png" alt="UCL Logo" height="100">
+<a href="https://www.ucl.ac.uk/" class="md-logo" title="Go to homepage" target="_blank">
+  <img src="{{ config.theme.logo | url }}" alt="Logo">
 </a>
 {% endblock %}
