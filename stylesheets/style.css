@@ -1,0 +1,30 @@
+/* Increase logo size in header */
+.md-logo img {
+    height: 30px !important;      /* Change size here */
+    max-height: none !important;   /* Remove default limit */
+    width: auto !important;        /* Keep proportions */
+}
+
+.md-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.md-logo {
+    order: 0;      /* Move logo to the right */
+    text-decoration: none !important;  /* Remove underline */
+}
+
+.md-header__title {
+    order: 1;      /* Keep title on the left */
+}
+
+.md-header__search {
+    order: 2;      /* Keep title on the left */
+}
+
+.md-main {
+    background-color: white !important;
+}
+
