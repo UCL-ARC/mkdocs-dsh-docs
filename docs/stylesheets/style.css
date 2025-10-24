@@ -6,7 +6,7 @@
     align-items: center;
 }
 .md-header-nav__title img {
-    height: 200px;
+    height: 200px !important;
     margin-left: auto;
 }
 
