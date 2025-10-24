@@ -1,6 +1,6 @@
 /* Increase logo size in header */
 .md-logo img {
-    height: 150px !important;      /* Change size here */
+    height: 50px !important;      /* Change size here */
     max-height: none !important;   /* Remove default limit */
     width: auto !important;        /* Keep proportions */
 }
