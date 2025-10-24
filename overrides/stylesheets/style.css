@@ -12,12 +12,12 @@
 }
 
 .md-logo {
-    order: 1;      /* Move logo to the right */
+    order: 0;      /* Move logo to the right */
     text-decoration: none !important;  /* Remove underline */
 }
 
 .md-header__title {
-    order: 2;      /* Keep title on the left */
+    order: 1;      /* Keep title on the left */
 }
 
 .md-header__search {
