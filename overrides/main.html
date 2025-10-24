@@ -1,7 +1,8 @@
+{# overrides/main.html - minimal override to make logo a link to UCL #}
 {% extends "base.html" %}
 
-{% block header_logo %}
-<a href="https://www.ucl.ac.uk/" class="md-logo" title="Go to homepage" target="_blank">
-  <img src="{{ config.theme.logo | url }}" alt="Logo">
-</a>
-{% endblock %}
+{%- block header_logo -%}
+  <a class="md-logo" href="https://www.ucl.ac.uk/" target="_blank" rel="noopener noreferrer" title="Visit UCL">
+    <img src="{{ config.theme.logo | url }}" alt="{{ config.site_name }}">
+  </a>
+{%- endblock -%}
