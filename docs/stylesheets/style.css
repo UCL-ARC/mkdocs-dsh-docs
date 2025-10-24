@@ -5,35 +5,18 @@
     width: auto !important;        /* Keep proportions */
 }
 
-/* Move logo to right side */
-.md-header-nav__title {
-    width: 100%;
+.md-header__inner {
     display: flex;
-    justify-content: space-between; /* Split title and logo */
+    justify-content: space-between;
     align-items: center;
 }
-.md-header-nav__title img {
-    height: 10px !important;
-    margin-left: auto;
+
+.md-logo {
+    order: 2;      /* Move logo to the right */
 }
 
-/* Side menu / navigation panel */
-.md-nav__title {
-    background-color: #FDD835 !important;
-    font-weight: bold;
-    color: #000 !important;
-}
-.md-nav__item{
-    background-color: #FDD835 !important;
-} 
-.md-nav__link {
-    background-color: #FDD835 !important; /* side menu background */
-    color: #333333 !important;            /* link text color */
-}
-
-/* Optional: hover effect for menu items */
-.md-nav__link:hover {
-    background-color: #FDD835 !important;
+.md-header__title {
+    order: 1;      /* Keep title on the left */
 }
 
 .md-main {
