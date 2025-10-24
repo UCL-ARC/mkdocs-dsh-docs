@@ -44,5 +44,5 @@ plugins:
       collapse_single_pages: true
       title_case: true
       ignore_files:
-        - index.md
+        - 'index.md'
 
