@@ -29,7 +29,7 @@ theme:
         name: Switch to light mode    
       primary: amber 
       accent: yellow
-  extra_css:
+extra_css:
   - 'stylesheets/style.css'   
 
 markdown_extensions:
