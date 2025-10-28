@@ -27,7 +27,7 @@ theme:
       toggle:
         icon: material/eye-outline
         name: Switch to light mode    
-      primary: indigo 
+      primary: pink
       accent: green
 extra_css:
   - 'stylesheets/style.css'   
