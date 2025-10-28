@@ -27,6 +27,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - repository 
   language: en
   palette:
     - scheme: default
