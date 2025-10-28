@@ -40,8 +40,12 @@ theme:
         name: Switch to light mode    
       primary: custom
       accent: pink  
+repo_url: 
 extra:
   homepage: https://www.ucl.ac.uk
+   social:
+    - icon: fontawesome/brands/github
+    - link: https://github.com/squidfunk/mkdocs-material   
 extra_css:
   - 'stylesheets/style.css'   
 
