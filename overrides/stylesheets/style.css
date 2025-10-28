@@ -12,7 +12,7 @@
 }
 
 .md-logo {
-    order: 2;      /* Move logo to the right */
+    order: 0;      /* Move logo to the left */
     text-decoration: none !important;  /* Remove underline */
 }
 
