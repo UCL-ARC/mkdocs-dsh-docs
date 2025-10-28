@@ -20,7 +20,7 @@ Often these kinds of work are either impossible or would take far too long to do
 
 By running the programs on the computers in a cluster, researchers can use many powerful computers at once, without locking up their own one.
 
-## What is the Data Safe Haven (DSH) High-Performance Computing (HPC) cluster? 
+## What is the Data Safe Haven high-performance computing (DSH HPC) cluster? 
 
 The DSH HPC is a cluster that is isolated from the university network and the internet for security purposes. These restrictions allow our users to use the cluster to analyse data containing sensitive information in a secure environment. 
 
