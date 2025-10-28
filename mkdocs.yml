@@ -15,6 +15,7 @@ theme:
     - navigation.top
     - navigation.path
     - navigation.indexes
+    - navigation.footer
     - toc.follow
     - toc.integrate
     - search.suggest
@@ -38,6 +39,9 @@ theme:
       accent: pink  
 extra:
   homepage: https://www.ucl.ac.uk
+  social:
+    - icon: fontawesome/brands/UCL 
+      link: https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh
 extra_css:
   - 'stylesheets/style.css'   
 
@@ -54,4 +58,4 @@ plugins:
       title_case: true
       ignore_files:
         - 'index.md'
-
+copyright: Copyright &copy; 2022 Bespoke Solutions Teams, UCL
