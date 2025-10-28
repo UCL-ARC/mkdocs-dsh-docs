@@ -11,7 +11,7 @@ edit_uri: blob/master/mkdocs-project-dir/docs/
 
 theme:
   name: material
-  logo: images/ucl-logo.jpg
+  logo: images/ucl-logo.png
   custom_dir: overrides
   icon:
     previous: fontawesome/solid/angle-left
