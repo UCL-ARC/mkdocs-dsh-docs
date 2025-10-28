@@ -20,8 +20,11 @@
     order: 1;      /* Keep title on the left */
 }
 
-.md-header__search {
-    order: 2;      /* Keep title on the left */
+.md-header__option {
+    margin-left: auto !important; /* Move search bar to the right */
+
+.md-header__option[data-md-component="search"] { 
+    margin-left: auto;        /* Push search bar to the right */
 }
 
 .md-main {
