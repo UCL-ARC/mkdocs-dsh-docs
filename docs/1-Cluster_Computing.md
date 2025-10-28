@@ -30,7 +30,7 @@ Most people use something like the following workflow:
   
  - Connect to DSH Desktop through the Applications & Data Portal: <https://accessgateway.idhs.ucl.ac.uk/>
  - Connect to the DSH HPC cluster's "login nodes" using SSH ("ssh client").
- - Copy necessary data to the DSH HPC cluster from your existing DSH share or DSH Desktop environment using WinSCP ("scp client")
+ - Copy necessary data to your personal home space in the DSH HPC cluster from your existing DSH share or DSH Desktop environment using WinSCP ("scp client")
    - Note that data can only be copied to the DSH HPC cluster if it is already inside the DSH environment.
      - If the data is outside of the DSH, then it must first be copied into a DSH share using the File Transfer Portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
      - Also note that only some DSH user accounts have privileges for transferring data into and out of the DSH. Your project's Information Asset Owner (IAA) or Administrator (IAA) can request these privileges for their users as needed.
