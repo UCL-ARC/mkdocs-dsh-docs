@@ -1,3 +1,6 @@
+hide:
+  - navigation
+  - toc
 site_name: Data Safe Haven Cluster Services Documentation
 site_description: Documentation for using the DSH cluster
 site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
@@ -7,8 +10,16 @@ theme:
   custom_dir: overrides
   features:
     - navigation.sections
-    - toc.follow
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
     - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -27,7 +38,7 @@ theme:
         icon: material/eye-outline
         name: Switch to light mode    
       primary: pink
-      accent: green
+      accent: green   
 extra:
   homepage: https://www.ucl.ac.uk
 extra_css:
