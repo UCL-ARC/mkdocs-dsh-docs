@@ -5,6 +5,7 @@ theme:
   name: material
   logo: images/icon-ucl-logo.png
   custom_dir: overrides
+  repo_url: https://github.com/UCL-ARC/mkdocs-dsh-docs
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
