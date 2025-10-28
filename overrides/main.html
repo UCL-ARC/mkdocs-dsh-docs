@@ -15,15 +15,8 @@
     <!-- Right side items -->
     <div class="md-header__items" style="margin-left:auto; display:flex; align-items:center; gap:10px;">
 
-      <!-- Theme toggle -->
-      <div class="md-header__option" data-md-component="toggle">
-        {{ super() }}
-      </div>
-
-      <!-- Search bar -->
-      <div class="md-header__option" data-md-component="search">
-        {{ super() }}
-      </div>
+      <!-- Call super() once to include toggle and search -->
+      {{ super() }}
 
       <!-- Repo icon -->
       {% if config.theme.repo_url %}
