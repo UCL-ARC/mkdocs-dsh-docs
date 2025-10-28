@@ -29,13 +29,13 @@ theme:
         icon: material/eye
         name: Switch to dark mode
       primary: custom
-      accent: green
+      accent: pink
     - scheme: slate 
       toggle:
         icon: material/eye-outline
         name: Switch to light mode    
       primary: custom
-      accent: green   
+      accent: pink  
 extra:
   homepage: https://www.ucl.ac.uk
 extra_css:
