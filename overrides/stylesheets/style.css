@@ -3,6 +3,33 @@
   --md-primary-fg-color--light: #AC145A;
   --md-primary-fg-color--dark:  #AC145A;
 }
+.md-header__inner {
+    display: flex;
+    align-items: center;
+}
+.md-logo {
+    order: 0;      /* Move logo to the left */
+    text-decoration: none !important;  /* Remove underline */
+}   
+
+.md-header__title {
+    order: 1;      /* Keep title on the left */
+    margin-left: 10px;  /* Space between icon and title */
+    color: white !important;  /* Change this to any colour */
+    font-size: 20px !important;  /* Change number to desired size */
+    font-weight: 600;            /* Optional: make text bolder */
+}
+
+.md-header__option[data-md-component="toggle"] {
+    order: 2;  /* Theme toggle third */
+    margin-left: auto; /* Push toggle and search to right */
+    margin-right: 10px; /* optional spacing */
+}
+
+.md-header__option[data-md-component="search"] { 
+  order: 3;  /* Search bar last */
+  margin-left: auto;        /* Push search bar to the right */
+}
 
 /* Increase logo size in header */
 .md-logo img {
@@ -11,34 +38,7 @@
     width: auto !important;        /* Keep proportions */
 }
 
-.md-logo {
-    order: 0;      /* Move logo to the left */
-    text-decoration: none !important;  /* Remove underline */
-}   
-
-.md-header__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* ===== Optional: adjust search bar size ===== */
+.md-search__input {
+    max-width: 200px;  /* change as needed */
 }
-
-.md-header__title {
-    order: 1;      /* Keep title on the left */
-    color: white !important;  /* Change this to any colour */
-    font-size: 28px !important;  /* Change number to desired size */
-    font-weight: 600;            /* Optional: make text bolder */
-}
-
-
-.md-header__option {
-    order: 2;
-#    margin-left: auto !important; /* Move search bar to the right */
-}
-#.md-header__option[data-md-component="search"] { 
-#    margin-left: auto;        /* Push search bar to the right */
-#}
-
-#.md-main {
-#    background-color: black !important;
-#}
-
