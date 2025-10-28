@@ -43,9 +43,9 @@ theme:
       accent: pink   
 extra:
   homepage: https://www.ucl.ac.uk
-   social:
-     icon: fontawesome/brands/github
-     link: https://github.com/squidfunk/mkdocs-material   
+  social:
+    icon: fontawesome/brands/github
+    link: https://github.com/squidfunk/mkdocs-material   
 extra_css:
   - 'stylesheets/style.css'   
 markdown_extensions:
