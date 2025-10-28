@@ -4,7 +4,7 @@ site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
 
 # Associated Git Repo Config
 repo_name: UCL-ARC/mkdocs-dsh-docs
-repo_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs
+repo_url: https://github.com/UCL-ARC/mkdocs-dsh-docs
 
 # If this is removed, the edit buttons will go away. I like them.
 edit_uri: blob/master/mkdocs-project-dir/docs/
