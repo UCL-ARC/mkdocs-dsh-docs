@@ -1,3 +1,9 @@
+:root  > * {
+  --md-primary-fg-color:        #AC145A;
+  --md-primary-fg-color--light: #AC145A;
+  --md-primary-fg-color--dark:  #AC145A;
+}
+
 /* Increase logo size in header */
 .md-logo img {
     height: 30px !important;      /* Change size here */
