@@ -25,8 +25,10 @@
 .md-header__title {
     order: 1;      /* Keep title on the left */
     color: white !important;  /* Change this to any colour */
-  
+    font-size: 28px !important;  /* Change number to desired size */
+    font-weight: 600;            /* Optional: make text bolder */
 }
+
 
 .md-header__option {
     order: 2;
