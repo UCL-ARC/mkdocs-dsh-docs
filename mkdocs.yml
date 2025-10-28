@@ -5,6 +5,9 @@ theme:
   name: material
   logo: images/icon-ucl-logo.png
   custom_dir: overrides
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
   features:
     - navigation.sections
     - navigation.instant
@@ -39,9 +42,6 @@ theme:
       accent: pink  
 extra:
   homepage: https://www.ucl.ac.uk
-  social:
-    - icon: fontawesome/brands/UCL 
-      link: https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh
 extra_css:
   - 'stylesheets/style.css'   
 
