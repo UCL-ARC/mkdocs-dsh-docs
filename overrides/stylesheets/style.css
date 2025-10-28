@@ -12,7 +12,7 @@
 }
 
 .md-logo {
-    order: 0;      /* Move logo to the right */
+    order: 1;      /* Move logo to the right */
     text-decoration: none !important;  /* Remove underline */
 }
 
@@ -23,11 +23,11 @@
 .md-header__option {
     margin-left: auto !important; /* Move search bar to the right */
 
-.md-header__option[data-md-component="search"] { 
-    margin-left: auto;        /* Push search bar to the right */
-}
+#.md-header__option[data-md-component="search"] { 
+#    margin-left: auto;        /* Push search bar to the right */
+#}
 
-.md-main {
-    background-color: white !important;
-}
+#.md-main {
+#    background-color: white !important;
+#}
 
