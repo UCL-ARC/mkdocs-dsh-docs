@@ -1,4 +1,4 @@
-# Introduction to Data Save Haven (DSH) 
+# Introduction to Data Save Haven
 
 It is a secure, isolated environment where sensitive data can be stored, processed, and analyzed, 
 while maintaining strict security measures to protect the confidentiality and privacy of individuals.
