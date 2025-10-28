@@ -1,7 +1,6 @@
 site_name: Data Safe Haven Cluster Services Documentation
 site_description: Documentation for using the DSH cluster
 site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
-
 theme:
   name: material
   logo: images/icon-ucl-logo.png
@@ -16,7 +15,6 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.tracking
-    - navigation.sections
     - navigation.expand
     - navigation.top
     - navigation.path
@@ -42,21 +40,18 @@ theme:
         icon: material/eye-outline
         name: Switch to light mode    
       primary: custom
-      accent: pink  
-      
+      accent: pink   
 extra:
   homepage: https://www.ucl.ac.uk
-  #social:
-    #icon: fontawesome/brands/github
-    #link: https://github.com/squidfunk/mkdocs-material   
+   #social:
+     #icon: fontawesome/brands/github
+     #link: https://github.com/squidfunk/mkdocs-material   
 extra_css:
   - 'stylesheets/style.css'   
-
 markdown_extensions:
   - admonition
   - footnotes
   - attr_list
-
 plugins:
   - search
   - awesome-nav:
@@ -65,5 +60,4 @@ plugins:
       title_case: true
       ignore_files:
         - 'index.md'
-        
 copyright: Copyright &copy; 2022 Bespoke Solutions Teams, UCL
