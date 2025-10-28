@@ -1,4 +1,4 @@
-# Cluster Computing
+# Introduction to Cluster Computing
 
 ## What is a cluster?
 
