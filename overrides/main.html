@@ -15,10 +15,17 @@
     <!-- Right side items -->
     <div class="md-header__items" style="margin-left:auto; display:flex; align-items:center; gap:10px;">
 
-      <!-- Call super() once to include toggle and search -->
-      {{ super() }}
+      <!-- Theme toggle -->
+      {% if config.theme.features contains 'toggle' %}
+      <div class="md-header__option" data-md-component="toggle"></div>
+      {% endif %}
 
-      <!-- Repo icon -->
+      <!-- Search bar -->
+      {% if config.theme.features contains 'search' %}
+      <div class="md-header__option" data-md-component="search"></div>
+      {% endif %}
+
+      <!-- GitHub repo icon -->
       {% if config.theme.repo_url %}
       <div class="md-header__option" data-md-component="repo">
         <a class="md-icon" href="{{ config.theme.repo_url }}" target="_blank" rel="noopener noreferrer" title="GitHub Repository">
