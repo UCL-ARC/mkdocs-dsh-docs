@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header class="md-header">
+  <div class="md-header__inner">
+    
+    <!-- Logo first -->
+    <a class="md-logo" href="{{ config.site_url }}">
+      <img src="{{ config.theme.logo | url }}" alt="{{ config.site_name }}">
+    </a>
+
+    <!-- Title second -->
+    <span class="md-header__title">{{ config.site_name }}</span>
+
+    <!-- Right side items -->
+    <div class="md-header__items" style="margin-left:auto; display:flex; align-items:center; gap:10px;">
+
+      <!-- Theme toggle -->
+      <div class="md-header__option" data-md-component="toggle">
+        {{ super() }}
+      </div>
+
+      <!-- Search bar -->
+      <div class="md-header__option" data-md-component="search">
+        {{ super() }}
+      </div>
+
+      <!-- Repo icon -->
+      {% if config.theme.repo_url %}
+      <div class="md-header__option" data-md-component="repo">
+        <a class="md-icon" href="{{ config.theme.repo_url }}" target="_blank" rel="noopener noreferrer" title="GitHub Repository">
+          <i class="md-icon__inner {{ config.theme.icon.repo }}"></i>
+        </a>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</header>
+{% endblock %}
