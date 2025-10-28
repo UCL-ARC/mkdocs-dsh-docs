@@ -50,5 +50,21 @@
     max-width: 200px;  /* change as needed */
 }
 
+/* Footer background color same as header */
+.md-footer {
+    background-color: #AC145A !important;  /* Match header color */
+    color: white !important;               /* Text color */
+    padding: 1rem 2rem;                    /* Optional spacing */
+}
 
+/* Footer links color */
+.md-footer a {
+    color: white !important;
+    text-decoration: underline;
+}
+
+/* Optional: change hover color for links */
+.md-footer a:hover {
+    color: pink !important;  /* Gold accent, for example */
+}
 
