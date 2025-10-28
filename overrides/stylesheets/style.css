@@ -17,7 +17,7 @@
     margin-left: 10px;  /* Space between icon and title */
     color: white !important;  /* Change this to any colour */
     font-size: 20px !important;  /* Change number to desired size */
-    font-weight: 600;            /* Optional: make text bolder */
+    font-weight: 500;            /* Optional: make text bolder */
 }
 
 .md-header__option[data-md-component="toggle"] {
@@ -28,7 +28,14 @@
 
 .md-header__option[data-md-component="search"] { 
   order: 3;  /* Search bar last */
-  margin-left: auto;        /* Push search bar to the right */
+  margin-left: 10px;        /* Push search bar to the right */
+}
+
+/* Ensure repo icon appears and is on the right */
+.md-header__option[data-md-component="repo"] {
+    order: 4;           /* After toggle and search bar */
+    display: inline-flex !important;
+    margin-left: 10px;
 }
 
 /* Increase logo size in header */
