@@ -45,7 +45,7 @@ extra:
   homepage: https://www.ucl.ac.uk
   social:
     - icon: fontawesome/brands/github   # <-- FIXED: now a list item
-      link: https://github.com/squidfunk/mkdocs-material
+      link: https://github.com/UCL-ARC/mkdocs-dsh-docs
 extra_css:
   - 'stylesheets/style.css'   
 markdown_extensions:
