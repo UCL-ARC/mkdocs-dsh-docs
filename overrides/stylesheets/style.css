@@ -5,15 +5,15 @@
     width: auto !important;        /* Keep proportions */
 }
 
+.md-logo {
+    order: 0;      /* Move logo to the left */
+    text-decoration: none !important;  /* Remove underline */
+}   
+
 .md-header__inner {
     display: flex;
 #    justify-content: space-between;
     align-items: center;
-}
-
-.md-logo {
-    order: 0;      /* Move logo to the left */
-    text-decoration: none !important;  /* Remove underline */
 }
 
 .md-header__title {
@@ -21,6 +21,7 @@
 }
 
 .md-header__option {
+    order: 2;
     margin-left: auto !important; /* Move search bar to the right */
 
 #.md-header__option[data-md-component="search"] { 
@@ -28,6 +29,6 @@
 #}
 
 #.md-main {
-#    background-color: white !important;
+#    background-color: black !important;
 #}
 
