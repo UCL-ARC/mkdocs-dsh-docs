@@ -4,6 +4,8 @@ site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
 theme:
   name: material
   logo: images/icon-ucl-logo.png
+  extra:
+  homepage: https://www.ucl.ac.uk
   custom_dir: overrides
   features:
     #- navigation.tabs #turning off tabs (can be turned on later)
