@@ -22,13 +22,13 @@ theme:
         icon: material/eye
         name: Switch to dark mode
       primary: pink
-      accent: light green
+      accent: green
     - scheme: slate 
       toggle:
         icon: material/eye-outline
         name: Switch to light mode    
       primary: indigo 
-      accent: light green
+      accent: green
 extra_css:
   - 'stylesheets/style.css'   
 
