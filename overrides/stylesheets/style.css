@@ -24,12 +24,12 @@
 
 .md-header__title {
     order: 1;      /* Keep title on the left */
-    color: black !important;  /* Change this to any colour */
+    color: white !important;  /* Change this to any colour */
 }
 
 .md-header__option {
     order: 2;
-~    margin-left: auto !important; /* Move search bar to the right */
+#    margin-left: auto !important; /* Move search bar to the right */
 }
 #.md-header__option[data-md-component="search"] { 
 #    margin-left: auto;        /* Push search bar to the right */
