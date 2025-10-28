@@ -49,8 +49,6 @@ extra:
     - icon: fontawesome/brands/github
     - link: https://github.com/squidfunk/mkdocs-material   
   analytics:
-    provider: google
-    property: G-XXXXXXXXXX
     feedback:
       title: Was this page helpful?
       ratings:
