@@ -21,14 +21,14 @@ theme:
       toggle:
         icon: material/eye
         name: Switch to dark mode
-      primary: amber
-      accent: yellow 
+      primary: pink
+      accent: light green
     - scheme: slate 
       toggle:
         icon: material/eye-outline
         name: Switch to light mode    
-      primary: amber 
-      accent: yellow
+      primary: indigo 
+      accent: amber
 extra_css:
   - 'stylesheets/style.css'   
 
