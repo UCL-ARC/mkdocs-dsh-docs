@@ -6,7 +6,7 @@ theme:
   logo: images/icon-ucl-logo.png
   custom_dir: overrides
   features:
-    #- navigation.tabs #turning off tabs (can be turned on later)
+    - navigation.tabs #turning off tabs (can be turned on later)
     - navigation.sections
     - toc.follow
     - navigation.top
