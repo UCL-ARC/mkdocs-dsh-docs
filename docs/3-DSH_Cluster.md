@@ -1,6 +1,6 @@
 # Data Safe Haven (DSH) HPC Cluster
 
-The DSH HPC cluster is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is relatively small scale, so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs. You can find additional information about the DSH HPC cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
+The DSH HPC cluster is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is fairly small scale, so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs. You can find additional information about the DSH HPC cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
 
 ## Accounts
 
