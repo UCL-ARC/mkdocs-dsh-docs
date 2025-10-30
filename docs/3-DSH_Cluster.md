@@ -1,4 +1,4 @@
-# DSH HPC Cluster
+# Data Safe Haven (DSH) HPC Cluster
 
 The DSH HPC cluster is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is relatively small scale, so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs. You can find additional information about the DSH HPC cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
 
@@ -256,9 +256,9 @@ You can include `nvidia-smi` in your jobscript to get information about the GPU 
 
 | Cores   | Max wallclock   |
 | ------- | --------------- |
-| 1 to 16 | 48hrs suggested |
+| 1 to 16 | 48h   suggested |
 
-We do not provide a hard wallclock limit, but we strongly suggest that users keep their jobs within the 48hrs time limit out of consideration for other users. If you need more time to run your jobscript for particular circumstances, please contact us at <rc-support@ucl.ac.uk>.
+We do not provide a hard wallclock limit, but we strongly suggest that users keep their jobs within a 48-hour time limit out of consideration for other users. If you need more time to run your jobscript for particular circumstances, please contact us at <rc-support@ucl.ac.uk>.
 
 [Interactive jobs](Interactive_Jobs.md) can be run with `qlogin` and have the same maximum wallclock time suggested as other jobs.
 

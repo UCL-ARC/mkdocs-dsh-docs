@@ -1,42 +1,65 @@
 site_name: Data Safe Haven Cluster Services Documentation
 site_description: Documentation for using the DSH cluster
 site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
+
+# Associated Git Repo Config
+repo_name: UCL-ARC/mkdocs-dsh-docs
+repo_url: https://github.com/UCL-ARC/mkdocs-dsh-docs
+
+# If this is removed, the edit buttons will go away. I like them.
+edit_uri: blob/master/mkdocs-project-dir/docs/
+
 theme:
   name: material
-  logo: images/icon-ucl-logo.png
+  logo: images/ucl-logo.png
   custom_dir: overrides
+  icon:
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    repo: fontawesome/brands/github
   features:
-    #- navigation.tabs #turning off tabs (can be turned on later)
     - navigation.sections
-    - toc.follow
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.expand
     - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - repository 
   language: en
   palette:
     - scheme: default
       toggle:
         icon: material/eye
         name: Switch to dark mode
-      primary: amber
-      accent: yellow 
+      primary: custom
+      accent: pink
     - scheme: slate 
       toggle:
         icon: material/eye-outline
         name: Switch to light mode    
-      primary: amber 
-      accent: yellow
+      primary: custom
+      accent: pink   
+extra:
+  homepage: https://www.ucl.ac.uk
+  social:
+    - icon: fontawesome/brands/github   # <-- FIXED: now a list item
+      link: https://github.com/UCL-ARC/mkdocs-dsh-docs
 extra_css:
   - 'stylesheets/style.css'   
-
 markdown_extensions:
   - admonition
   - footnotes
   - attr_list
-
 plugins:
   - search
   - awesome-nav:
@@ -45,4 +68,4 @@ plugins:
       title_case: true
       ignore_files:
         - 'index.md'
-
+copyright: Copyright &copy; 2025 Bespoke Solutions Teams, UCL
