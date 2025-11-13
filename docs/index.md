@@ -18,7 +18,7 @@ General User Information:
 - [Machine Learning Workflows](3.7-ML_workflows.md)
 - [Jupyter Hub](4-JupyterHub.md)
 - [RStudio](5-RStudio.md)
-- [Cluster Status Page](6-Cluster_status_page.md)
+- [DSH HPC Cluster Status Page](6-Cluster_status_page.md)
 - [Terms and Conditions](7-Terms_and_Conditions.md)
 - [Contact Us](8-Contact_Us.md)
 - [Glossary](9-Glossary.md)
