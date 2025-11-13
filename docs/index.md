@@ -11,7 +11,7 @@ General User Information:
 - [Data Safe Haven (DSH) HPC Cluster](3-DSH_Cluster.md)
 - [Installing Software](3.1-Installing_Software.md)
 - [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md)
-- [Running jobs](3.3-Running_jobs.md)
+- [Submitting Jobs](3.3-Running_jobs.md)
 - [Example jobscripts](3.4-Example_Jobscripts.md)
 - [Job Results](3.5-Job_Results.md)
 - [Interactive_Jobs](3.6-Interactive_Jobs.md)
