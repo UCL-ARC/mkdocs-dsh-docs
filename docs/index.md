@@ -15,12 +15,12 @@ General User Information:
 - [Example Jobscripts](3.4-Example_Jobscripts.md)
 - [Job Results](3.5-Job_Results.md)
 - [Interactive_Job Sessions](3.6-Interactive_Jobs.md)
-- [Machine learning workflows](3.7-ML_workflows.md)
-- [JupyterHub](4-JupyterHub.md)
+- [Machine Learning Workflows](3.7-ML_workflows.md)
+- [Jupyter Hub](4-JupyterHub.md)
 - [RStudio](5-RStudio.md)
-- [Cluster status page](6-Cluster_status_page.md)
+- [Cluster Status Page](6-Cluster_status_page.md)
 - [Terms and Conditions](7-Terms_and_Conditions.md)
-- [Contact us](8-Contact_Us.md)
+- [Contact Us](8-Contact_Us.md)
 - [Glossary](9-Glossary.md)
 
 ## Training
