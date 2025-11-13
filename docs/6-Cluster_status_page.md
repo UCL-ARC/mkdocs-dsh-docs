@@ -1,10 +1,10 @@
-# Status of the cluster
+# DSH HPC Cluster Status Page
 
 This page outlines that status of the DSH cluster and the planned outages managed by the Beskpoke team at UCL.
 We endeavour to keep this page as up-to-date as possible but there might be some delay. If you are experiencing 
 issues with the cluster, feel free to report them to rc-support@ucl.ac.uk.
 
-## DSH cluster status
+## Status of the DSH HPC Cluster
 
   - 2025-06-05 - DSH cluster is working normally.
   - 2025-06-04 - We need to perform maintenance on some of our DSH host machines. The GPU-enabled virtual machines
