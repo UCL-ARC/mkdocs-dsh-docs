@@ -13,7 +13,7 @@ General User Information:
 - [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md)
 - [Running jobs](3.3-Running_jobs.md)
 - [Example jobscripts](3.4-Example_Jobscripts.md)
-- [Job_Results](3.5-Job_Results.md)
+- [Job Results](3.5-Job_Results.md)
 - [Interactive_Jobs](3.6-Interactive_Jobs.md)
 - [Machine learning workflows](3.7-ML_workflows.md)
 - [JupyterHub](4-JupyterHub.md)
