@@ -20,7 +20,7 @@ General User Information:
 - [RStudio](5-RStudio.md)
 - [DSH HPC Cluster Status Page](6-Cluster_status_page.md)
 - [Terms and Conditions](7-Terms_and_Conditions.md)
-- [Contact Us](8-Contact_Us.md)
+- [Contact and Support](8-Contact_Us.md)
 - [Glossary](9-Glossary.md)
 
 ## Training
