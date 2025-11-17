@@ -6,21 +6,21 @@ This documentation is maintained by the Data Safe Haven Cluster Services team fo
 
 General User Information:
 
-- [Introduction to Cluster Computing](1-Cluster_Computing.md)
 - [Introduction to Data Safe Haven (DSH)](2-DSH_Intro.md)
-- [DSH Cluster](3-DSH_Cluster.md)
+- [Introduction to Cluster Computing](1-Cluster_Computing.md)
+- [Data Safe Haven (DSH) HPC Cluster](3-DSH_Cluster.md)
 - [Installing Software](3.1-Installing_Software.md)
 - [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md)
-- [Running jobs](3.3-Running_jobs.md)
-- [Example jobscripts](3.4-Example_Jobscripts.md)
-- [Job_Results](3.5-Job_Results.md)
-- [Interactive_Jobs](3.6-Interactive_Jobs.md)
-- [Machine learning workflows](3.7-ML_workflows.md)
-- [JupyterHub](4-JupyterHub.md)
+- [Submitting Jobs](3.3-Running_jobs.md)
+- [Example Jobscripts](3.4-Example_Jobscripts.md)
+- [Job Results](3.5-Job_Results.md)
+- [Interactive_Job Sessions](3.6-Interactive_Jobs.md)
+- [Machine Learning Workflows](3.7-ML_workflows.md)
+- [Jupyter Hub](4-JupyterHub.md)
 - [RStudio](5-RStudio.md)
-- [Cluster status page](6-Cluster_status_page.md)
+- [DSH HPC Cluster Status Page](6-Cluster_status_page.md)
 - [Terms and Conditions](7-Terms_and_Conditions.md)
-- [Contact us](8-Contact_Us.md)
+- [Contact and Support](8-Contact_Us.md)
 - [Glossary](9-Glossary.md)
 
 ## Training

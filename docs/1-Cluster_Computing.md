@@ -6,7 +6,7 @@ In this context, a cluster is a collection of computers (often referred to as "n
 They're networked together with some shared storage and a scheduling system that lets people 
 run programs on them without having to enter commands "live".
 
-The UCL Moodle course "ARC - Introduction to High Performance Computing at UCL" has a video explanation of this here: [(Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4623810) (UCL users)/
+The UCL Moodle course "ARC - Introduction to High Performance Computing at UCL" has a video explanation of this here: [(Moodle)](https://moodle.ucl.ac.uk/mod/page/view.php?id=4623810) (UCL users).
 
 This video is also available here: [(mediacentral)](https://mediacentral.ucl.ac.uk/Play/96444) (non-UCL users).
 
@@ -20,25 +20,27 @@ Often these kinds of work are either impossible or would take far too long to do
 
 By running the programs on the computers in a cluster, researchers can use many powerful computers at once, without locking up their own one.
 
-## What is Data Save Haven (DSH) cluster? 
+## What is the Data Safe Haven high-performance computing (DSH HPC) cluster? 
 
-It is a cluster that is isolated from the university network for security purposes. It also doesn't have any connection to internet. This restrictions allow our users to use the cluster to analyse data containing sensitive information in a secure environment. 
+The DSH HPC is a cluster that is isolated from the university network and the internet for security purposes. These restrictions allow our users to use the cluster to analyse data containing sensitive information in a secure environment. 
 
-## How do I use a cluster in DSH?
+## How do I use the DSH HPC cluster?
 
 Most people use something like the following workflow:
   
- - Connect to the DSH desktop through the data portal : https://accessgateway.idhs.ucl.ac.uk/vpn/index.html
- - Connect to the cluster's "login nodes" using ssh ("ssh client").
- - If you need to copy data into the cluster, you can only do it if the data is already in the DSH desktop.
-     - If the data is outside DSH it must be copied into the DSH desktop thorough the file transfer portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
+ - Connect to DSH Desktop through the Applications & Data Portal: <https://accessgateway.idhs.ucl.ac.uk/>
+ - Connect to the DSH HPC cluster's "login nodes" using SSH ("ssh client").
+ - Copy necessary data to your personal home space in the DSH HPC cluster from your existing DSH share or DSH Desktop environment using WinSCP ("scp client")
+   - Note that data can only be copied to the DSH HPC cluster if it is already inside the DSH environment.
+     - If the data is outside of the DSH, then it must first be copied into a DSH share using the File Transfer Portal: https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml
+     - Also note that only some DSH user accounts have privileges for transferring data into and out of the DSH. Your project's Information Asset Owner (IAA) or Administrator (IAA) can request these privileges for their users as needed.
  - Create a script of commands to run programs
  - Submit the script to the scheduler
  - Wait for the scheduler to find available "compute nodes" and run the script
  - Look at the results in the files the script created
 
-In order to connect to the cluster using ssh, you can use both **Gitbash** or **PuTTY**. Both programs are already installed in DSH desktop. Both of them will open a terminal where you can enter text commands to intercat with the cluster.
+In order to connect to the cluster using SSH, you can use an application such as **GitBash** or **PuTTY** (both of these are available in DSH Desktop by default) to open a terminal where you can enter text commands to interact with the cluster.
 
-If you need to copy data already in the DSH desktop to the cluster you can do it using **SCP** command or in a more interactive way using FileZilla, that is already inside DSH.
+If you need to copy data that is already inside the DSH onto the DSH HPC cluster, you can do so using the **SCP** text command, or in a more interactive way using WinSCP (which is available in DSH Desktop by default).
 
-Please be aware that login nodes are shared resources, so users should not be running memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for other users. Hence, identified culprit user processes are systematically killed.
+Please be aware that login nodes are shared resources, so users should not be running memory intensive jobs nor jobs with long runtimes in the login node. Doing so may negatively impact the performance of the login node for yourself and the other users. Any user processes that are identified as being disruptive to the normal operation of the login nodes may be killed without warning.

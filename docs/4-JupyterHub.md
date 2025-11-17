@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DSH cluster team provide a JupyterHub service with graphical interface.
+The DSH HPC cluster login nodes provide a JupyterHub service with graphical interface.
 
 ## Access
 
@@ -10,7 +10,7 @@ To access the service go to the following URL from inside DSH:
 
 <https://cluster.idhs.ucl.ac.uk/jhub/hub/login>
 
-and login with your UCL userid and password.
+and login with your DSH userid and password.
 
 ![JupyterHub_login](img/JupyterHub_login.png)
 
