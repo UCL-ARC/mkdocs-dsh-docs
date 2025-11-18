@@ -14,7 +14,7 @@ General User Information:
 - [Submitting Jobs](3.3-Running_jobs.md)
 - [Example Jobscripts](3.4-Example_Jobscripts.md)
 - [Job Results](3.5-Job_Results.md)
-- [Interactive_Job Sessions](3.6-Interactive_Jobs.md)
+- [Interactive Job Sessions](3.6-Interactive_Jobs.md)
 - [Machine Learning Workflows](3.7-ML_workflows.md)
 - [Jupyter Hub](4-JupyterHub.md)
 - [RStudio](5-RStudio.md)
