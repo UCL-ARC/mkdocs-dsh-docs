@@ -21,7 +21,7 @@ DSH Desktop, please visit the [user guide documentation and FAQ](https://www.ucl
 
 The software available in DSH Desktop can be checked [here](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services).
 
-The [DSH HPC cluster](DSH_Cluster.md) is a set of Red Hat Enterprise Linux virtual machines in an isolated environment, and it can only be accessed from within the DSH (e.g. using DSH Desktop). Find more detailed information about [what a cluster is here.](1-Cluster_Computing.md) 
+The [DSH HPC cluster](3-DSH_Cluster.md) is a set of Red Hat Enterprise Linux virtual machines in an isolated environment, and it can only be accessed from within the DSH (e.g. using DSH Desktop). Find more detailed information about [what a cluster is here.](2-Cluster_Computing.md) 
 
 ## DSH account application
 
@@ -52,7 +52,8 @@ The Data safe haven operates under a "walled garden" approach. All connections i
 
 Data Save Haven services are free at point of use by default. 
 
-!!! important Check our [Status page](6-Cluster_status_page.md) to see the current status of clusters and planned outages. 
+!!! important
+    Check our [Status page](6-Cluster_status_page.md) to see the current status of clusters and planned outages. 
 
 Use of these services is subject to a common set of [terms and conditions](7-Terms_and_Conditions.md)
 
