@@ -2,21 +2,19 @@
 
 ## Overview
 
-The DSH HPC cluster login nodes provide a JupyterHub service with graphical interface.
+The DSH HPC Cluster login nodes (and some select other DSH HPC machines) provide a JupyterHub service with graphical interface.
 
 ## Access
 
-To access the service go to the following URL from inside DSH:
+To access the service, visit the machine's URL from inside DSH. For the DSH HPC Cluster, this is: <https://cluster.idhs.ucl.ac.uk/jhub/hub/login>
 
-<https://cluster.idhs.ucl.ac.uk/jhub/hub/login>
-
-and login with your DSH userid and password.
+You will be prompted to login with your DSH userid and password.
 
 ![JupyterHub_login](img/JupyterHub_login.png)
 
 ![JupyterHub](img/JupyterHub.png)
 
-The Jupyter Hub and all of its components are only accessible from inside DSH network. 
+These Jupyter Hub instances and all of their components are only accessible from inside DSH network. 
 
 ### Jupyter Hub not starting or Initialisation Error
 
