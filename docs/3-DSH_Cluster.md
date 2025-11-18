@@ -1,18 +1,24 @@
-# Data Safe Haven (DSH) HPC Cluster
+# Data Safe Haven High-Performance Computing (DSH HPC) 
 
-The DSH HPC cluster is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is fairly small scale, so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs. You can find additional information about the DSH HPC cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
+The DSH HPC environment consists of two main pieces, the DSH HPC Cluster and the Customer Specialist Servers. 
+
+The DSH HPC Cluster is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is fairly small scale, so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs. You can find additional information about the DSH HPC cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
+
+Customer Specialist Servers are a variety of individual bespoke servers, custom built for specific projects and users, and are only provisioned by special request. 
+
+The remainder of this section will primarily discuss the DSH HPC Cluster and the DSH HPC environment generally, while Customer Specialist Servers are discussed in more detail on their dedicated [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md) page.
 
 ## Accounts
 
-DSH accounts can be applied for via the [DSH sign up process](2-DSH_Intro.md#dsh-account-application). The format of the DSH userid may vary based on the type of account you are provided, the permissions you've been afforded, and whether you are an internal UCL user or an external user.
+As discussed in the [Introduction to DSH](2-DSH_Intro) section, DSH accounts can be applied for via the [DSH sign up process](2-DSH_Intro.md#dsh-account-application). The format of the DSH userid may vary based on the type of account you are provided, the permissions you've been afforded, and whether you are an internal UCL user or an external user.
 
-All DSH users are automatically granted access to the DSH HPC cluster.
+All DSH users are automatically granted access to the DSH HPC Cluster.
 
-## Logging in to the DSH HPC cluster
+## Logging in to the DSH HPC environment
 
-The DSH HPC cluster can only be accessed from within the DSH "walled garden" environment, so you *must* log in from inside, e.g. using DSH Desktop. The connection to the cluster is typically made via Secure Shell (SSH) connection, and DSH Desktop has terminal applications such as **PuTTY** and **GitBash** installed for this purpose. 
+The DSH HPC environment can only be accessed from within the broader DSH "walled garden" environment, so you *must* log in from inside, e.g. using DSH Desktop. The connection to the DSH HPC Cluster and Customer Specialist Servers is typically made via Secure Shell (SSH) connection, and DSH Desktop has terminal applications such as **PuTTY** and **GitBash** installed for this purpose. 
 
-For example, to connect to the cluster using **GitBash**, open a terminal and type the below command to SSH into the machine you wish to access. Replace <DSH_userid> with your DSH userid and <DSH_system_name> with the name of the machine you want to log in to, eg. dsh-sge2log01:
+For example, to connect to a DSH HPC system using **GitBash**, open a terminal and type the below command to SSH into the machine you wish to access. Replace <DSH_userid> with your DSH userid and <DSH_system_name> with the name of the machine you want to log in to:
 
 ```
 ssh <DSH_userid>@<DSH_system_name>
@@ -30,7 +36,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 Typing **yes** will allow you to continue logging in.
 
-If you have access to a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) or similar private virtual machine in the DSH HPC environment, you can typically just substitute that machine's name for `<DSH_system_name>` above. 
+To access the DSH HPC Cluster, you will generally use one of its login nodes as the system name (`dsh-sge2log01` or `dsh-sge2log02`). If you have access to a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) or similar private virtual machine in the DSH HPC environment, you would instead substitute that machine's name for `<DSH_system_name>` above. 
 
 ### PuTTY
 
@@ -42,24 +48,26 @@ You will then be asked to enter your username and password. Note that this requi
 
 The first time you log in to a new server, you'll get a popup telling you that the server's host key is not cached in the registry - this is normal and is because you have never connected to this server before. If you want to, you can check the host fingerprint against our current key fingerprints.
 
-### Login nodes
+### DSH HPC Cluster Login nodes
 
-The DSH HPC cluster uses two login nodes: `dsh-sge2log01` and  `dsh-sge2log02`, both of which are identical and you can connect to either. The alias `cluster` can also be used as a shortcut to automatically connect to a login node (`dsh-sge2log01` by default). The login nodes allow you to manage your files, compile code and submit jobs. Very short (<15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted to the scheduler as a job, as login nodes are shared resources. Running memory intensive jobs or jobs with long runtimes on the login nodes may negatively impact the performance of the node for other users, so please be mindful. Any user processes identified as being disruptive to normal system operation may be killed without warning.
+The DSH HPC Cluster uses two login nodes: `dsh-sge2log01` and  `dsh-sge2log02`, both of which are identical and you can connect to either. The alias `cluster` can also be used as a shortcut to automatically connect to a login node (`dsh-sge2log01` by default). The login nodes allow you to manage your files, compile code and submit jobs. 
+
+Very short (<15 mins) and non-resource-intensive software tests can be run on the login nodes, but anything more should be submitted to the scheduler as a job, as login nodes are shared resources. Running memory intensive jobs or jobs with long runtimes on the login nodes may negatively impact the performance of the node for other users, so please be mindful. Any user processes identified as being disruptive to normal system operation may be killed without warning.
 
 ### Logging in to a specific machine
 
-As noted [above](3-DSH_Cluster.md#logging-in), you can use SSH to access a specific machine by name. Typically this would be one of the login nodes (either `dsh-sge2log01` or `dsh-sge2log02`), or a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) that has been created for your project. A reminder of the command structure for doing this is provided below. 
+As noted [above](3-DSH_Cluster.md#logging-in), you can use SSH to access a specific machine by name. Typically this would be one of the DSH HPC Cluster login nodes (either `dsh-sge2log01` or `dsh-sge2log02`), or a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) that has been created for your project. A reminder of the command structure for doing this is provided below. 
 ```
 ssh <DSH_userid>@dsh-sge2log01
-ssh <DSH_userid>@dsh-sge2log02
+ssh <DSH_userid>@<DSH_system_name>
 ```
-  - (Tip 1: The shortform alias `cluster` can also be used to connect to the `dsh-sge2log01` login node)
-  - (Tip 2: If you've logged into DSH Desktop using your regular DSH userid, you can typically omit the "<DSH_userid@" portion of the command, for example: `ssh cluster`)
+  - _Tip 1: The shortform alias `cluster` can also be used to connect to the `dsh-sge2log01` login node_
+  - _Tip 2: If you've logged into DSH Desktop using your regular DSH userid, you can typically omit the "<DSH_userid@" portion of the command, for example: `ssh cluster`_
 
 ### Login problems
-If you experience difficulties logging in to the DSH HPC cluster, please make sure that you are typing your DSH user ID and your password correctly (and note that the DSH userid is distinct from your UCL userid, if you have one). If you have recently updated your password, it may take some time to propagate to all UCL systems -- consider giving it some time and trying again later.
+If you experience difficulties logging in to systems in the DSH HPC environment, please make sure that you are typing your DSH user ID and your password correctly (and note that the DSH userid is distinct from your UCL userid, if you have one). If you have recently updated your password, it may take some time to propagate to all UCL systems -- consider giving it some time and trying again later.
 
-If you still cannot access the DSH HPC, but are able to access DSH Desktop, please contact us on rc-support@ucl.ac.uk indicating you are having difficulty accessing in the DSH HPC Cluster.
+If you still cannot access DSH HPC systems, but are able to access DSH Desktop, please email us at <rc-support@ucl.ac.uk> indicating that you are having difficulty accessing the DSH HPC, and specifying which systems where possible.
 
 If you cannot access anything in the DSH, you may need to request a password reset from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
@@ -67,11 +75,11 @@ If you cannot access anything in the DSH, you may need to request a password res
 
 You can log out of the systems by typing `exit` and pressing enter (pressing `Ctrl`+`D` also works).
 
-## Copying data into your DSH HPC cluster environment
+## Copying data to the DSH HPC Cluster or a Customer Specialist Server
 
-If you wish to copy data into your DSH HPC cluster home space, first ensure that the data is accessible from inside the DSH environment (e.g. it is in a DSH project share, or in your home space in the DSH Desktop environment). If the data is outside of the DSH, then it must first be copied into the DSH using the [File Transfer Portal](https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml) (note that only some DSH user accounts have privileges for transferring data into and out of the DSH; your project's Information Asset Owner (IAA) or Administrator (IAA) can request these privileges for you, if necessary).
+If you wish to copy data into your DSH HPC Cluster home space or onto a Customer Specialist Server, first ensure that the data is accessible from inside the broader DSH environment (e.g. it is in a DSH project share, or in your home space in the DSH Desktop environment). If the data is outside of the DSH, then it must first be copied into the DSH using the [File Transfer Portal](https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml) (note that only some DSH user accounts have privileges for transferring data into and out of the DSH; your project's Information Asset Owner (IAA) or Administrator (IAA) can request these privileges for you, if necessary).
 
-To copy data that is already in the DSH into your DSH HPC cluster environment, you can use the **Secure Copy (SCP)** protocol. For this you can use the **SCP** or **rsync** text commands, or if you prefer to use a graphical interface, the **WinSCP** application provided in the DSH Desktop. (*Note that while **Filezilla** is also installed in the DSH Desktop, it is not supported for the DSH HPC cluster.*)
+To copy data that is already in the DSH onto a DSH HPC machine, you can use the **Secure Copy (SCP)** protocol. For this you can use the **SCP** or **rsync** text commands, or if you prefer to use a graphical interface, the **WinSCP** application provided in the DSH Desktop. (*Note that while **Filezilla** is also installed in the DSH Desktop, it is not supported on DSH HPC systems.*)
 
 ### SCP
 
@@ -82,7 +90,7 @@ scp <options> <source_file> <target_destination>
 
 Below are some example command templates that could be run from a DSH Desktop terminal application (such as GitBash or PuTTY).
 
-This template will copy a data file (preferably a single compressed file) from somewhere on your DSH Desktop machine to a specified location on the remote machine inside the DSH HPC cluster (login node, etc):
+This template will copy a data file (preferably a single compressed file) from somewhere on your DSH Desktop machine to a specified location on the remote machine inside the DSH HPC (login node, etc):
 ```
 scp <local_data_file_path> <DSH_userid>@<DSH_system_name>:<remote_path>/
 # Example: scp mylocalfile.txt mydshuserid@dsh-sge2log01:~/myremotepath/
@@ -121,13 +129,13 @@ Press **accept**. You will see this window:
 
 ![WinSCP](img/WinSCP3.png)
 
-The left panel usually shows your local DSH Desktop directories, and the right panel shows the directories of the server you are connected to -- if connecting to a DSH HPC cluster login node, this will typically be your DSH HPC cluster home space. To transfer files, just drag the file or directory you want to copy from one panel to the other. This works in both directions, meaning you can copy from your local directory in DSH Desktop to the DSH HPC cluster, and also from the cluster to DSH Desktop.
+The left panel usually shows your local DSH Desktop directories, and the right panel shows the directories of the server you are connected to -- if connecting to a DSH HPC Cluster login node, this will typically be your DSH HPC Cluster home space. To transfer files, just drag the file or directory you want to copy from one panel to the other. This works in both directions, meaning you can copy from your local directory in DSH Desktop to a DSH HPC machine, and also from the DSH HPC machine to DSH Desktop.
 
-## Software stack
+## DSH HPC Software stack
 
-The DSH HPC cluster uses a simple software stack based upon Red Hat Enterprise Linux (RHEL) v8.x, with some additional commonly used applications installed, such as R and Anaconda. There is also a small set of custom installed applications that can be accessed by all users from the DSH HPC cluster nodes at the location `/apps`. 
+DSH HPC machines all use a simple software stack based upon Red Hat Enterprise Linux (RHEL) v8.x, with some additional commonly used applications installed, such as R and Anaconda. Customer Specialist Servers will only come with additional software installed as required by the original provisioning request.
 
-A partial list of some of the software that is already available for use in the DSH HPC cluster is summarized in the table below:
+The DSH HPC Cluster includes an additional small set of custom installed applications that can be accessed by all users from the DSH HPC Cluster nodes at the shared location `/apps`. A partial list of some of the software that is already available for use in the DSH HPC Cluster is summarized in the table below:
 
 | Software            | Version  |
 | --------------------| -------- |
@@ -153,43 +161,45 @@ A partial list of some of the software that is already available for use in the 
 
 ### Installing your own software
 
-The DSH also provides access to an internal software repository called **Artifactory**. Artifactory provides secure, curated access to some commonly-used external software repositories such as CRAN, Conda, and PyPi, which users can use to install Python and R packages into their cluster environment as needed. See [Installing your own software](3.1_Installing_Software.md) for more information.
+The DSH also provides access to an internal software repository called **Artifactory**. Artifactory provides secure, curated access to some commonly-used external software repositories such as CRAN, Conda, and PyPi, which users can use to install Python and R packages into their cluster environment as needed. See [Installing Software](3.1_Installing_Software.md) for more information.
 
 ### Requesting software installs
 
-If you wish, you can also request that specific software be installed into the DSH by contacting us and specifying that it is a new software request for the DSH HPC cluster and detailing the specific software and version that you require. This can be done by emailing us at <rc-support@ucl.ac.uk>, or raising a ticket with our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). 
+If you wish, you can also request that specific software be installed onto a DSH HPC machine by contacting us, either by email at <rc-support@ucl.ac.uk> or by raising a ticket with our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). Please indicate that it is a new software request for the DSH HPC, specify whether it is for the DSH HPC Cluster or a Customer Specialist Server, and provide details about the specific software and version that you require.
 
-As DSH is a secure environment, all software that is not already available in **Artifactory** will be subject to a rigorous security, validation, and vulnerability assessment process before being installed. This might take several days, and in some complex cases it can extend to weeks. If the risk is deemed to be too significant, we reserve the right to refuse installation of the requested software for security reasons.  
+As the DSH is a secure environment, all software that is not already available in **Artifactory** will be subject to a rigorous security, validation, and vulnerability assessment process before being installed. This might take several days, and in some complex cases it can extend to weeks. If the risk is deemed to be too significant, we reserve the right to refuse installation of the requested software for security reasons.  
 
-### JupyterHub and RStudio
+### Jupyter Hub and RStudio
 
-The DSH HPC cluster also provides a browser-based interactive graphical user interface (Web GUI) for the **Jupyter Hub** and **RStudio** applications. To access these services, launch a web browser from inside the DSH (e.g. DSH Desktop) and visit the following URL: <https://cluster.idhs.ucl.ac.uk/>
+Some DSH HPC machines, including the DSH HPC Cluster, provide a browser-based interactive graphical user interface (Web GUI) for the **Jupyter Hub** and **RStudio** applications. To access these services for the DSH HPC Cluster, launch a web browser from inside the DSH (e.g. DSH Desktop) and visit the following URL: <https://cluster.idhs.ucl.ac.uk/>
 
-A splash page will be displayed, allowing you to select both options:
+If a Customer Specialist Server has been equipped with Jupyter Hub and/or Rstudio, you can typically access the web GUI using a URL similar to the following: `https://<DSH_system_name>.idhs.ucl.ac.uk/`
+
+A splash page will be displayed, allowing you to select the desired application:
 
 ![Menu_JupyterHub_R](img/Menu_JupyterHub_R.png)
 
 For more information related to these services, visit our pages [Jupyter Hub](4-JupyterHub.md) and [RStudio](5-RStudio.md).
 
-## Data storage
+## DSH HPC Cluster Data storage
 
-The DSH HPC cluster nodes use a local parallel filesystem which includes a shared `/apps` directory accessible to all users, and dedicated private cluster home space for each user. 
+The DSH HPC Cluster nodes use a local parallel filesystem which includes a shared `/apps` directory accessible to all users, and dedicated private cluster home space for each user on `/hpchome`.
 
-Each user is allocated a 50 GB quota of home space in the DSH HPC cluster environment for their personal use. It is not possible to request a permanent increase to this quota size at this time, but it is not a "hard" quota -- you will be able to write beyond this limit to some extent, but since it is a limited and shared resource we strongly encourage users to keep their usage within the established limits out of consideration for other cluster users. We routinely monitor disk space usage, and users found to be repeatedly or flagrantly extending beyond these limits will be asked to remedy their behaviour, and, if necessary, we may take action to bring usage back into acceptable limits. If you need more storage for particular circumstances, please contact us at <rc-support@ucl.ac.uk> to discuss your options.
+Each user is allocated a 50 GB quota of home space in the DSH HPC Cluster for their personal use. It is not possible to request a permanent increase to this quota size at this time, but it is not a "hard" quota -- you will be able to write beyond this limit to some extent, but since it is a limited and shared resource we strongly encourage users to keep their usage within the established limits out of consideration for other cluster users. We routinely monitor disk space usage, and users found to be repeatedly or flagrantly extending beyond these limits will be asked to remedy their behaviour, and, if necessary, we may take action to bring usage back into acceptable limits. If you need more storage for particular circumstances, please contact us at <rc-support@ucl.ac.uk> to discuss your options.
 
-### Home
+### DSH HPC Cluster Home Directories
 
-Each user is allocated a private home space in the DSH HPC cluster, which is shared across each node in the cluster. This home space is the directory that you are shown when you first log in to a cluster node, and is can be accessed at the location `/hpchome/<DSH_userid>@IDHS.UCL.AC.UK/` (this can be verified by checking the associated environment variable with `echo $HOME`). To navigate back to your home space from another directory, you can use the shortcut commands `cd $HOME`, or `cd ~` (or you can navigate there more explicitly by using the full path, `cd /hpchome/<DSH_userid>@IDHS.UCL.AC.UK/`).
+As noted above, each user is allocated a private home space in the DSH HPC cluster, which is shared across each node in the cluster. This home space is typically the directory that you are shown when you first log in to a Cluster node, and it can be accessed at the location `/hpchome/<DSH_userid>@IDHS.UCL.AC.UK/` (this can be verified by checking the associated environment variable with `echo $HOME`). To navigate back to your home space from another directory, you can use the shortcut commands `cd $HOME`, or `cd ~` (or you can navigate there more explicitly by using the full path, `cd /hpchome/<DSH_userid>@IDHS.UCL.AC.UK/`).
 
-Many programs will save config files to your home directory using filenames beginning with `.` (e.g., `.config`, `.cache`), which causes them to be hidden. You can list all files (including hidden ones) using `ls -al`.
+Many programs will save configuration and settings files to your home directory using filenames beginning with `.` (e.g., `.config`, `.cache`), which causes them to be hidden by default. You can list all files (including hidden ones) using `ls -al`.
  
-Please note that your DSH HPC cluster home space is distinct from the DSH Desktop home space and any project shares that you have access to, as well as any local home space you may have on a standalone Customer Specialist Server. No one else can access your cluster home space, and any files that you wish to use for your work on the cluster must be specifically copied into your cluster home space in order for the cluster nodes to be able to access it.
+Please note that your DSH HPC Cluster home space is distinct from the DSH Desktop home space and any project shares that you have access to, as well as any local home space you may have on a standalone Customer Specialist Server. No one else can access your Cluster home space, and any files that you wish to use for your work on the DSH HPC Cluster must be specifically copied into your Cluster home space in order for the Cluster nodes to be able to access it.
 
 #### Tips for use
 
 - Use different directories for different jobs. Do not write everything to the same place.
 - Clear up your work directory after your jobs. Keep the files you need, archive or delete the ones you do not.
-- Archive and compress directory trees you aren't currently using. (`tar` command for example). This stores all their contents as one file, and compressing it saves space.
+- Archive and compress directory trees you aren't currently using (e.g., using the `tar` command). This stores all their contents as one file, and compressing it saves space.
 - Regularly back-up your important data to somewhere off the cluster.
 - If you haven't used particular files for some months and do not expect to in the near future, keep them off-cluster and delete the copies on the cluster.
 - If you are no longer using the cluster, remove your data to maintain filesystem performance and allow the space to be used by current active users.
@@ -213,9 +223,9 @@ Make formal request by ticket : [Data Safe Haven - General DSH Enquiry](https://
 
 Note that, depending on the details on the user and data, this request may need to be made by the project's IAO and/or IAA. 
 
-## Node types
+## DSH HPC Cluster Node types
 
-The DSH HPC cluster is composed of 11 user-facing nodes: 2 login nodes, 7 CPU-only compute nodes and 2 GPU-equipped compute nodes. 
+The DSH HPC Cluster is composed of 11 user-facing nodes: 2 login nodes, 7 CPU-only compute nodes and 2 GPU-equipped compute nodes. 
 
 | Type          |   Hostname   | Cores per node     | RAM per node | Nodes |
 | --------------|--------------| ------------------ | ------------ | ----- |
@@ -223,7 +233,7 @@ The DSH HPC cluster is composed of 11 user-facing nodes: 2 login nodes, 7 CPU-on
 | Compute       |dsh-sge2cpu0X |   16               | 128GB        | 7     |
 | Compute + GPU |dsh-sge2gpu0X |   16 + 1 A100 GPUs | 128GB        | 2     |
 
-You can tell the type of a node (login, cpu, or gpu) by its name, e.g. login nodes are `dsh-sge2log0X`, etc.
+You can generally tell the type of a node (login, cpu, or gpu) by its name, e.g. login nodes are `dsh-sge2log0X`, etc.
 
 Here are the processors each node type has:
   - Login nodes         : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
@@ -232,23 +242,18 @@ Here are the processors each node type has:
 
 Hyperthreading is not available. 
 
-(If you ever need to check this, you can include `cat /proc/cpuinfo` in your jobscript so
-you get it in your job's .o file for the exact node your job ran on. You will get an entry
-for every core).
+(If you ever need to check this for yourself, you can include `cat /proc/cpuinfo` in your jobscript so you get it in your job's .o file for the exact node your job ran on. You will get an entry for every core).
 
 ### GPUs
 
-The DSH HPC cluster has two GPU nodes, each equipped with a NVIDIA A100 80 GB card (Compute Capability 8.0).  [Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how Nvidia categorises its generations of GPU architectures. 
-When code is compiled, it targets one or multiple of these and so it may only be able to run on GPUs of a specific Compute Capability.
+The DSH HPC Cluster has two GPU nodes, each equipped with an NVIDIA A100 80 GB card (Compute Capability 8.0).  [Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how Nvidia categorises its generations of GPU architectures. When code is compiled, it targets one or multiple of these and so it may only be able to run on GPUs of a specific Compute Capability.
 
 If you get an error like this:
-
 ```
 CUDA runtime implicit initialization on GPU:0 failed. Status: device kernel image is invalid
 ```
 
-then the software you are running does not support the Compute Capability of the GPU
-you tried to run it on, and you probably need a newer version.
+then the software you are running does not support the Compute Capability of the GPU you tried to run it on, and you probably need a newer version.
 
 You can include `nvidia-smi` in your jobscript to get information about the GPU your job ran on.
 
@@ -267,12 +272,12 @@ We do not provide a hard wallclock limit, but we strongly suggest that users kee
 We have pages that will help explain how to create, submit, and check the results of your jobscripts.
 - To learn about the basic SGE commands to run, check, delete, and manage your jobscript, please check our [running jobs ](3.3-Running_jobs.md) page.
 - To create a jobscript, please check our [job examples](3.4-Example_Jobscripts.md) page.
-- To run an interactive job, please check our [interactive jobs](3.6-Interactive_Jobs.md) page
 - To learn how to check the results after a job has finished, please check our [job results](3.5-Job_Results.md) page.
+- To run an interactive job, please check our [interactive jobs](3.6-Interactive_Jobs.md) page
 
 ## Requesting Customer Specialist Servers
 
-If the DSH HPC cluster is not suitable for your needs, you may be able to request a custom virtual machine with the particular characteristics you need to carry on your work. Check our page about requesting a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) for more information.
+If the DSH HPC Cluster is not suitable for your needs, you may be able to request a custom virtual machine with the particular characteristics you need to carry on your work. Check our page about requesting a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) for more information.
 
 ## Support
 
