@@ -1,6 +1,6 @@
 # Contact and Support
 
-Users should direct any queries relating to their use of the DSH HPC cluster and DSH Customer Specialist Servers to the Research Computing Support Team at 
+Users should direct any queries relating to their use of the DSH HPC Cluster and Customer Specialist Servers to the Research Computing Support Team at 
 <rc-support@ucl.ac.uk>, indicating you are working in the DSH. The team will respond to your question as quickly as possible, giving priority to requests that are deemed urgent
 on the basis of the information provided.
 
@@ -12,10 +12,9 @@ We aim to provide you with a useful response within 48 hours.
 
 ## MyServices
 
-You can also contact us in MyServices creating a [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). 
+You can also contact us by creating a MyServices ticket at [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). 
 
-Please try to be as specific as possible with regard to the service that you wish to get assistance with, so that we can direct your request to the correct team promptly 
-(for example, mention the "DSH HPC cluster" or a specific "DSH Customer Specialist Server").
+Please try to be as specific as possible with regard to the service that you wish to get assistance with so that we can direct your request to the correct team promptly (for example, mention the "DSH HPC cluster" or a specific "DSH Customer Specialist Server").
 
 ## Drop-In Sessions
 
