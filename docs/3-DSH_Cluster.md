@@ -265,7 +265,7 @@ You can include `nvidia-smi` in your jobscript to get information about the GPU 
 
 We do not provide a hard wallclock limit, but we strongly suggest that users keep their jobs within a 48-hour time limit out of consideration for other users. If you need more time to run your jobscript for particular circumstances, please contact us at <rc-support@ucl.ac.uk>.
 
-[Interactive jobs](Interactive_Jobs.md) can be run with `qlogin` and have the same maximum wallclock time suggested as other jobs.
+[Interactive jobs](3.6-Interactive_Jobs.md) can be run with `qlogin` and have the same maximum wallclock time suggested as other jobs.
 
 ## Creating, submitting and checking jobs
 
