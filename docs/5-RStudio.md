@@ -1,20 +1,18 @@
 # RStudio
 
-The DSH HPC cluster login nodes provide an RStudio service with graphical interface.
+The DSH HPC Cluster login nodes (and some select other DSH HPC machines) provide an RStudio service with graphical interface.
 
 ## Access
 
-To access the service go to the following URL from inside DSH:
+To access the service, visit the machine's URL from inside DSH. For the DSH HPC Cluster, this is: <https://cluster.idhs.ucl.ac.uk/rstudio/auth-sign-in>
 
-<https://cluster.idhs.ucl.ac.uk/rstudio/auth-sign-in>
-
-Then login with your DSH userid and password.
+You will be prompted to login with your DSH userid and password.
 
 ![RStudio_login](img/RStudio_login.png)
 
 ![RStudio](img/RStudio.png)
 
-RStudio and all of its components are only accessible from inside DSH network. 
+These RStudio instances and all of their components are only accessible from inside DSH network. 
 
 ### R session not starting or RStudio Initialisation Error
 
