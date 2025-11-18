@@ -161,7 +161,7 @@ The DSH HPC Cluster includes an additional small set of custom installed applica
 
 ### Installing your own software
 
-The DSH also provides access to an internal software repository called **Artifactory**. Artifactory provides secure, curated access to some commonly-used external software repositories such as CRAN, Conda, and PyPi, which users can use to install Python and R packages into their cluster environment as needed. See [Installing Software](3.1_Installing_Software.md) for more information.
+The DSH also provides access to an internal software repository called **Artifactory**. Artifactory provides secure, curated access to some commonly-used external software repositories such as CRAN, Conda, and PyPi, which users can use to install Python and R packages into their cluster environment as needed. See [Installing Software](3.1-Installing_Software.md) for more information.
 
 ### Requesting software installs
 
