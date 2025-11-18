@@ -10,7 +10,7 @@ The remainder of this section will primarily discuss the DSH HPC Cluster and the
 
 ## Accounts
 
-As discussed in the [Introduction to DSH](2-DSH_Intro.md) section, DSH accounts can be applied for via the [DSH sign up process](2-DSH_Intro.md#dsh-account-application). The format of the DSH userid may vary based on the type of account you are provided, the permissions you've been afforded, and whether you are an internal UCL user or an external user.
+As discussed in the [Introduction to DSH](2-DSH_Intro.md) section, DSH accounts can be applied for via the [DSH sign up process](1-DSH_Intro.md#dsh-account-application). The format of the DSH userid may vary based on the type of account you are provided, the permissions you've been afforded, and whether you are an internal UCL user or an external user.
 
 All DSH users are automatically granted access to the DSH HPC Cluster.
 
