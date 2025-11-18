@@ -1,10 +1,9 @@
 
 # Terms and Conditions
 
-All use of Advanced Research Computing platforms including the DSH HPC cluster are subject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
+All use of Advanced Research Computing platforms including the DSH HPC environment are subject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
 
 DSH services are also subject to the [Information Governance procedure and rationale](https://www.ucl.ac.uk/isd/data-safe-haven-arc-trusted-research-environment-assurance) policy and the [UCL Information Security Management System (ISMS) policies for Trusted Research Environments](https://isms.arc.ucl.ac.uk/).
-
 
 ## Commercial Services
 
@@ -12,8 +11,7 @@ It is not permitted to provide commercial services from your account on our syst
 
 ## Impairing Other Users
 
-All DSH HPC cluster nodes are intended for shared use among multiple users, and we ask that you please be mindful of your resource usage, especially with regard to home directory storage and applications running on the login nodes. We monitor the load on cluster nodes to ensure suitable operation for all users, and we may on occasion terminate running processes or remove running or queued jobs without warning if they impair the availability of shared resources for other users. 
-
+All DSH HPC Cluster nodes are intended for shared use among multiple users, and we ask that you please be mindful of your resource usage, especially with regard to home directory storage and applications running on the login nodes. We monitor the load on cluster nodes to ensure suitable operation for all users, and we may on occasion terminate running processes or remove running or queued jobs without warning if they impair the availability of shared resources for other users. 
 
 ## Access Suspension
 
@@ -28,11 +26,10 @@ We may raise this with relevant UCL teams[^fn-isg] and suspend your access to se
 
 [^fn-isg]: I.e. the Information Security Group, or Human Resources.
 
-
 ## Your Data
 
-The DSH HPC cluster has some data storage capability, but it should not be treated as the sole repository for your data. We do not actively back up user data.
-Outages and data-loss events will be handled on a best-efforts basis within normal UCL working hours.
+Machines in the DSH HPC environment have some data storage capability, but it should not be treated as the sole repository for your data. We do not actively back up user data.
+Outages and data-loss events will be handled on a best-effort basis within normal UCL working hours.
 
 ### Transferring Data Ownership
 
@@ -41,7 +38,6 @@ You may contact us to arrange to transfer ownership of your data on a service to
 ### Data Access by Support Staff
 
 We will not access your data without your consent under any circumstances.
-
 
 ### Data Retention
 #### Data Retention on Leaving UCL
@@ -52,7 +48,7 @@ This process is not currently automated, so data may still be retained after thi
 
 #### Backup Retention
 
-- The DSH HPC cluster does not perform back-up of any data.
+The DSH HPC cluster does not perform back-up of any data.
 
 ## Acknowledgement in Works
 
