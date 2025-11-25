@@ -1,12 +1,12 @@
-# The Data Safe Haven High-Performance Computing (DSH HPC) Services environment
+# The DSH Research Compute environment
 
-The DSH HPC Services environment consists of two main pieces, the DSH HPC Cluster and the Customer Specialist Servers. 
+The DSH Research Compute environment consists of two main pieces, the DSH HPC Cluster and the Customer Specialist Servers. 
 
 The **DSH HPC Cluster** is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is fairly small scale so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs.
 
 **Customer Specialist Servers** are a variety of individual bespoke servers, custom built for specific projects and users, and are only provisioned by special request. 
 
-The remainder of this section will primarily discuss the DSH HPC Cluster and the DSH HPC Services environment generally, while Customer Specialist Servers are discussed in more detail on their dedicated [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md) page.
+The remainder of this section will primarily discuss the DSH HPC Cluster and the DSH Research Compute environment generally, while Customer Specialist Servers are discussed in more detail on their dedicated [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md) page.
 
 ## Accounts
 
@@ -14,11 +14,11 @@ As discussed in the [Introduction to DSH](2-DSH_Intro.md) section, DSH accounts 
 
 All DSH users are automatically granted access to the DSH HPC Cluster.
 
-## Logging in to the DSH HPC Services environment
+## Logging in to machines in the DSH Research Compute environment
 
-The DSH HPC Services environment can only be accessed from within the broader DSH "walled garden" environment, so you *must* log in from inside, e.g. using **DSH Desktop**. The connection to the DSH HPC Cluster and Customer Specialist Servers is typically made via Secure Shell (SSH) connection, and DSH Desktop has terminal applications such as **PuTTY** and **GitBash** installed for this purpose. 
+The DSH Research Compute environment can only be accessed from within the broader DSH "walled garden" environment, so you *must* log in from inside, e.g. using **DSH Desktop**. The connection to the DSH HPC Cluster and Customer Specialist Servers is typically made via Secure Shell (SSH) connection, and DSH Desktop has terminal applications such as **PuTTY** and **GitBash** installed for this purpose. 
 
-For example, to connect to a DSH HPC system using **GitBash**, open a terminal and type the below command to SSH into the machine you wish to access. Replace <DSH_userid> with your DSH userid and <DSH_system_name> with the name of the machine you want to log in to:
+For example, to connect to a DSH Research Compute system using **GitBash**, open a terminal and type the below command to SSH into the machine you wish to access. Replace <DSH_userid> with your DSH userid and <DSH_system_name> with the name of the machine you want to log in to:
 
 ```
 ssh <DSH_userid>@<DSH_system_name>
@@ -36,7 +36,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 Typing **yes** will allow you to continue logging in.
 
-To access the DSH HPC Cluster, you will generally use one of its login nodes as the system name (`dsh-sge2log01` or `dsh-sge2log02`). If you have access to a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) or similar private virtual machine in the DSH HPC environment, you would instead substitute that machine's name for `<DSH_system_name>` above. 
+To access the DSH HPC Cluster, you will generally use one of its login nodes as the system name (`dsh-sge2log01` or `dsh-sge2log02`). If you have access to a [Customer Specialist Server](3.2-Customer_Specialist_Servers.md) or similar private virtual machine in the DSH Research Compute environment, you would instead substitute that machine's name for `<DSH_system_name>` above. 
 
 ### PuTTY
 
@@ -65,9 +65,9 @@ ssh <DSH_userid>@<DSH_system_name>
   - _Tip 2: If you've logged into DSH Desktop using your regular DSH userid, you can typically omit the "<DSH_userid@" portion of the command, for example: `ssh cluster`_
 
 ### Login problems
-If you experience difficulties logging in to DSH HPC systems, please make sure that you are typing your DSH user ID and your password correctly (and note that the DSH userid is distinct from your UCL userid, if you have one). If you have recently updated your password, it may take some time to propagate to all UCL systems -- consider giving it some time and trying again later.
+If you experience difficulties logging in to DSH Research Compute systems, please make sure that you are typing your DSH user ID and your password correctly (and note that the DSH userid is distinct from your UCL userid, if you have one). If you have recently updated your password, it may take some time to propagate to all UCL systems -- consider giving it some time and trying again later.
 
-If you still cannot access DSH HPC systems, but are able to access DSH Desktop, please email us at <rc-support@ucl.ac.uk> indicating that you are having difficulty accessing the DSH HPC, and specifying which systems where possible.
+If you still cannot access DSH Research Compute systems, but are able to access DSH Desktop, please email us at <rc-support@ucl.ac.uk> indicating that you are having difficulty accessing DSH Research Compute systems, and specifying which systems where possible.
 
 If you cannot access anything in the DSH, you may need to request a password reset from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
@@ -79,7 +79,7 @@ You can log out of the systems by typing `exit` and pressing enter (pressing `Ct
 
 If you wish to copy data into your DSH HPC Cluster home space or onto a Customer Specialist Server, first ensure that the data is accessible from inside the broader DSH environment (e.g. it is in a DSH project share, or in your home space in the DSH Desktop environment). If the data is outside of the DSH, then it must first be copied into the DSH using the [File Transfer Portal](https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml) (note that only some DSH user accounts have privileges for transferring data into and out of the DSH; your project's Information Asset Owner (IAA) or Administrator (IAA) can request these privileges for you, if necessary).
 
-To copy data that is already in the DSH onto a DSH HPC system, you can use the **Secure Copy (SCP)** protocol. For this you can use the **SCP** or **rsync** text commands, or if you prefer to use a graphical interface, the **WinSCP** application provided in the DSH Desktop. (*Note that while **Filezilla** is also installed in the DSH Desktop, it is not supported on DSH HPC systems.*)
+To copy data that is already in the DSH onto a DSH Research Compute system, you can use the **Secure Copy (SCP)** protocol. For this you can use the **SCP** or **rsync** text commands, or if you prefer to use a graphical interface, the **WinSCP** application provided in the DSH Desktop. (*Note that while **Filezilla** is also installed in the DSH Desktop, it is not supported on DSH Research Compute systems.*)
 
 ### SCP
 
@@ -90,7 +90,7 @@ scp <options> <source_file> <target_destination>
 
 Below are some example command templates that could be run from a DSH Desktop terminal application (such as GitBash or PuTTY).
 
-This template will copy a data file (preferably a single compressed file) from somewhere on your DSH Desktop machine to a specified location on the remote machine inside the DSH HPC (login node, etc):
+This template will copy a data file (preferably a single compressed file) from somewhere on your DSH Desktop machine to a specified location on the remote machine inside the DSH Research Compute environment (login node, etc):
 ```
 scp <local_data_file_path> <DSH_userid>@<DSH_system_name>:<remote_path>/
 # Example: scp mylocalfile.txt mydshuserid@dsh-sge2log01:~/myremotepath/
@@ -129,11 +129,13 @@ Press **accept**. You will see this window:
 
 ![WinSCP](img/WinSCP3.png)
 
-The left panel usually shows your local DSH Desktop directories, and the right panel shows the directories of the server you are connected to -- if connecting to a DSH HPC Cluster login node, this will typically be your DSH HPC Cluster home space. To transfer files, just drag the file or directory you want to copy from one panel to the other. This works in both directions, meaning you can copy from your local directory in DSH Desktop to a DSH HPC machine, and also from the DSH HPC machine to DSH Desktop.
+The left panel usually shows your local DSH Desktop directories, and the right panel shows the directories of the server you are connected to -- if connecting to a DSH HPC Cluster login node, this will typically be your DSH HPC Cluster home space. To transfer files, just drag the file or directory you want to copy from one panel to the other. This works in both directions, meaning you can copy from your local directory in DSH Desktop to a DSH Research Compute machine, and also from the DSH Research Compute machine to DSH Desktop.
 
-## DSH HPC Services software stack
+## DSH Research Compute software stack
 
-DSH HPC systems all use a simple software stack based upon Red Hat Enterprise Linux (RHEL) v8.x, with some additional commonly used applications installed such as R and Anaconda. Customer Specialist Servers will only come with additional software installed as required by the original provisioning request.
+DSH Research Compute systems all use a simple software stack based upon Red Hat Enterprise Linux (RHEL) v8.x, with some additional commonly used applications installed such as R and Anaconda. 
+
+Customer Specialist Servers will only come with additional software installed as required by the original provisioning request.
 
 The DSH HPC Cluster includes an additional small set of custom installed applications that can be accessed by all users from the DSH HPC Cluster nodes at the shared location `/apps`. A partial list of some of the software that is already available for use in the DSH HPC Cluster is summarized in the table below:
 
@@ -165,13 +167,13 @@ The DSH also provides access to an internal software repository called **Artifac
 
 ### Requesting software installs
 
-If you wish, you can also request that specific software be installed onto a DSH HPC machine by contacting us, either by email at <rc-support@ucl.ac.uk> or by raising a ticket with our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). Please indicate that it is a new software request for the DSH HPC, specify whether it is for the DSH HPC Cluster or a Customer Specialist Server, and provide details about the specific software and version that you require.
+If you wish, you can also request that specific software be installed onto a DSH Research Compute machine by contacting us, either by email at <rc-support@ucl.ac.uk> or by raising a ticket with our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). Please indicate that it is a new software request for DSH Research Compute, preferably specify whether it is for the DSH HPC Cluster or a Customer Specialist Server, and provide details about the specific software and version that you require.
 
 As the DSH is a secure environment, all software that is not already available in **Artifactory** will be subject to a rigorous security, validation, and vulnerability assessment process before being installed. This might take several days, and in some complex cases it can extend to weeks. If the risk is deemed to be too significant, we reserve the right to refuse installation of the requested software for security reasons.  
 
 ### Jupyter Hub and RStudio
 
-Some DSH HPC machines, including the DSH HPC Cluster, provide a browser-based interactive graphical user interface (Web GUI) for the **Jupyter Hub** and **RStudio** applications. To access these services for the DSH HPC Cluster, launch a web browser from inside the DSH (e.g. DSH Desktop) and visit the following URL: <https://cluster.idhs.ucl.ac.uk/>
+Some DSH Research Compute machines, including the DSH HPC Cluster, provide a browser-based interactive graphical user interface (Web GUI) for the **Jupyter Hub** and **RStudio** applications. To access these services for the DSH HPC Cluster, launch a web browser from inside the DSH (e.g. DSH Desktop) and visit the following URL: <https://cluster.idhs.ucl.ac.uk/>
 
 If a Customer Specialist Server has been equipped with Jupyter Hub and/or Rstudio, you can typically access the web GUI using a URL similar to the following: `https://<DSH_system_name>.idhs.ucl.ac.uk/`
 
