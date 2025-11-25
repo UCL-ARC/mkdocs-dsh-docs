@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DSH HPC Cluster login nodes (and some select other DSH HPC machines) provide a JupyterHub service with graphical interface.
+The DSH HPC Cluster login nodes (and some select other DSH Research Compute machines) provide a JupyterHub service with graphical interface.
 
 ## Access
 
