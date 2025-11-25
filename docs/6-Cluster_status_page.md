@@ -1,10 +1,14 @@
-# DSH HPC Cluster Status Page
+# DSH HPC Services Status Page
 
-This page outlines that status of the DSH HPC environment and the planned outages managed by the ARC Bespoke team at UCL.
+This page outlines that status of the DSH HPC Services environment and the planned outages managed by the ARC Bespoke team at UCL.
 We endeavour to keep this page as up-to-date as possible but there might be some delay. If you are experiencing issues with the cluster, feel free to report them to <rc-support@ucl.ac.uk>.
 
-## Status of the DSH HPC Cluster
+## Status of the DSH HPC Services
 
+  - 2025-11-19 - Update: 16:56
+    - Data Safe Haven now working as expected - The replacement network equipment has been installed this afternoon, and we have tested both data centre configurations.  The Data Safe Haven is now working as expected, at full capacity.  Those services which have been unavailable since Monday should now be accessible.
+    - If you find a problem, please report it in the usual way through the MyServices portal: [Live - Self Service | UCL MyServices](https://myservices.ucl.ac.uk/self-service)
+    - I would like to apologise for the disruption this outage has caused and your patience while we were working at reduced capacity. 
   - 2025-11-17 - Update: 16:15
     - Our network support team has a replacement device on order which should arrive tomorrow.  This will take some time to install and configure, so hard to predict exactly when we will be able to bring the DSH back to normal functioning, but we will be working on this as a priority.
     - We have now completed all steps to failover to the second data centre.  The service will be running at reduced capacity and some actions will be slower than usual.
@@ -25,9 +29,9 @@ We endeavour to keep this page as up-to-date as possible but there might be some
   - 2025-11-17 - Problems with Data Safe Haven, 17/11/2025:
     - There are wide spread problems with the Data Safe Haven this morning. The team noticed this early this morning and have been working with colleagues to restore the service. The problem is with a specific piece of network equipment in one of our data centre's unfortunately we are unable to fix this remotely, so members of our team are heading to the data centre to fix this in person.
 
-## Planned outages for the DSH cluster 
+## Planned outages for DSH HPC Services machines
 
-Full details of unplanned outages are emailed to the DSH HPC Cluster user list. 
+Full details of unplanned outages are emailed to the DSH HPC Services user list. 
 
 The second Tuesday of every month is a RedHat patch release day, aka **Patch Tuesday**. In response to this, we perform maintenance on DSH HPC machines every month, including patching and possible system reboots. Any outages should only last a couple of hours, and the system should resume normal operation before noon on the machine's respective patch day. If there is a notable delay in bringing a system back, we will contact affected users after approximately midday.
 
@@ -42,11 +46,6 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Status  | Reason 
 --------------------|---------|--------
-17 November 2025 | Planned | Patching and maintenance for Group 1 machines.
-19 November 2025 | Planned | Patching and maintenance for Group 2 machines.
-21 November 2025 | Planned | Cluster queue will be disabled pending patching on Monday.
-24 November 2025 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines.
---- | --- | ---
 15 December 2025 | Planned | Patching and maintenance for Group 1 machines.
 17 December 2025 | Planned | Patching and maintenance for Group 2 machines.
 19 December 2025 | Planned | Cluster queue will be disabled pending patching on Monday.
@@ -56,6 +55,11 @@ Date                | Status  | Reason
 21 January 2025 | Planned | Patching and maintenance for Group 2 machines.
 23 January 2025 | Planned | Cluster queue will be disabled pending patching on Monday.
 26 January 2025 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines.
+--- | --- | ---
+16 January 2025 | Planned | Patching and maintenance for Group 1 machines.
+18 January 2025 | Planned | Patching and maintenance for Group 2 machines.
+20 January 2025 | Planned | Cluster queue will be disabled pending patching on Monday.
+23 January 2025 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines.
 
 
 
