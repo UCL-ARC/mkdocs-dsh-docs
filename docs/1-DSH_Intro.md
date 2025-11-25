@@ -12,7 +12,7 @@ collaboration in research.
 # Account Services
 
 [UCL DSH service](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh) is
-composed by two parts: The **DSH Desktop** and the **DSH HPC Services environment**.
+composed by two parts: The **DSH Desktop** and the **DSH Research Compute Services**.
 
 The [DSH Desktop](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/dsh-data-safe-haven-portals) 
 is a Windows Virtual Desktop. There are a number of virtual machines (VMs) that allows multiple concurrent interactive 
@@ -21,7 +21,7 @@ DSH Desktop, please visit the [user guide documentation and FAQ](https://www.ucl
 
 The software available in DSH Desktop can be checked [here](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/software-and-services).
 
-The [DSH HPC Services environment](3-DSH_Cluster.md) consists of the DSH HPC Cluster and Customer Specialist Servers, which are Red Hat Enterprise Linux (RHEL) virtual machines in an isolated environment which can only be accessed from within the DSH (e.g. using DSH Desktop). *(You can find more detailed information about [what a cluster is here](2-Cluster_Computing.md))*
+The [DSH Research Compute Services](3-DSH_Cluster.md) consists of the DSH HPC Cluster and Customer Specialist Servers, which are Red Hat Enterprise Linux (RHEL) virtual machines in an isolated environment which can only be accessed from within the DSH (e.g. using DSH Desktop). *(You can find more detailed information about [what a cluster is here](2-Cluster_Computing.md))*
 
 ## DSH account application
 
@@ -53,7 +53,7 @@ The Data Safe Haven operates under a "walled garden" approach. All connections i
 Data Save Haven services are free at point of use by default. 
 
 !!! important
-    Check our [Status page](6-Cluster_status_page.md) to see the current status of DSH HPC Services machines and planned outages. 
+    For the current status and planned outages for the DSH Research Compute Services specifically, check our [DSH Research Compute Status page](6-Cluster_status_page.md) . 
 
 Use of these services is subject to a common set of [terms and conditions](7-Terms_and_Conditions.md)
 
