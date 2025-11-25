@@ -8,7 +8,7 @@ General User Information:
 
 - [Introduction to Data Safe Haven (DSH)](1-DSH_Intro.md)
 - [Introduction to Cluster Computing](2-Cluster_Computing.md)
-- [The Data Safe Haven Research Compute environment](3-DSH_Cluster.md)
+- [The DSH Research Compute environment](3-DSH_Cluster.md)
 - [Installing Software](3.1-Installing_Software.md)
 - [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md)
 - [Submitting Jobs to the DSH HPC Cluster](3.3-Running_jobs.md)
