@@ -62,7 +62,7 @@ ssh <DSH_userid>@dsh-sge2log01
 ssh <DSH_userid>@<DSH_system_name>
 ```
   - _Tip 1: The shortform alias `cluster` can also be used to connect to the `dsh-sge2log01` login node_
-  - _Tip 2: If you've logged into DSH Desktop using your regular DSH userid, you can typically omit the "<DSH_userid@" portion of the command, for example: `ssh cluster`_
+  - _Tip 2: If you've logged into DSH Desktop using your regular DSH userid, you can typically omit the "<DSH_userid>@" portion of the command, for example: `ssh cluster`_
 
 ### Login problems
 If you experience difficulties logging in to DSH Research Compute systems, please make sure that you are typing your DSH user ID and your password correctly (and note that the DSH userid is distinct from your UCL userid, if you have one). If you have recently updated your password, it may take some time to propagate to all UCL systems -- consider giving it some time and trying again later.
