@@ -1,6 +1,6 @@
-# DSH HPC Services
+# DSH Research Compute Services
 
-This documentation is maintained by the Data Safe Haven HPC Services team for the purpose of sharing information about our services, including user guides, service updates and account request and renewal support.
+This documentation is maintained by the Data Safe Haven (DSH) Research Compute Services team for the purpose of sharing information about our services, including user guides, service updates and account request and renewal support.
 
 ## Documentation
 
@@ -8,7 +8,7 @@ General User Information:
 
 - [Introduction to Data Safe Haven (DSH)](1-DSH_Intro.md)
 - [Introduction to Cluster Computing](2-Cluster_Computing.md)
-- [The Data Safe Haven High-Performance Computing (DSH HPC) Services environment](3-DSH_Cluster.md)
+- [The Data Safe Haven Research Compute environment](3-DSH_Cluster.md)
 - [Installing Software](3.1-Installing_Software.md)
 - [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md)
 - [Submitting Jobs to the DSH HPC Cluster](3.3-Running_jobs.md)
@@ -18,7 +18,7 @@ General User Information:
 - [Example machine learning workflow](3.7-ML_workflows.md)
 - [Jupyter Hub](4-JupyterHub.md)
 - [RStudio](5-RStudio.md)
-- [DSH HPC Services Status Page](6-Cluster_status_page.md)
+- [DSH Research Compute Services Status Page](6-Cluster_status_page.md)
 - [Terms and Conditions](7-Terms_and_Conditions.md)
 - [Contact and Support](8-Contact_Us.md)
 - [Glossary](9-Glossary.md)
