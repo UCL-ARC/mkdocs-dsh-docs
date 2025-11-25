@@ -1,9 +1,9 @@
-# DSH HPC Services Status Page
+# DSH Research Compute Services Status Page
 
-This page outlines that status of the DSH HPC Services environment and the planned outages managed by the ARC Bespoke team at UCL.
+This page outlines that status of the DSH Research Compute environment and the planned outages managed by the ARC Bespoke team at UCL.
 We endeavour to keep this page as up-to-date as possible but there might be some delay. If you are experiencing issues with the cluster, feel free to report them to <rc-support@ucl.ac.uk>.
 
-## Status of the DSH HPC Services
+## Status of the DSH Research Compute Services
 
   - 2025-11-19 - Update: 16:56
     - Data Safe Haven now working as expected - The replacement network equipment has been installed this afternoon, and we have tested both data centre configurations.  The Data Safe Haven is now working as expected, at full capacity.  Those services which have been unavailable since Monday should now be accessible.
@@ -29,9 +29,9 @@ We endeavour to keep this page as up-to-date as possible but there might be some
   - 2025-11-17 - Problems with Data Safe Haven, 17/11/2025:
     - There are wide spread problems with the Data Safe Haven this morning. The team noticed this early this morning and have been working with colleagues to restore the service. The problem is with a specific piece of network equipment in one of our data centre's unfortunately we are unable to fix this remotely, so members of our team are heading to the data centre to fix this in person.
 
-## Planned outages for DSH HPC Services machines
+## Planned outages for DSH Research Compute Services
 
-Full details of unplanned outages are emailed to the DSH HPC Services user list. 
+Full details of unplanned outages are emailed to the DSH Research Compute user list. 
 
 The second Tuesday of every month is a RedHat patch release day, aka **Patch Tuesday**. In response to this, we perform maintenance on DSH HPC machines every month, including patching and possible system reboots. Any outages should only last a couple of hours, and the system should resume normal operation before noon on the machine's respective patch day. If there is a notable delay in bringing a system back, we will contact affected users after approximately midday.
 
