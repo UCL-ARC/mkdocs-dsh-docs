@@ -1,5 +1,5 @@
-site_name: Data Safe Haven Cluster Services Documentation
-site_description: Documentation for using the DSH cluster
+site_name: Data Safe Haven High-Performance Computing Services Documentation
+site_description: Documentation for using the DSH HPC cluster and related services
 site_url: https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/
 
 # Associated Git Repo Config
