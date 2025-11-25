@@ -1,4 +1,4 @@
-# Data Safe Haven High-Performance Computing (DSH HPC) Services
+# The Data Safe Haven High-Performance Computing (DSH HPC) Services environment
 
 The DSH HPC Services environment consists of two main pieces, the DSH HPC Cluster and the Customer Specialist Servers. 
 
