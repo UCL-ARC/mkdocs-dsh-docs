@@ -2,9 +2,9 @@
 
 The DSH HPC Services environment consists of two main pieces, the DSH HPC Cluster and the Customer Specialist Servers. 
 
-The DSH HPC Cluster is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is fairly small scale so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs. You can find additional information about the DSH HPC Cluster in the [DSH user guide and FAQs](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs), in the **Research computing** section.
+The **DSH HPC Cluster** is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is fairly small scale so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs.
 
-Customer Specialist Servers are a variety of individual bespoke servers, custom built for specific projects and users, and are only provisioned by special request. 
+**Customer Specialist Servers** are a variety of individual bespoke servers, custom built for specific projects and users, and are only provisioned by special request. 
 
 The remainder of this section will primarily discuss the DSH HPC Cluster and the DSH HPC Services environment generally, while Customer Specialist Servers are discussed in more detail on their dedicated [Customer Specialist Servers](3.2-Customer_Specialist_Servers.md) page.
 
