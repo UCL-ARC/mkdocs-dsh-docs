@@ -1,7 +1,7 @@
 
 # Terms and Conditions
 
-All use of Advanced Research Computing platforms including the DSH HPC environment are subject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
+All use of Advanced Research Computing platforms including the DSH HPC Services environment are subject to the general [UCL Computing Regulations](https://www.ucl.ac.uk/information-security/sites/information_security/files/regulations.pdf).
 
 DSH services are also subject to the [Information Governance procedure and rationale](https://www.ucl.ac.uk/isd/data-safe-haven-arc-trusted-research-environment-assurance) policy and the [UCL Information Security Management System (ISMS) policies for Trusted Research Environments](https://isms.arc.ucl.ac.uk/).
 
@@ -28,7 +28,7 @@ We may raise this with relevant UCL teams[^fn-isg] and suspend your access to se
 
 ## Your Data
 
-Machines in the DSH HPC environment have some data storage capability, but it should not be treated as the sole repository for your data. We do not actively back up user data.
+Machines in the DSH HPC Services environment have some data storage capability, but it should not be treated as the sole repository for your data. We do not actively back up user data.
 Outages and data-loss events will be handled on a best-effort basis within normal UCL working hours.
 
 ### Transferring Data Ownership
