@@ -1,6 +1,6 @@
 # RStudio
 
-The DSH HPC Cluster login nodes (and some select other DSH HPC machines) provide an RStudio service with graphical interface.
+The DSH HPC Cluster login nodes (and some select other DSH Research Compute machines) provide an RStudio service with graphical interface.
 
 ## Access
 
