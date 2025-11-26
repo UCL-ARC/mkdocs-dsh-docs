@@ -69,7 +69,7 @@ If you experience difficulties logging in to DSH Research Compute systems, pleas
 
 If you still cannot access DSH Research Compute systems, but are able to access DSH Desktop, please email us at <rc-support@ucl.ac.uk> indicating that you are having difficulty accessing DSH Research Compute systems, and specifying which systems where possible.
 
-If you cannot access anything in the DSH, you may need to request a password reset from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
+If you cannot access anything in the DSH, you may need to request a password reset from the Service Desk. Please, contact our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
 ## Logging out
 
@@ -167,7 +167,7 @@ The DSH also provides access to an internal software repository called **Artifac
 
 ### Requesting software installs
 
-If you wish, you can also request that specific software be installed onto a DSH Research Compute machine by contacting us, either by email at <rc-support@ucl.ac.uk> or by raising a ticket with our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). Please indicate that it is a new software request for DSH Research Compute, preferably specify whether it is for the DSH HPC Cluster or a Customer Specialist Server, and provide details about the specific software and version that you require.
+If you wish, you can also request that specific software be installed onto a DSH Research Compute machine by contacting us, either by email at <rc-support@ucl.ac.uk> or by raising a ticket with our support team - [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222). Please indicate that it is a new software request for DSH Research Compute, preferably specify whether it is for the DSH HPC Cluster or a Customer Specialist Server, and provide details about the specific software and version that you require.
 
 As the DSH is a secure environment, all software that is not already available in **Artifactory** will be subject to a rigorous security, validation, and vulnerability assessment process before being installed. This might take several days, and in some complex cases it can extend to weeks. If the risk is deemed to be too significant, we reserve the right to refuse installation of the requested software for security reasons.  
 
@@ -209,7 +209,7 @@ Please note that your DSH HPC Cluster home space is distinct from the DSH Deskto
 
 ### Requesting transfer of your data to another user
 
-If you want to transfer ownership of all your data to another user, with their consent, you can contact us at <rc-support@ucl.ac.uk> and ask us to do this or open a general request: [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
+If you want to transfer ownership of all your data to another user, with their consent, you can contact us at <rc-support@ucl.ac.uk> and ask us to do this or open a general request: [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
 If you are a UCL user, please arrange this while you still have access to the institutional credentials associated with the account. Without this, we cannot identify you as the owner of the account. You will need to tell us what data to transfer and the username of the recipient, and will be subject to approval by the associated project's IAO and/or IAA.
 
@@ -221,7 +221,7 @@ At [UCL Information Security Policy](https://www.ucl.ac.uk/information-security/
 
 Follow the guidance on that page for how to encrypt the form when sending it to them. The form needs to be signed by the head of department/division and the UCL data protection officer (data-protection@ucl.ac.uk).
 
-Make formal request by ticket : [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&requested_for_id=187535&requestor_id=187535&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
+Make formal request by ticket : [Data Safe Haven - General DSH Enquiry](https://myservices.ucl.ac.uk/self-service/requests/new/provide_description?from=wizard&service_id=1473&service_instance_id=3892&subject=Data+Safe+Haven+-+General+DSH+Enquiry%3A&template_id=3222)
 
 Note that, depending on the details on the user and data, this request may need to be made by the project's IAO and/or IAA. 
 
