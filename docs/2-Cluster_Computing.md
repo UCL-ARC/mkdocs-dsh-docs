@@ -32,14 +32,13 @@ Most users will use something like the following workflow:
   
  - Connect to DSH Desktop through the Applications & Data Portal: <https://accessgateway.idhs.ucl.ac.uk/>
  - Copy necessary data to your personal home space inside the DSH HPC Cluster from your existing DSH share or DSH Desktop environment using an SCP client
-   - *Note that data can only be copied to the DSH HPC Cluster if it is already inside the broader DSH environment.*
-     - *If the data is outside of the DSH, then it must first be copied into a DSH share using the File Transfer Portal: <https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml>*
-     - *Also note that only some DSH user accounts have privileges for transferring data into and out of the DSH. Your project's Information Asset Owner (IAA) or Administrator (IAA) can request these privileges for their users as needed.*
  - Connect to one of the DSH HPC Cluster's "login nodes" using SSH
  - Create a script of commands to run programs
  - Submit the script to the scheduler
  - Wait for the scheduler to find suitable available "compute nodes" and run the script
  - Look at the results files created by the scheduler and your script
+
+Note that data can only be copied to the DSH HPC Cluster if it is already inside the broader DSH environment. If the data is outside of the DSH, then it must first be copied into a DSH share using the File Transfer Portal: <https://filetransfer.idhs.ucl.ac.uk/webclient/Login.xhtml>. (Also note that only some DSH user accounts have privileges for transferring data into and out of the DSH. Your project's Information Asset Owner (IAA) or Administrator (IAA) can request these privileges for their users as needed.)
 
 In order to connect to the cluster using SSH, you can use an application such as **GitBash** or **PuTTY** (both of these are available in DSH Desktop by default) to open a terminal where you can enter text commands to interact with the cluster.
 
