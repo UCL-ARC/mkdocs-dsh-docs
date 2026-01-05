@@ -28,19 +28,19 @@ Date                | Status  | Reason
 06 January 2026 | Planned | Power-off of select machines pending decommission at end of month (IAO and IAA of affected machines will have been previously informed, and will receive additional email notification)
 19 January 2026 | Planned | Patching and maintenance for Group 1 machines.
 21 January 2026 | Planned | Patching and maintenance for Group 2 machines.
-23 January 2026 | Planned | Cluster queue will be disabled pending patching on Monday.
-26 January 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines.
+23 January 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
+26 January 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
 30 January 2026 | Planned | Select machines will be decommissioned and deleted (project's IAO and IAA will have been previously informed)
 --- | --- | ---
 16 February 2026 | Planned | Patching and maintenance for Group 1 machines.
 18 February 2026 | Planned | Patching and maintenance for Group 2 machines.
-20 February 2026 | Planned | Cluster queue will be disabled pending patching on Monday.
-23 February 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines.
+20 February 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
+23 February 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
 --- | --- | ---
 16 March 2026 | Planned | Patching and maintenance for Group 1 machines.
 18 March 2026 | Planned | Patching and maintenance for Group 2 machines.
-20 March 2026 | Planned | Cluster queue will be disabled pending patching on Monday.
-23 March 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines.
+20 March 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
+23 March 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
 --- | --- | ---
 
 
