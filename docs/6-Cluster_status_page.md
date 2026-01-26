@@ -5,6 +5,8 @@ We endeavour to keep this page as up-to-date as possible but there might be some
 
 ## Status of the DSH Research Compute Services
 
+  - 2026-01-26 - New V100 GPU nodes added to DSH HPC Cluster:
+    - Three new GPU-capable compute nodes have been added to the DSH HPC Cluster, each using an NVIDIA Tesla V100 32 GB GPU. To request a GPU node of any type you can continue to use `#$ -l gpu` and the scheduler will asasign your job to the first available GPU node, regardless of which GPU it has. To request a specific GPU type, you can add one of the `a100` (for NVIDIA A100 Tensor Core 80 GB GPUs) or `v100` (for NVIDIA Tesla V100 32 GB GPUs) boolean operators, for example: `#$ -l a100=TRUE`. See [Submitting Jobs to the DSH HPC Cluster](3.3-Running_jobs.md/#gpus) for more information.
   - 2025-12-23 - Support Staff Unavailable:
     - Support staff for DSH Research Compute services will be unavailable for the holiday season starting Weds., December 24th, 2025. All services will return to full supported status as of Mon., January 05, 2026.
 
@@ -28,8 +30,8 @@ Date                | Status  | Reason
 06 January 2026 | Completed | Power-off of select machines pending decommission at end of month (IAO and IAA of affected machines will have been previously informed, and will receive additional email notification)
 19 January 2026 | Completed | Patching and maintenance for Group 1 machines.
 21 January 2026 | Completed | Patching and maintenance for Group 2 machines.
-23 January 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
-26 January 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
+23 January 2026 | Completed | DSH HPC Cluster queue will be disabled pending patching on Monday.
+26 January 2026 | Completed | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
 30 January 2026 | Planned | Select machines will be decommissioned and deleted (project's IAO and IAA will have been previously informed)
 --- | --- | ---
 16 February 2026 | Planned | Patching and maintenance for Group 1 machines.
