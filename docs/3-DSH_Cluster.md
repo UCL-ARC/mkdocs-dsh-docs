@@ -227,13 +227,14 @@ Note that, depending on the details on the user and data, this request may need 
 
 ## DSH HPC Cluster node types
 
-The DSH HPC Cluster is composed of 11 user-facing nodes: 2 login nodes, 7 CPU-only compute nodes, and 2 GPU-equipped compute nodes. 
+The DSH HPC Cluster is composed of 14 user-facing nodes: 2 login nodes, 7 CPU-only compute nodes, and 5 GPU-equipped compute nodes. 
 
 | Type          |   Hostname   | Cores per node     | RAM per node | Nodes |
 | --------------|--------------| ------------------ | ------------ | ----- |
 | Login         |dsh-sge2log0X |   4                | 16GB         | 2     |
 | Compute       |dsh-sge2cpu0X |   16               | 128GB        | 7     |
-| Compute + GPU |dsh-sge2gpu0X |   16 + 1 A100 GPU  | 128GB        | 2     |
+| Compute + GPU |dsh-sge2gpu0X |   16 + 1 A100 GPU (80GB)  | 128GB        | 2     |
+| Compute + GPU |dsh-sge2gpu0X |   16 + 1 V100 GPU (32GB) | 128GB        | 3     |
 
 You can generally tell the type of a node (login, cpu, or gpu) by its name, e.g. login nodes are `dsh-sge2log0X`, etc.
 
@@ -248,7 +249,7 @@ Hyperthreading is not available.
 
 ### GPUs
 
-The DSH HPC Cluster has two GPU nodes, each equipped with an NVIDIA A100 80 GB card (Compute Capability 8.0).  [Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how Nvidia categorises its generations of GPU architectures. When code is compiled, it targets one or multiple of these and so it may only be able to run on GPUs of a specific Compute Capability.
+The DSH HPC Cluster has five GPU nodes, two equipped with an NVIDIA A100 Tensor Core 80 GB card (Compute Capability 8.0) and three equipped with an NVIDIA V100 Tesla 32 GB card (Compute Capability 7.0).  [Compute Capability](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-generations) is how NVIDIA categorises its generations of GPU architectures. When code is compiled, it targets one or multiple of these and so it may only be able to run on GPUs of a specific Compute Capability.
 
 If you get an error like this:
 ```
