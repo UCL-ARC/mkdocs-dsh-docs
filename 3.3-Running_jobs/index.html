@@ -1,0 +1,1394 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for using the DSH HPC Cluster and related services">
+      
+      
+      
+        <link rel="canonical" href="https://github-pages.arc.ucl.ac.uk/mkdocs-dsh-docs/3.3-Running_jobs/">
+      
+      
+        <link rel="prev" href="../3.2-Customer_Specialist_Servers/">
+      
+      
+        <link rel="next" href="../3.4-Example_Jobscripts/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Submitting Jobs to the DSH HPC Cluster - Data Safe Haven Research Compute Services Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#submitting-jobs-to-the-dsh-hpc-cluster" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://www.ucl.ac.uk" title="Data Safe Haven Research Compute Services Documentation" class="md-header__button md-logo" aria-label="Data Safe Haven Research Compute Services Documentation" data-md-component="logo">
+      
+  <img src="../images/ucl-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Data Safe Haven Research Compute Services Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Submitting Jobs to the DSH HPC Cluster
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/UCL-ARC/mkdocs-dsh-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UCL-ARC/mkdocs-dsh-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://www.ucl.ac.uk" title="Data Safe Haven Research Compute Services Documentation" class="md-nav__button md-logo" aria-label="Data Safe Haven Research Compute Services Documentation" data-md-component="logo">
+      
+  <img src="../images/ucl-logo.png" alt="logo">
+
+    </a>
+    Data Safe Haven Research Compute Services Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/UCL-ARC/mkdocs-dsh-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UCL-ARC/mkdocs-dsh-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSH Research Compute Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-DSH_Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Data Safe Haven (DSH)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-Cluster_Computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction to Cluster Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-DSH_Cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DSH Research Compute environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.1-Installing_Software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.2-Customer_Specialist_Servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Specialist Servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Submitting Jobs to the DSH HPC Cluster
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Submitting Jobs to the DSH HPC Cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-submit-a-job-to-the-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I submit a job to the scheduler?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asking-for-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asking for resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asking for resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-of-cores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Number of cores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-requests-amount-of-ram-per-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory requests (amount of RAM per core)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPUs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passing-in-qsub-options-on-the-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Passing in qsub options on the command line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-monitor-a-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I monitor a job?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do I monitor a job?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qstat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        qstat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="qstat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job states
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-is-my-job-in-eqw-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why is my job in Eqw status?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Job deletion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Job deletion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-scheduler-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More scheduler commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-run-interactive-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I run interactive jobs?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-estimate-what-resources-to-request-in-my-jobscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I estimate what resources to request in my jobscript?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-i-run-a-graphical-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How do I run a graphical program?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What can I do to minimise the time I need to wait for my job(s) to run?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.4-Example_Jobscripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Jobscripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.5-Job_Results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Job Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.6-Interactive_Jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive Job Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.7-ML_workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example machine learning workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-JupyterHub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jupyter Hub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-RStudio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RStudio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-Cluster_status_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DSH Research Compute Services Status Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-Terms_and_Conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms and Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-Contact_Us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact and Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-Glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="submitting-jobs-to-the-dsh-hpc-cluster">Submitting Jobs to the DSH HPC Cluster</h1>
+<p>Generally, to submit a job to the DSH HPC Cluster you must be on a cluster login node, create a <strong>jobscript</strong> telling the cluster what you want it to do, and submit the jobscript to the <strong>job queue</strong> using the <code>qsub</code> command. The <strong>scheduler</strong> will then allocate your job to a <strong>compute node</strong> to run, and your results will be placed in your working directory once the job is complete.</p>
+<h2 id="how-do-i-submit-a-job-to-the-scheduler">How do I submit a job to the scheduler?</h2>
+<p>To submit a non-interactive (a.k.a "batch") job to the DSH HPC Cluster, you need to create a jobscript that contains instructions for the scheduler to follow, including resources that you want to request and the actual commands that you want to run. For best results, jobscripts should begin with <code>#!/bin/bash -l</code> to run using a login shell, which allows them to include your familiar login environment and packages. </p>
+<p>A sample job script is provided automatically when your DSH HPC Cluster home space is created, and can be found at <code>~/helloWorld.sh</code>. (<em>If this file is not present in your cluster home or you would like to obtain a fresh copy, you can also find it in the shared <code>/apps</code> space at <code>/apps/sample_job_script/helloWorld.sh</code>.</em>)</p>
+<p>Generally, jobscripts will use something like the following structure (see our section on <a href="../3.4-Example_Jobscripts/">Example Jobscripts</a> for more examples):</p>
+<pre><code class="language-bash">#!/bin/bash -l
+
+# Give the job a name (optional)
+#$ -N HelloWorld
+
+# Request some resources
+#$ -l h_vmem=2G
+#$ -l h_rt=0:5:0
+
+# Set a working directory
+#$ -wd /hpchome/USERID@IDHS.UCL.AC.UK/myproject
+
+##### Job starts here #####
+# List commands that you want to run here
+date
+python mypythonscript.py
+R CMD BATCH --no-save test.R
+##### Job ends here #####
+</code></pre>
+<p>This job script should then be submitted to the cluster job queue using the <code>qsub</code> command.</p>
+<pre><code class="language-bash">qsub myjobscript.sh
+</code></pre>
+<p>The job will be put in to the job queue, and it will begin running on compute nodes once the scheduler is able to allocate your requested resources.</p>
+<p>Additional information can be found here:
+- <a href="https://moodle.ucl.ac.uk/mod/page/view.php?id=4845666">Scheduler fundamentals (moodle)</a> (UCL users)
+- <a href="https://mediacentral.ucl.ac.uk/Play/98368">Scheduler fundamentals (mediacentral)</a> (non-UCL users)</p>
+<h2 id="asking-for-resources">Asking for resources</h2>
+<h3 id="number-of-cores">Number of cores</h3>
+<pre><code class="language-bash">#$ -pe smp &lt;number of cores&gt;
+</code></pre>
+<p>For single core jobs you don't need to request a number of cores.</p>
+<h3 id="memory-requests-amount-of-ram-per-core">Memory requests (amount of RAM per core)</h3>
+<p>The memory you request is always per core, not the total amount. If you ask for 128GB RAM and 4 cores, that may run on 4 nodes using only one core per node. This allows you to have sparse process placement when you do actually need that much RAM per process.</p>
+<p>Each of the compute nodes in the DSH HPC Cluster have 128 GB of RAM standard, with approximately 8 GB required for overall system usage, leaving ~120 GB of usable RAM per node. If you want to avoid sparse process placement and your job taking up more nodes than you were expecting, the maximum memory request you should make when using all the cores in a standard node is ~120/16 = ~7.5G.</p>
+<pre><code class="language-bash">#$ -l h_vmem=&lt;integer amount of RAM in G or M&gt;
+</code></pre>
+<p>e.g. <code>#$ -l h_vmem=4G</code> requests 4 gigabytes of RAM per core.</p>
+<h3 id="run-time">Run time</h3>
+<pre><code class="language-bash">#$ -l h_rt=&lt;hours:minutes:seconds&gt;
+</code></pre>
+<p>e.g. <code>#$ -l h_rt=48:00:00</code> requests 48 hours.</p>
+<h3 id="working-directory">Working directory</h3>
+<p>Your working directory is the path that the job will use as the default for finding files and writing outputs. This can be specified in your jobscript either as a particular working directory:</p>
+<pre><code class="language-bash">#$ -wd /path/to/working/directory
+</code></pre>
+<p>Or the current working directory that the script was submitted from:</p>
+<pre><code class="language-bash">#$ -cwd
+</code></pre>
+<h3 id="gpus">GPUs</h3>
+<p>To request a GPU for your job, use the <code>-l gpu</code> directive.</p>
+<pre><code class="language-bash">#$ -l gpu
+</code></pre>
+<p>Note that this is the equivalent of <code>#$ -l gpu=1</code>. Requesting more than one GPU will leave your job stuck in the queue indefinitely, as the DSH HPC Cluster currently exclusively uses single-GPU nodes.</p>
+<p>If you wish to request a specific type of GPU, you can use the corresponding boolean operator as noted in the table below, for example:</p>
+<pre><code>#$ -l gpu=1
+#$ -l a100=TRUE
+</code></pre>
+<p>If you do not specify a particular GPU type, the scheduler will assign you the first available GPU node of any type.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">operator</th>
+<th>GPU type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">v100</td>
+<td>NVIDIA Tesla V100 32 GB GPU</td>
+</tr>
+<tr>
+<td style="text-align: left;">a100</td>
+<td>NVIDIA A100 80 GB Tensor Core GPU</td>
+</tr>
+</tbody>
+</table>
+<h3 id="passing-in-qsub-options-on-the-command-line">Passing in qsub options on the command line</h3>
+<p>The <code>#$</code> lines in your jobscript are options supplied to the <code>qsub</code> command. It will take each line which starts with <code>#$</code> and use the contents beyond that as an option. </p>
+<p>You can also pass options directly to the <code>qsub</code> command, and this will override the settings in your script. This can be useful if you are scripting your job submissions in more complicated ways.</p>
+<p>For example, if you want to change the name of the job for this one instance of the job you can submit your script with:</p>
+<pre><code>qsub -N NewName myscript.sh
+</code></pre>
+<p>Or if you want to increase the wall-clock time to 24 hours:</p>
+<pre><code>qsub -l h_rt=24:0:0 myscript.sh
+</code></pre>
+<p>You can submit jobs with dependencies by using the <code>-hold_jid</code> option. For example, the command below submits a job that won't run until job 12345 has finished:</p>
+<pre><code>qsub -hold_jid 12345 myscript.sh
+</code></pre>
+<p>Note that for debugging purposes, it helps us if you have these options inside your jobscript rather than passed in on the command line whenever possible. We (and you) can see the exact jobscript that was submitted for every job that ran but not what command line options you submitted it with.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>qsub myscript.sh</code></td>
+<td>Submit the script as-is</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>qsub -N NewName myscript.sh</code></td>
+<td>Submit the script but change the job's name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>qsub -l h_rt=24:0:0 myscript.sh</code></td>
+<td>Submit the script but change the maximum run-time</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>qsub -hold_jid 12345 myscript.sh</code></td>
+<td>Submit the script but make it wait for job 12345 to finish</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-do-i-monitor-a-job">How do I monitor a job?</h2>
+<h3 id="qstat">qstat</h3>
+<p>The <code>qstat</code> command shows the status of your jobs. By default, if you run it with no options, it shows only your jobs (and no one else’s). This makes it easier to keep track of your jobs. </p>
+<p>The output will look something like this:</p>
+<pre><code>job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
+-----------------------------------------------------------------------------------------------------------------
+123454 2.00685 DI_m3      ccxxxxx      Eqw   10/13/2017 15:29:11                                    12 
+123456 2.00685 DI_m3      ccxxxxx      r     10/13/2017 15:29:11 all.q@dsh-sge2gpu01.IDHS.UCL.A     16 
+123457 2.00398 DI_m2      ucappka      qw    10/12/2017 14:42:12                                    1 
+</code></pre>
+<p>This shows you the job ID, the numeric priority the scheduler has assigned to the job, the name you have given the job, your username, the state the job is in, the date and time it was submitted at (or started at, if it has begun), the head node of the job, the number of 'slots' it is taking up, and if it is an array job the last column shows the task ID.</p>
+<p>The queue name (<code>all.q</code> here) is generally not useful. The head node name (<code>dsh-sge2gpu01</code>) can be a useful reference in troubleshooting when something goes wrong.</p>
+<p>If you want to get more information on a particular job, note its job ID and then use the <code>-f</code> and <code>-j &lt;job-ID&gt;</code> flags to get full output about that job. Most of this information is circumstantial and may not be very useful most of the time, but can be very helpful in determining what's wrong if things are not working as expected.</p>
+<pre><code>qstat -f -j 12345
+</code></pre>
+<h4 id="job-states">Job states</h4>
+<ul>
+<li><code>qw</code>: queueing, waiting</li>
+<li><code>r</code>: running</li>
+<li><code>Rq</code>: a pre-job check on a node failed and this job was put back in the queue</li>
+<li><code>Rr</code>: this job was rescheduled but is now running on a new node</li>
+<li><code>Eqw</code>: there was an error in this jobscript. This will not run.</li>
+<li><code>t</code>: this job is being transferred</li>
+<li><code>dr</code>: this job is being deleted</li>
+</ul>
+<!--- dRr  --->
+<!--- hqw  --->
+
+<p>Many jobs cycling between <code>Rq</code> and <code>Rr</code> generally means there is a dodgy compute node which is failing pre-job checks, but is free so everything tries to run there. In this case, let us know and we will investigate. </p>
+<p>If a job stays in <code>t</code> or <code>dr</code> state for a long time, the node it was on is likely to be unresponsive - again let us know and we'll investigate.</p>
+<p>A job in <code>Eqw</code> will remain in that state until you delete it - you should first have a look at what the error was with <code>qexplain</code>.</p>
+<h4 id="why-is-my-job-in-eqw-status">Why is my job in Eqw status?</h4>
+<p>If your job goes straight into Eqw state, there was an error in your jobscript that meant your job couldn't be started. The standard <code>qstat</code> job information command will give you a truncated version of the error:</p>
+<pre><code>qstat -j &lt;job_ID&gt;
+</code></pre>
+<p>The most common reason jobs go into this error state is that a file or directory your job is trying to use doesn't exist. Creating it after the job is in the <code>Eqw</code> state won't make the job run: it'll still have to be deleted and re-submitted.</p>
+<h2 id="job-deletion">Job deletion</h2>
+<p>Use  <code>qdel</code> to delete a submitted job. You must give the job ID.</p>
+<pre><code>qdel 361829
+</code></pre>
+<p>You can also delete all the jobs from a specific user with the following:</p>
+<pre><code>qdel -u &lt;username&gt;
+</code></pre>
+<p>To delete a batch of jobs, you can create a file with the list of job IDs that you would like to delete and use that file's name in the following to delete the list of jobs: <code>cat &lt;filename&gt; | xargs qdel</code></p>
+<h3 id="more-scheduler-commands">More scheduler commands</h3>
+<p>The command <code>qacct -j &lt;job_ID&gt;</code> is useful in determining what happened with a job after it has completed. This can show you information such as how long the job ran for, how much memory it used over the lifetime of the job, the maximum memory that was used at any one point, and the exit status (which can be very useful if something went wrong).</p>
+<p>For more details on the SGE commands you can have a look at their manual pages, such as <code>man qstat</code>. (You can also browse the manual pages outside of the DSH on publicly available websites, such as <a href="https://gridscheduler.sourceforge.net/htmlman/manuals.html">gridscheduler.sourceforge.net</a>.)</p>
+<h2 id="how-do-i-run-interactive-jobs">How do I run interactive jobs?</h2>
+<p>If you wish to run interactive programs on the cluster, use the commands <code>qlogin</code> or <code>qrsh</code> to request an interactive session. This will be queued in the same manner as other jobs, and the scheduler will open a remote command-line session on a suitable node when it is able. See our detailed guide to running <a href="../3.6-Interactive_Jobs/">interactive jobs</a> for more information.</p>
+<h2 id="how-do-i-estimate-what-resources-to-request-in-my-jobscript">How do I estimate what resources to request in my jobscript?</h2>
+<p>It can be difficult to know where to start when estimating the resources your job will need. One way you can find out what resources your jobs need is to submit one job which requests far more than you think necessary, and gather data on what it actually uses. If you aren't sure what 'far more' entails, request the maximum wallclock time and job size that will fit on one node, and reduce this after you have some idea. In the case for array jobs, each job in the array is treated independently by the scheduler and are each allocated the same resources as are requested. For example, in a job array of 40 jobs requesting for 24 hours wallclock time and 3GB ram, each job in the array will be allocated 24 hours wallclock time and 3GB ram. Wallclock time does not include the time spent waiting in the queue.</p>
+<p>In your job sript, you can try running your program using the following:</p>
+<pre><code>/usr/bin/time --verbose myprogram myargs
+</code></pre>
+<p>where <code>myprogram myargs</code> is however you normally run your program, with whatever options you pass to it.</p>
+<p>When your job finishes, you will get output about the resources it used and how long it took - the relevant one for memory is <code>maxrss</code> (maximum resident set size) which roughly tells you the largest amount of memory it used.</p>
+<p>Remember that memory requests in your jobscript are always per core, so check the total you are requesting is sensible -- if you increase it too much you may end up with a job that cannot be submitted.</p>
+<h2 id="how-do-i-run-a-graphical-program">How do I run a graphical program?</h2>
+<p>Unfortunately, at the moment it is not possible to run a graphical program in the DSH HPC cluster. </p>
+<h2 id="what-can-i-do-to-minimise-the-time-i-need-to-wait-for-my-jobs-to-run">What can I do to minimise the time I need to wait for my job(s) to run?</h2>
+<ol>
+<li>Minimise the amount of wall clock time you request.</li>
+<li>Use job arrays instead of submitting large numbers of jobs (see our <a href="../3.4-Example_Jobscripts/">job script examples</a>).</li>
+<li>Plan your work so that you can do other things while your jobs are being scheduled.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../3.2-Customer_Specialist_Servers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Customer Specialist Servers">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Customer Specialist Servers
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../3.4-Example_Jobscripts/" class="md-footer__link md-footer__link--next" aria-label="Next: Example Jobscripts">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Example Jobscripts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M247.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L179.2 256 41.9 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Bespoke Solutions Teams, UCL
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/UCL-ARC/mkdocs-dsh-docs" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+<h4>Local storage notification</h4>
+<p>We don't use cookies at all, but we do use your browser's local storage to remember whether you prefer dark or light mode, and to store the GitHub statistics displayed in the top-right. You can disable the stats retrieval to GitHub and associated storage here.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Reject</button>
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.expand", "navigation.top", "navigation.path", "navigation.indexes", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "repository"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
