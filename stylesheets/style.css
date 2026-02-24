@@ -1,0 +1,70 @@
+:root  > * {
+  --md-primary-fg-color:        #AC145A;
+  --md-primary-fg-color--light: #AC145A;
+  --md-primary-fg-color--dark:  #AC145A;
+}
+.md-header__inner {
+    display: flex;
+    align-items: center;
+}
+.md-logo {
+    #order: 0;      /* Move logo to the left */
+    margin-right: 10px;
+    text-decoration: none !important;  /* Remove underline */
+}   
+
+.md-header__title {
+    #order: 1;      /* Keep title on the left */
+    margin-left: 10px;  /* Space between icon and title */
+    color: white !important;  /* Change this to any colour */
+    font-size: 20px !important;  /* Change number to desired size */
+    font-weight: 500;            /* Optional: make text bolder */
+    white-space: nowrap;
+}
+/* Push toggle + search + repo to the right */
+.md-header__items {
+    margin-left: auto; /* this pushes all right-side items */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* spacing between them */
+}
+
+/* Force order: toggle, search, repo */
+.md-header__items > .md-header__option[data-md-component="toggle"] { order: 0; }
+.md-header__items > .md-header__option[data-md-component="search"] { order: 1; }
+.md-header__items > .md-header__option[data-md-component="repo"] { 
+    order: 2; 
+    display: inline-flex !important;  /* ensure visible */
+}
+  
+
+/* Increase logo size in header */
+.md-logo img {
+    height: 40px !important;      /* Change size here */
+    max-height: none !important;   /* Remove default limit */
+    width: auto !important;        /* Keep proportions */
+}
+
+/* ===== Optional: adjust search bar size ===== */
+.md-search__input {
+    max-width: 200px;  /* change as needed */
+}
+
+/* Footer background color same as header */
+.md-footer {
+    background-color: #AC145A !important;  /* Match header color */
+    color: white !important;               /* Text color */
+    padding: 1rem 2rem;                    /* Optional spacing */
+}
+
+/* Footer links color */
+.md-footer a {
+    color: white !important;
+    text-decoration: underline;
+}
+
+/* Optional: change hover color for links */
+.md-footer a:hover {
+    color: pink !important;  /* Gold accent, for example */
+}
+
