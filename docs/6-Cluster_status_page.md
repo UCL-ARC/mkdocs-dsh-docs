@@ -25,10 +25,10 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Status  | Reason 
 --------------------|---------|--------
-16 February 2026 | Planned | Patching and maintenance for Group 1 machines.
-18 February 2026 | Planned | Patching and maintenance for Group 2 machines.
-20 February 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
-23 February 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
+16 February 2026 | Completed | Patching and maintenance for Group 1 machines.
+18 February 2026 | Completed | Patching and maintenance for Group 2 machines.
+20 February 2026 | Completed | DSH HPC Cluster queue will be disabled pending patching on Monday.
+23 February 2026 | Completed | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
 --- | --- | ---
 16 March 2026 | Planned | Patching and maintenance for Group 1 machines.
 18 March 2026 | Planned | Patching and maintenance for Group 2 machines.
