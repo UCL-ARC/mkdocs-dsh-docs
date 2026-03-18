@@ -242,7 +242,8 @@ Here are the processors each node type has:
   
  - **Login**: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
  - **Compute**: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
- - **Compute + GPU**: Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+ - **Compute + GPU (V100)**: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+ - **Compute + GPU (A100)**: Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
 
 Hyperthreading is not available. 
 
