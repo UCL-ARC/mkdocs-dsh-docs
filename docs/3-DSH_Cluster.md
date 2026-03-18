@@ -1,6 +1,6 @@
 # The DSH Research Compute environment
 
-The DSH Research Compute environment consists of two main pieces, the DSH HPC Cluster and the Customer Specialist Servers. 
+The DSH Research Compute environment consists of two main pieces, the DSH HPC Cluster and the Customer Specialist Servers.  
 
 The **DSH HPC Cluster** is a secure super-computing environment that is isolated from the internet and the UCL network for security and privacy reasons. Relative to some other cluster offerings, it is fairly small scale so note that it is designed for single-node jobs -- it is not possible to run multi-node parallel jobs.
 
