@@ -40,10 +40,10 @@ Activating the account will require a mobile phone number or an alternative e-ma
 from the Token for security purposes](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven/data-safe-haven-user-guide-faqs#Security%20&%20Tokens%20Portal). This information is stored securely and used only for this purpose. After the password and PIN has been changed, users will get access to the DSH portals and their shares.
 
 The DSH webpage is composed of 3 [portals](https://www.ucl.ac.uk/isd/services/file-storage-sharing/data-safe-haven-dsh):
-
-* [DSH File Transfer Portal](https://filetransfer.idhs.ucl.ac.uk/): Used to transfer data into and out of the DSH.
-* [DSH Applications & Data Portal](https://accessgateway.idhs.ucl.ac.uk/): Portal to access the DSH Desktop environment through the Citrix "XenApp & XenDesktop" technology.
-* [DSH Security & Tokens Portal](https://registration.idhs.ucl.ac.uk/dsc): Portal to generate tokens and change the password. 
+  
+ - [DSH File Transfer Portal](https://filetransfer.idhs.ucl.ac.uk/): Used to transfer data into and out of the DSH.
+ - [DSH Applications & Data Portal](https://accessgateway.idhs.ucl.ac.uk/): Portal to access the DSH Desktop environment through the Citrix "XenApp & XenDesktop" technology.
+ - [DSH Security & Tokens Portal](https://registration.idhs.ucl.ac.uk/dsc): Portal to generate tokens and change the password. 
 
 The DSH Desktop publishes virtual desktops through the use of Citrix "XenApp & XenDesktop" technology. This is a web browser window from where users can connect to DSH Desktop from anywhere. The purpose of this functionality is to keep all information within the DSH environment secure, by utilising dedicated Citrix desktops. The data held within the environment can be manipulated by users without having the need to bring it locally to their machine.
 
