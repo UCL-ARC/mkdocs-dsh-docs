@@ -244,6 +244,10 @@ Here are the processors each node type has:
  - Compute nodes       : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
  - Compute nodes + GPU : Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
 
+workflow:
+  
+ - Connect
+
 Hyperthreading is not available. 
 
 (If you ever need to check this for yourself, you can include `cat /proc/cpuinfo` in your jobscript so you get it in your job's .o file for the exact node your job ran on. You will get an entry for every core).
