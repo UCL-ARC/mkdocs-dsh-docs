@@ -239,9 +239,9 @@ The DSH HPC Cluster is composed of 14 user-facing nodes: 2 login nodes, 7 CPU-on
 You can generally tell the type of a node (login, cpu, or gpu) by its name, e.g. login nodes are `dsh-sge2log0X`, etc.
 
 Here are the processors each node type has:
-  - Login nodes         : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
-  - Compute nodes       : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
-  - Compute nodes + GPU : Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+- Login nodes         : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+- Compute nodes       : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+- Compute nodes + GPU : Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
 
 Hyperthreading is not available. 
 
@@ -273,10 +273,10 @@ We do not provide a hard wallclock limit, but we strongly suggest that users kee
 ## Creating, submitting and checking jobs
 
 We have pages that will help explain how to create, submit, and check the results of your jobscripts.
-  - To learn about the basic SGE commands to run, check, delete, and manage your jobscript, please check our [running jobs ](3.3-Running_jobs.md) page.
-  - To create a jobscript, please check our [job examples](3.4-Example_Jobscripts.md) page.
-  - To learn how to check the results after a job has finished, please check our [job results](3.5-Job_Results.md) page.
-  - To run an interactive job, please check our [interactive jobs](3.6-Interactive_Jobs.md) page
+- To learn about the basic SGE commands to run, check, delete, and manage your jobscript, please check our [running jobs ](3.3-Running_jobs.md) page.
+- To create a jobscript, please check our [job examples](3.4-Example_Jobscripts.md) page.
+- To learn how to check the results after a job has finished, please check our [job results](3.5-Job_Results.md) page.
+- To run an interactive job, please check our [interactive jobs](3.6-Interactive_Jobs.md) page
 
 ## Requesting Customer Specialist Servers
 
