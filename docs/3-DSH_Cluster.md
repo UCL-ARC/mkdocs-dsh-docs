@@ -240,9 +240,9 @@ You can generally tell the type of a node (login, cpu, or gpu) by its name, e.g.
 
 Here are the processors each node type has:
   
- - Login nodes         : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
- - Compute nodes       : Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
- - Compute nodes + GPU : Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
+ - Login: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+ - Compute: Intel(R) Xeon(R) Gold 6240 CPU @ 2.60GHz
+ - Compute + GPU: Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
 
 Hyperthreading is not available. 
 
