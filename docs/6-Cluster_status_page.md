@@ -25,20 +25,20 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Status  | Reason 
 --------------------|---------|--------
-16 February 2026 | Completed | Patching and maintenance for Group 1 machines.
-18 February 2026 | Completed | Patching and maintenance for Group 2 machines.
-20 February 2026 | Completed | DSH HPC Cluster queue will be disabled pending patching on Monday.
-23 February 2026 | Completed | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
---- | --- | ---
-16 March 2026 | Completed | Patching and maintenance for Group 1 machines.
-18 March 2026 | Completed | Patching and maintenance for Group 2 machines.
-20 March 2026 | Completed | DSH HPC Cluster queue will be disabled pending patching on Monday.
-23 March 2026 | Completed | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
---- | --- | ---
-20 April 2026 | Planned | Patching and maintenance for Group 1 machines.
+20 April 2026 | Completed | Patching and maintenance for Group 1 machines.
 22 April 2026 | Planned | Patching and maintenance for Group 2 machines.
 24 April 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
 27 April 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
+--- | --- | ---
+18 May 2026 | Planned | Patching and maintenance for Group 1 machines.
+20 May 2026 | Planned | Patching and maintenance for Group 2 machines.
+22 May 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
+25 May 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
+--- | --- | ---
+15 June 2026 | Planned | Patching and maintenance for Group 1 machines.
+17 June 2026 | Planned | Patching and maintenance for Group 2 machines.
+19 June 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
+22 June 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
 --- | --- | ---
 
 
