@@ -8,7 +8,7 @@ We endeavour to keep this page as up-to-date as possible but there might be some
   
   - 2026-06-17 @ 4:00 pm - GPU system patching required:
     - All DSH Research Compute GPU machines must be temporarily powered off to implement system patching -- this will be done in stages as outlined below. The patching of a given system should only take a few hours, and all machines should be back up and running by end of day Thursday, June 18th. The DSH HPC Cluster queue will also be temporarily disabled until this work is completed.
-      - Stage 1: A subset of VMs using V100 GPUs will be powered down first, this will include cluster node dsh-sge2gpu03. This is expected to be begin at 4:00 pm on Wed. June 17th and be completed by end of day.
+      - Stage 1: A subset of VMs using V100 GPUs will be powered down first, this will include cluster node dsh-sge2gpu03. This is expected to begin at 4:00 pm on Wed. June 17th and be completed by end of day.
       - Stage 2: All VMs using A100 GPUs will be powered down second, this will include cluster nodes dsh-sge2gpu01 and dsh-sge2gpu02 as well as select Customer Specialist Servers. This is expected to begin at end of day on Wed. June 17th, and be completed by lunchtime Thurs. June 18th.
       - Stage 3: All remaining VMs using V100 GPUs will be powered down, this will include cluster nodes dsh-sge2gpu04, dsh-sge2gpu05, as well as all Customer Specialist Servers using V100 GPUs. This is expected to begin in the morning of Thurs. June 18th, and be completed by end of day.
     - @ 4:00 pm - Stage 1 machines have been powered off and patching is in progress.
