@@ -11,8 +11,10 @@ We endeavour to keep this page as up-to-date as possible but there might be some
       - Stage 1: A subset of VMs using V100 GPUs will be powered down first, this will include cluster node dsh-sge2gpu03. This is expected to begin at 4:00 pm on Wed. June 17th and be completed by end of day.
       - Stage 2: All VMs using A100 GPUs will be powered down second, this will include cluster nodes dsh-sge2gpu01 and dsh-sge2gpu02 as well as select Customer Specialist Servers. This is expected to begin at end of day on Wed. June 17th, and be completed by lunchtime Thurs. June 18th.
       - Stage 3: All remaining VMs using V100 GPUs will be powered down, this will include cluster nodes dsh-sge2gpu04, dsh-sge2gpu05, as well as all Customer Specialist Servers using V100 GPUs. This is expected to begin in the morning of Thurs. June 18th, and be completed by end of day.
-    - @ 4:00 pm - Stage 1 machines have been powered off and patching is in progress.
-    - @ 4:30 pm - Stage 2 machines have been powered off and are awaiting patching.
+    - Wed @ 4:00 pm - Stage 1 machines have been powered off and patching is in progress.
+    - Wed @ 4:30 pm - Stage 2 machines have been powered off and are awaiting patching.
+    - Thurs @ 10:00 am - Maintenance for Stage 1 machines has been completed. Patching is in progress for Stage 2 machines.
+    - Thurs @ 10:17 am - Stage 3 machines have been powered off and are awaiting patching.
   - 2026-04-30 @ 11:30 am - Emergency security patching required:
     - All DSH Research Compute machines must be rebooted to implement an emergency security patch.
     - @ 11:30 am - The DSH HPC Cluster job queue has been temporarily disabled to facilitate the patching of the compute nodes, and all login nodes and user-facing standalone machines will be rebooted between 4:00 pm and 5:00 pm this afternoon. The DSH HPC Cluster queue will be re-enabled after all patching and reboots have been completed.
