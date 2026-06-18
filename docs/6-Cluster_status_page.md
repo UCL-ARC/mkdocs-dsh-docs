@@ -15,6 +15,7 @@ We endeavour to keep this page as up-to-date as possible but there might be some
     - @ Wed, 4:30 pm - Stage 2 machines have been powered off and are awaiting patching.
     - @ Thurs, 10:00 am - Maintenance for Stage 1 machines has been completed. Patching is in progress for Stage 2 machines.
     - @ Thurs, 10:17 am - Stage 3 machines have been powered off and are awaiting patching.
+    - @ Thurs, 11:30 am - The DSH HPC Cluster queue has been re-enabled (but note that only one GPU node is currently available for jobs in the cluster)
   - 2026-04-30 @ 11:30 am - Emergency security patching required:
     - All DSH Research Compute machines must be rebooted to implement an emergency security patch.
     - @ 11:30 am - The DSH HPC Cluster job queue has been temporarily disabled to facilitate the patching of the compute nodes, and all login nodes and user-facing standalone machines will be rebooted between 4:00 pm and 5:00 pm this afternoon. The DSH HPC Cluster queue will be re-enabled after all patching and reboots have been completed.
