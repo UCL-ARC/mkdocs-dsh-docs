@@ -19,6 +19,7 @@ We endeavour to keep this page as up-to-date as possible but there might be some
     - @ Thurs, 4:02 pm - Maintenance for Stage 2 machines has been completed. Patching is in progress for Stage 3 machines.
     - @ Thurs, 5:00 pm - Maintenance for Stage 3 machines is taking longer than expected, and will continue into Friday. We are also experiencing some issues with some Stage 1 machines, so a subset of these will continue to be unavailable for a time -- this should only impact DSH HPC cluster machine dsh-sge2gpu03, and no customer machines.
     - @ Fri, 2:15 pm - Maintenance for Stage 3 machines is now completed. Work continues on the above-noted problematic subset of Stage 1 machines.
+    - 2026-06-22 @ Mon, 4:39 pm - All DSH Research Compute GPU machines are now fully operational. Please raise a ticket in MyServices if you see any further issues.
   - 2026-04-30 @ 11:30 am - Emergency security patching required:
     - All DSH Research Compute machines must be rebooted to implement an emergency security patch.
     - @ 11:30 am - The DSH HPC Cluster job queue has been temporarily disabled to facilitate the patching of the compute nodes, and all login nodes and user-facing standalone machines will be rebooted between 4:00 pm and 5:00 pm this afternoon. The DSH HPC Cluster queue will be re-enabled after all patching and reboots have been completed.
