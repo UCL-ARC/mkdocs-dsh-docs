@@ -6,6 +6,10 @@ We endeavour to keep this page as up-to-date as possible but there might be some
 ## Status of the DSH Research Compute Services
 
   
+  - 2026-08-24 - GPU system maintenance required:
+    - DSH HPC Cluster GPU nodes and Customer Specialist Servers with GPUs will be receiving maintenance this week, which will result in a brief outage for affected machines. Affected machines and their scheduled maintenance date are outlined below; this maintenance should only take a couple of hours, and all machines should resume normal function by end of day on their scheduled maintenance day:
+      - Stage 1, Weds. Aug. 26th: DSH HPC Cluster machines dsh-sge2gpu04, and dsh-sge2gpu05, and Customer GPU machines for CaseRefs 00965, 01148
+      - Stage 2, Fri. Aug. 28th: DSH HPC Cluster machine dsh-sge2gpu03
   - 2026-06-17 @ 4:00 pm - GPU system patching required:
     - All DSH Research Compute GPU machines must be temporarily powered off to implement system patching -- this will be done in stages as outlined below. The patching of a given system should only take a few hours, and all machines should be back up and running by end of day Thursday, June 18th. The DSH HPC Cluster queue will also be temporarily disabled until this work is completed.
       - Stage 1: A subset of VMs using V100 GPUs will be powered down first, this will include cluster node dsh-sge2gpu03. This is expected to begin at 4:00 pm on Wed. June 17th and be completed by end of day.
@@ -47,20 +51,22 @@ After an outage, the first day or two back should be considered 'at risk'; that 
 
 Date                | Status  | Reason 
 --------------------|---------|--------
-20 July 2026 | Planned | Patching and maintenance for Group 1 machines.
-22 July 2026 | Planned | Patching and maintenance for Group 2 machines.
-24 July 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
-27 July 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
---- | --- | ---
-17 August 2026 | Planned | Patching and maintenance for Group 1 machines.
-19 August 2026 | Planned | Patching and maintenance for Group 2 machines.
-21 August 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
-24 August 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
+17 August 2026 | Completed | Patching and maintenance for Group 1 machines.
+19 August 2026 | Completed | Patching and maintenance for Group 2 machines.
+21 August 2026 | Completed | DSH HPC Cluster queue will be disabled pending patching on Monday.
+24 August 2026 | Completed | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
+26 August 2026 | Planned | Maintenance for DSH Research Compute GPU machines (Stage 1)
+28 August 2026 | Planned | Maintenance for DSH Research Compute GPU machines (Stage 2)
 --- | --- | ---
 14 September 2026 | Planned | Patching and maintenance for Group 1 machines.
 16 September 2026 | Planned | Patching and maintenance for Group 2 machines.
 18 September 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
 21 September 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
+--- | --- | ---
+19 October 2026 | Planned | Patching and maintenance for Group 1 machines.
+21 October 2026 | Planned | Patching and maintenance for Group 2 machines.
+23 October 2026 | Planned | DSH HPC Cluster queue will be disabled pending patching on Monday.
+26 October 2026 | Planned | Patching and maintenance for DSH HPC Cluster and Group 3 machines, and Cluster queue re-enabled.
 
 
 
