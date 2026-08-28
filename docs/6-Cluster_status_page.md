@@ -8,6 +8,7 @@ We endeavour to keep this page as up-to-date as possible but there might be some
   
   - 2026-08-26 @ 8:17am - GPU system maintenance initiated: As outlined below, "Stage 1" of the GPU maintenance has begun, and DSH HPC Cluster machines dsh-sge2gpu04 and dsh-sge2gpu05 as well as machines for CaseRefs 01148 and 00965 are now offline and will be unavailable for the next few hours.
     - @ 6:30pm - This maintenance is taking longer than anticipated, and the above-mentioned machines will remain out of service until at least 9am on Friday morning.
+    - @ Fri, 9:08 am - Stage 2 as outlined below is set to begin, and DSH HPC Cluster machine dsh-sge2gpu03 will be powered off. Unfortunately, there was an issue during Stage 1 and those machines will remain offline for some time longer. We apologize for the inconvenience, and will provide updates as soon as we have more information.
   - 2026-08-24 - GPU system maintenance required:
     - DSH HPC Cluster GPU nodes and Customer Specialist Servers with GPUs will be receiving maintenance this week, which will result in a brief outage for affected machines. Affected machines and their scheduled maintenance date are outlined below; this maintenance should only take a couple of hours, and all machines should resume normal function by end of day on their scheduled maintenance day:
       - Stage 1, Weds. Aug. 26th: DSH HPC Cluster machines dsh-sge2gpu04, and dsh-sge2gpu05, and Customer GPU machines for CaseRefs 00965, 01148
